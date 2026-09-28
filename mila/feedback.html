@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MILA — Feedback</title>
+<meta name="description" content="Report a bug, request a feature, or just say hello. Your feedback shapes MILA.">
+<link rel="stylesheet" href="styles.css">
+<style>
+.form-card{max-width:620px;margin:0 auto}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;box-sizing:border-box;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:inherit}
+.field textarea{min-height:140px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.direct{max-width:620px;margin:22px auto 0;text-align:center;color:var(--mut)}
+.navlinks a.active{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none">MILA<span>.</span></a></div>
+    <div class="navlinks">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how">How it works</a>
+      <a href="demo.html">Demo</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="feedback.html" class="active">Feedback</a>
+      <a class="cta" href="mailto:milatechnogies@gmail.com?subject=MILA%20early%20access">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Feedback</div>
+      <h1>Tell us what's<br><span class="hl">on your mind.</span></h1>
+      <p class="lead">Found a bug, want a feature, or just want to talk polls? We read everything.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="card form-card">
+      <form id="fbForm">
+        <div class="field">
+          <label for="fbName">Name <span style="color:var(--mut);font-weight:400">(optional)</span></label>
+          <input id="fbName" type="text" autocomplete="name" placeholder="Jane">
+        </div>
+        <div class="field">
+          <label for="fbEmail">Email <span style="color:var(--mut);font-weight:400">(optional — so we can reply)</span></label>
+          <input id="fbEmail" type="email" autocomplete="email" placeholder="jane@example.com">
+        </div>
+        <div class="field">
+          <label for="fbTopic">Topic</label>
+          <select id="fbTopic">
+            <option>Bug report</option>
+            <option>Feature request</option>
+            <option>Question</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fbMsg">Message</label>
+          <textarea id="fbMsg" required placeholder="What should we know?"></textarea>
+        </div>
+        <button class="btn primary" type="submit" style="width:100%">Send feedback</button>
+      </form>
+    </div>
+    <p class="direct">Prefer plain email? Write to <a href="mailto:milatechnogies@gmail.com" style="color:var(--accent)">milatechnogies@gmail.com</a>.<br>
+    <span style="font-size:.85rem">Submitting opens your email app with everything filled in — nothing is stored on our servers.</span></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><h4>MILA</h4><a href="index.html#features">Features</a><a href="demo.html">Demo</a><a href="index.html#pricing">Pricing</a><a href="index.html#faq">FAQ</a></div>
+      <div><h4>Company</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="feedback.html">Feedback</a><a href="mailto:milatechnogies@gmail.com">Contact</a></div>
+      <div><h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
+    </div>
+    <div class="fbottom"><span>© 2026 Mila Tech LLC. All rights reserved.</span><span>Metro Detroit, Michigan</span></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('fbForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var name=document.getElementById('fbName').value.trim();
+  var email=document.getElementById('fbEmail').value.trim();
+  var topic=document.getElementById('fbTopic').value;
+  var msg=document.getElementById('fbMsg').value.trim();
+  var subject='MILA feedback — '+topic;
+  var body=(name?'Name: '+name+'\n':'')+(email?'Email: '+email+'\n':'')+'\n'+msg;
+  window.location.href='mailto:milatechnogies@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>

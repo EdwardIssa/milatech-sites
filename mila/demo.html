@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MILA — Live demo</title>
+<meta name="description" content="Try a simulated MILA flash poll right in your browser. Vote Yes, Neutral, or No and watch results move in real time.">
+<link rel="stylesheet" href="styles.css">
+<style>
+.demo-card{max-width:640px;margin:0 auto}
+.poll-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+.flash-tag{background:var(--accent);color:#06121f;font-weight:800;font-size:.8rem;padding:4px 12px;border-radius:999px;letter-spacing:.04em}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent)}
+.poll-q{font-size:1.6rem;font-weight:800;margin:6px 0 18px}
+.vote-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.vote-btns button{padding:14px 8px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font-weight:800;font-size:1rem;cursor:pointer;transition:transform .08s,border-color .15s}
+.vote-btns button:hover{border-color:var(--accent);transform:translateY(-1px)}
+.results{display:none}
+.bar-row{margin:12px 0}
+.bar-label{display:flex;justify-content:space-between;font-weight:700;margin-bottom:6px}
+.bar-track{height:14px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);overflow:hidden}
+.bar-fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--accent),#7cc7ff);transition:width .6s ease}
+.bar-fill.no{background:linear-gradient(90deg,#ff7a7a,#ffb37c)}
+.bar-fill.neu{background:linear-gradient(90deg,#b9c2cc,#e6ebf0)}
+.poll-meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:var(--mut);font-size:.9rem;flex-wrap:wrap;gap:8px}
+.live-dot{color:#3ddc84;font-weight:700}
+.closed{display:none;text-align:center;padding:10px;border:1px dashed var(--line);border-radius:12px;margin-top:14px;color:var(--mut)}
+.sim-note{max-width:640px;margin:18px auto 0;color:var(--mut);font-size:.9rem;text-align:center}
+.navlinks a.active{color:var(--accent)}
+@media(max-width:560px){.vote-btns{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none">MILA<span>.</span></a></div>
+    <div class="navlinks">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how">How it works</a>
+      <a href="demo.html" class="active">Demo</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="feedback.html">Feedback</a>
+      <a class="cta" href="mailto:milatechnogies@gmail.com?subject=MILA%20early%20access">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Interactive demo</div>
+      <h1>Vote on a live<br><span class="hl">flash poll.</span></h1>
+      <p class="lead">Sixty seconds on the clock. Pick a side and watch the results move as votes roll in — this is exactly how a MILA flash poll feels.</p>
+      <div class="btnrow">
+        <a class="btn primary" href="#demo">Start the demo</a>
+        <a class="btn ghost" href="index.html#how">How it works</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="demo">
+  <div class="wrap">
+    <div class="card demo-card">
+      <div class="poll-top">
+        <span class="flash-tag">⚡ FLASH POLL</span>
+        <span class="timer" id="timer">⏱ 01:00</span>
+      </div>
+      <div class="poll-q">Pineapple belongs on pizza.</div>
+
+      <div class="vote-btns" id="voteBtns">
+        <button data-vote="yes">Yes</button>
+        <button data-vote="neutral">Neutral</button>
+        <button data-vote="no">No</button>
+      </div>
+
+      <div class="results" id="results">
+        <div class="bar-row">
+          <div class="bar-label"><span>Yes</span><span id="yesPct">0%</span></div>
+          <div class="bar-track"><div class="bar-fill" id="yesBar"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>Neutral</span><span id="neuPct">0%</span></div>
+          <div class="bar-track"><div class="bar-fill neu" id="neuBar"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>No</span><span id="noPct">0%</span></div>
+          <div class="bar-track"><div class="bar-fill no" id="noBar"></div></div>
+        </div>
+      </div>
+
+      <div class="poll-meta">
+        <span><span class="live-dot">●</span> <span id="votersNow">128</span> voting now</span>
+        <span><strong id="totalVotes">0</strong> total votes</span>
+      </div>
+
+      <div class="closed" id="closed">
+        Poll closed. <button class="btn primary" id="again" style="margin-left:8px">Run it again</button>
+      </div>
+    </div>
+    <p class="sim-note">Simulated demo — votes are illustrative and aren't counted anywhere. In the real app, every vote is live and every poll is real.</p>
+  </div>
+</section>
+
+<section style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2 style="text-align:center">What you just felt</h2>
+    <div class="grid">
+      <div class="card"><h3>⚡ Real-time results</h3><p>Results move the instant votes land. No refresh, no waiting — the numbers are alive.</p></div>
+      <div class="card"><h3>⏱ Flash polls</h3><p>1-minute and 5-minute polls turn any hot take into a sixty-second event.</p></div>
+      <div class="card"><h3>🪙 Stakes &amp; rewards</h3><p>In the app, votes earn coins and leaderboard points. Winning a flash poll pays.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Ready for the real thing?</h2>
+    <p>Get early access and be first in when MILA launches.</p>
+    <div class="btnrow" style="justify-content:center">
+      <a class="btn primary" href="mailto:milatechnogies@gmail.com?subject=MILA%20early%20access">Get early access</a>
+      <a class="btn ghost" href="index.html#pricing">See pricing</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><h4>MILA</h4><a href="index.html#features">Features</a><a href="demo.html">Demo</a><a href="index.html#pricing">Pricing</a><a href="index.html#faq">FAQ</a></div>
+      <div><h4>Company</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="feedback.html">Feedback</a><a href="mailto:milatechnogies@gmail.com">Contact</a></div>
+      <div><h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
+    </div>
+    <div class="fbottom"><span>© 2026 Mila Tech LLC. All rights reserved.</span><span>Metro Detroit, Michigan</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var votes={yes:0,neutral:0,no:0}, voted=false, seconds=60, timerId=null, simId=null;
+  var weights={yes:.46,neutral:.14,no:.40};
+  function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+  function total(){return votes.yes+votes.neutral+votes.no;}
+  function render(){
+    var t=total()||1;
+    var p={yes:votes.yes/t*100,neutral:votes.neutral/t*100,no:votes.no/t*100};
+    document.getElementById('yesBar').style.width=p.yes+'%';
+    document.getElementById('neuBar').style.width=p.neutral+'%';
+    document.getElementById('noBar').style.width=p.no+'%';
+    document.getElementById('yesPct').textContent=Math.round(p.yes)+'% · '+votes.yes;
+    document.getElementById('neuPct').textContent=Math.round(p.neutral)+'% · '+votes.neutral;
+    document.getElementById('noPct').textContent=Math.round(p.no)+'% · '+votes.no;
+    document.getElementById('totalVotes').textContent=total().toLocaleString();
+  }
+  function seed(){votes={yes:214,neutral:63,no:188};render();}
+  function tick(){
+    seconds--;
+    document.getElementById('timer').textContent='⏱ '+fmt(Math.max(seconds,0));
+    document.getElementById('votersNow').textContent=90+Math.floor(Math.random()*80);
+    if(seconds<=0){end();return;}
+  }
+  function simulate(){
+    var r=Math.random(),k=r<weights.yes?'yes':(r<weights.yes+weights.neutral?'neutral':'no');
+    votes[k]+=1+Math.floor(Math.random()*4);
+    if(voted)render();
+    simId=setTimeout(simulate,1200+Math.random()*2600);
+  }
+  function start(){
+    seed();voted=false;seconds=60;
+    document.getElementById('voteBtns').style.display='grid';
+    document.getElementById('results').style.display='none';
+    document.getElementById('closed').style.display='none';
+    document.getElementById('timer').textContent='⏱ 01:00';
+    clearInterval(timerId);clearTimeout(simId);
+    timerId=setInterval(tick,1000);simulate();
+  }
+  function end(){
+    clearInterval(timerId);clearTimeout(simId);
+    document.getElementById('timer').textContent='⏱ 00:00';
+    document.getElementById('closed').style.display='block';
+    document.getElementById('votersNow').textContent='0';
+  }
+  document.getElementById('voteBtns').addEventListener('click',function(e){
+    if(e.target.tagName!=='BUTTON'||voted||seconds<=0)return;
+    voted=true;votes[e.target.getAttribute('data-vote')]++;
+    document.getElementById('voteBtns').style.display='none';
+    document.getElementById('results').style.display='block';
+    render();
+  });
+  document.getElementById('again').addEventListener('click',start);
+  start();
+})();
+</script>
+</body>
+</html>
