@@ -13,7 +13,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand">MILA<span>.</span></div>
+    <div class="brand"><img src="icon-nav.png" alt="MILA icon" width="32" height="32">MILA<span>.</span></div>
     <div class="navlinks">
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
@@ -21,22 +21,23 @@
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="feedback.html">Feedback</a>
-      <a class="cta" href="mailto:milatechnogies@gmail.com?subject=MILA%20early%20access">Get early access</a>
+      <a class="cta" href="https://app.milatech.tech">Try the beta</a>
     </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
     <div>
-      <div class="kicker">Now in early access</div>
+      <div class="kicker">Beta is live</div>
       <h1>Ask the world.<br><span class="hl">Get the answer.</span></h1>
       <p class="lead">MILA is the polling app where opinions move fast. Vote Yes, Neutral, or No on the topics that matter — launch flash polls, climb leaderboards, and earn coins.</p>
       <div class="btnrow">
-        <a class="btn primary" href="mailto:milatechnogies@gmail.com?subject=MILA%20early%20access">Get early access</a>
+        <a class="btn primary" href="https://app.milatech.tech">Try the beta now</a>
         <a class="btn ghost" href="demo.html">Try the live demo</a>
       </div>
-      <p class="fine">Free to play · iOS · 13+</p>
+      <p class="fine">Free to play · Web beta · 13+</p>
     </div>
     <div>
       <div class="phone">
@@ -109,7 +110,7 @@
           <li class="no">All 8 poll durations</li>
           <li class="no">Ad-free experience</li>
         </ul>
-        <a class="btn ghost" href="mailto:milatechnogies@gmail.com?subject=MILA%20early%20access" style="text-align:center">Start free</a>
+        <a class="btn ghost" href="mailto:milatechnogies@gmail.com?subject=MILA%20launch%20updates" style="text-align:center">Start free</a>
       </div>
       <div class="plan featured">
         <div class="pname">Premium</div>
@@ -148,7 +149,7 @@
       <details><summary>What are coins?</summary><p>Coins are MILA's in-app currency. You earn them by voting and creating polls, or buy coin packs. Spend them on extra flash polls, visibility boosts, and cover images. Coins have no cash value and can't be transferred.</p></details>
       <details><summary>What is a flash poll?</summary><p>A poll that runs for just 1 or 5 minutes — built for instant, real-time reactions. Everyone gets monthly flash polls included; after that, spend coins (or watch a rewarded ad on the free tier).</p></details>
       <details><summary>Who can use MILA?</summary><p>MILA is for ages 13 and up. We collect your date of birth at sign-up, and age-aware content filtering is rolling out as the community grows.</p></details>
-      <details><summary>When is MILA launching?</summary><p>MILA is in early access now on iOS. Email us to get in.</p></details>
+      <details><summary>When is MILA launching?</summary><p>MILA is coming soon to iOS and Android. Email us to get notified at launch.</p></details>
       <details><summary>How is my data handled?</summary><p>See our <a href="privacy.html">Privacy Policy</a>. We don't sell your personal information, and you can request deletion of your account and data anytime.</p></details>
     </div>
   </div>
@@ -157,8 +158,8 @@
 <section class="band">
   <div class="wrap">
     <h2>Ready to ask the world?</h2>
-    <p>Get early access and start voting in seconds. Your opinion matters — make it count.</p>
-    <a class="btn primary" href="mailto:milatechnogies@gmail.com?subject=MILA%20early%20access">Get early access</a>
+    <p>The early beta is live — vote now. Your opinion matters — make it count.</p>
+    <a class="btn primary" href="https://app.milatech.tech">Try the beta now</a>
   </div>
 </section>
 
@@ -173,5 +174,23 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var btn=document.querySelector('.hamburger'), nav=document.querySelector('.navlinks');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','Open menu');
+    });
+  });
+})();
+</script>
 </body>
 </html>

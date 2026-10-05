@@ -23,7 +23,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none">MILA<span>.</span></a></div>
+    <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:10px"><img src="icon-nav.png" alt="MILA icon" width="32" height="32">MILA<span>.</span></a></div>
     <div class="navlinks">
       <a href="index.html#features">Features</a>
       <a href="index.html#how">How it works</a>
@@ -31,8 +31,9 @@
       <a href="index.html#pricing">Pricing</a>
       <a href="index.html#faq">FAQ</a>
       <a href="feedback.html" class="active">Feedback</a>
-      <a class="cta" href="mailto:milatechnogies@gmail.com?subject=MILA%20early%20access">Get early access</a>
+      <a class="cta" href="mailto:milatechnogies@gmail.com?subject=MILA%20launch%20updates">Notify me at launch</a>
     </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -101,6 +102,24 @@ document.getElementById('fbForm').addEventListener('submit',function(e){
   var body=(name?'Name: '+name+'\n':'')+(email?'Email: '+email+'\n':'')+'\n'+msg;
   window.location.href='mailto:milatechnogies@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
 });
+</script>
+<script>
+(function(){
+  var btn=document.querySelector('.hamburger'), nav=document.querySelector('.navlinks');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','Open menu');
+    });
+  });
+})();
 </script>
 </body>
 </html>
