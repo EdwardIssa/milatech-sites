@@ -32,6 +32,7 @@
       <a href="demo.html">Demo</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
+      <a href="#waitlist">Waitlist</a>
       <a href="feedback.html">Feedback</a>
       <a class="cta" href="https://app.milatech.tech">Try the beta</a>
     </div>
@@ -75,6 +76,54 @@
     <div class="stat"><b>Ranks</b><span>daily &amp; weekly boards</span></div>
   </div>
 </div>
+
+<section id="waitlist" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap" style="text-align:center">
+    <div class="kicker">Invite-only beta</div>
+    <h2>Get in early.</h2>
+    <p class="sub">MILA is rolling out city by city — Detroit first. Join the waitlist and we'll open the doors for you as soon as your wave starts. Invite friends to jump ahead in line.</p>
+    <div class="waitlist-box" style="text-align:left">
+      <p id="wl-ref-note" class="ref-note" hidden>A friend invited you — you'll jump ahead in line once they verify.</p>
+      <form id="wl-form" novalidate>
+        <label for="wl-email">Email <span class="required">*</span></label>
+        <input id="wl-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <label for="wl-phone">Phone <span class="optional">optional</span></label>
+        <input id="wl-phone" type="tel" name="phone" placeholder="(555) 123-4567" autocomplete="tel">
+        <label for="wl-username">Desired @username <span class="optional">optional</span></label>
+        <input id="wl-username" type="text" name="username" placeholder="yourname" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+        <p class="hint">3–20 characters, letters, numbers and underscores only. We'll reserve it for you.</p>
+        <label for="wl-city">City <span class="optional">optional</span></label>
+        <input id="wl-city" type="text" name="city" placeholder="Detroit" autocomplete="address-level2">
+        <input id="wl-ref" type="hidden" name="referral_code" value="">
+        <p id="wl-error" class="err" role="alert"></p>
+        <button type="submit" id="wl-submit" class="btn primary">Join the waitlist</button>
+        <p class="fine2">We'll email you when your wave opens. No spam, ever.</p>
+      </form>
+      <div id="wl-success" hidden>
+        <p class="wl-pos-label">You're in line</p>
+        <p class="wl-pos">#<span id="wl-pos">–</span></p>
+        <p id="wl-already" class="wl-already" hidden>You're already on the list.</p>
+        <p id="wl-ureserved" class="hint" style="text-align:center" hidden>@<span id="wl-ureserved-name"></span> is reserved for you.</p>
+        <p class="wl-share-label">Your referral link — invite 3 friends to jump ahead:</p>
+        <div class="reflink">
+          <input id="wl-link" type="text" readonly aria-label="Your referral link">
+          <button id="wl-copy" class="btn ghost" type="button">Copy</button>
+        </div>
+        <p id="wl-copy-ok" class="hint" style="text-align:center" hidden>Copied.</p>
+      </div>
+    </div>
+    <div class="wl-lookup">
+      <p>Already joined? <button id="wl-lookup-toggle" type="button" class="linklike">Check your position</button></p>
+      <div id="wl-lookup-box" hidden>
+        <div class="reflink">
+          <input id="wl-lookup-email" type="email" placeholder="you@example.com" aria-label="Email to look up" autocomplete="email">
+          <button id="wl-lookup-btn" class="btn ghost" type="button">Look up</button>
+        </div>
+        <p id="wl-lookup-result" class="hint" role="status"></p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="features">
   <div class="wrap">
@@ -191,7 +240,7 @@
     <h2>Questions, answered</h2>
     <p class="sub">The short version.</p>
     <div class="faq">
-      <details><summary>Is the beta really live?</summary><p>Yes. Head to <a href="https://app.milatech.tech">app.milatech.tech</a> and start voting right now — no waitlist, no invite code. The native iOS and Android apps are on the way.</p></details>
+      <details><summary>Is the beta really live?</summary><p>Yes. The web beta is live right now at <a href="https://app.milatech.tech">app.milatech.tech</a> — start voting, no invite needed. We're also rolling out city by city, Detroit first, through an invite-only waitlist: <a href="#waitlist">join here</a> and we'll open the doors for you as soon as your wave starts. The native iOS and Android apps are on the way.</p></details>
       <details><summary>What makes MILA different?</summary><p>MILA is opinion-first social. Every poll is live, every vote feels electric, and everything — DMs, hashtags, streaks, leaderboards — is built to keep the conversation moving. It's not a feed you scroll past; it's a feed you argue with.</p></details>
       <details><summary>Is MILA really free?</summary><p>Yes. The free tier includes unlimited 3-hour and 24-hour polls, monthly flash polls, voting on everything, DMs, hashtags, communities, and coin rewards. Premium ($2.99/mo or $19.99/yr) unlocks all durations and formats, more flash polls, and removes ads.</p></details>
       <details><summary>What are coins?</summary><p>Coins are MILA's in-app currency. You earn them by voting and creating polls, or buy coin packs. Spend them on extra flash polls, visibility boosts, and cover images. Coins have no cash value and can't be transferred.</p></details>
@@ -236,6 +285,145 @@
       btn.setAttribute('aria-expanded','false');
       btn.setAttribute('aria-label','Open menu');
     });
+  });
+})();
+</script>
+<script>
+/* MILA waitlist capture — posts to the waitlist-signup Edge Function */
+(function(){
+  var ENDPOINT='https://tuedziedafdiwuuzzveo.supabase.co/functions/v1/waitlist-signup';
+  var APIKEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR1ZWR6aWVkYWZkaXd1dXp6dmVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEwNDkxNjMsImV4cCI6MjEwNjYyNTE2M30.WERIdb-Y2uoKddnlBdm8zr-dma-26CUFMfRb4LljXbw';
+  function $(id){return document.getElementById(id);}
+  function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);}
+
+  var form=$('wl-form'), errBox=$('wl-error'), submitBtn=$('wl-submit');
+  if(!form)return;
+
+  /* ?ref=CODE — referral prefill */
+  try{
+    var ref=new URLSearchParams(window.location.search).get('ref');
+    if(ref){ $('wl-ref').value=ref; $('wl-ref-note').hidden=false; }
+  }catch(e){}
+
+  function setError(msg){ errBox.textContent=msg||''; }
+
+  function parseBody(res){
+    return res.text().then(function(t){
+      var data={};
+      try{ data=t?JSON.parse(t):{}; }catch(e){}
+      return {status:res.status,data:data};
+    });
+  }
+
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    setError('');
+    var email=$('wl-email').value.trim();
+    var phone=$('wl-phone').value.trim();
+    var username=$('wl-username').value.trim().replace(/^@/,'').toLowerCase();
+    var city=$('wl-city').value.trim();
+    if(!validEmail(email)){ setError('Enter a valid email.'); $('wl-email').focus(); return; }
+    if(username && !/^[a-z0-9_]{3,20}$/.test(username)){
+      setError('Usernames are 3–20 characters: letters, numbers and underscores only.');
+      $('wl-username').focus(); return;
+    }
+    submitBtn.disabled=true;
+    var origLabel=submitBtn.textContent;
+    submitBtn.textContent='Joining...';
+    var body={email:email,source:'landing'};
+    if(phone)body.phone=phone;
+    if(username)body.username=username;
+    if(city)body.city=city;
+    var refCode=$('wl-ref').value;
+    if(refCode)body.referral_code=refCode;
+    fetch(ENDPOINT,{
+      method:'POST',
+      headers:{'apikey':APIKEY,'Content-Type':'application/json'},
+      body:JSON.stringify(body)
+    })
+    .then(parseBody)
+    .then(function(r){
+      if(r.status===200){ showSuccess(r.data,false); }
+      else if(r.status===409){ showSuccess(r.data,true); }
+      else if(r.status===400){ setError(map400(r.data)); }
+      else if(r.status===429){ setError('Too many attempts — try again in an hour.'); }
+      else{ setError('Something went wrong — please try again.'); }
+    })
+    .catch(function(){ setError("Couldn't reach the server — check your connection and try again."); })
+    .then(function(){ submitBtn.disabled=false; submitBtn.textContent=origLabel; });
+  });
+
+  function map400(d){
+    var code=d&&(d.error||d.code);
+    if(code==='invalid_email')return 'Enter a valid email.';
+    if(code==='username_taken')return 'That username is taken, try another.';
+    if(code==='invalid_username')return 'Usernames are 3–20 characters: letters, numbers and underscores only.';
+    return (d&&d.message)||'Please check your details and try again.';
+  }
+
+  function showSuccess(d,already){
+    form.hidden=true;
+    $('wl-success').hidden=false;
+    $('wl-pos').textContent=(d&&d.position!=null)?d.position:'–';
+    $('wl-already').hidden=!already;
+    $('wl-link').value=(d&&d.referral_link)||'';
+    var un=d&&d.username_reserved;
+    $('wl-ureserved').hidden=!un;
+    if(un)$('wl-ureserved-name').textContent=un;
+  }
+
+  $('wl-copy').addEventListener('click',function(){
+    var input=$('wl-link');
+    function done(){
+      var ok=$('wl-copy-ok');
+      ok.hidden=false;
+      setTimeout(function(){ok.hidden=true;},2500);
+    }
+    function fallback(){
+      input.select();
+      try{ document.execCommand('copy'); }catch(e){}
+      done();
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(input.value).then(done,fallback);
+    }else{ fallback(); }
+  });
+
+  /* "Already joined? Check your position" lookup */
+  var toggle=$('wl-lookup-toggle'), box=$('wl-lookup-box'),
+      lemail=$('wl-lookup-email'), lbtn=$('wl-lookup-btn'), lres=$('wl-lookup-result');
+  toggle.addEventListener('click',function(){
+    box.hidden=!box.hidden;
+    if(!box.hidden)lemail.focus();
+  });
+  lbtn.addEventListener('click',function(){
+    var email=lemail.value.trim();
+    lres.textContent='';
+    if(!validEmail(email)){ lres.textContent='Enter a valid email.'; lemail.focus(); return; }
+    lbtn.disabled=true;
+    lres.textContent='Looking up...';
+    fetch(ENDPOINT+'?email='+encodeURIComponent(email),{headers:{'apikey':APIKEY}})
+    .then(parseBody)
+    .then(function(r){
+      if((r.status===200||r.status===409)&&r.data&&r.data.position!=null){
+        lres.textContent='';
+        var b=document.createElement('b');
+        b.textContent='You are #'+r.data.position+' in line. ';
+        lres.appendChild(b);
+        if(r.data.referral_link){
+          var a=document.createElement('a');
+          a.href=r.data.referral_link;
+          a.textContent='Your referral link';
+          lres.appendChild(a);
+        }
+      }else if(r.status===404){
+        lres.textContent='No waitlist entry found for that email yet.';
+      }else{
+        lres.textContent='Something went wrong — please try again.';
+      }
+    })
+    .catch(function(){ lres.textContent="Couldn't reach the server — check your connection and try again."; })
+    .then(function(){ lbtn.disabled=false; });
   });
 })();
 </script>
