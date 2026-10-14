@@ -44,7 +44,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <div class="kicker">The beta is live — Rounds 1–3 of our public bug hunt are complete · See the Fix Tracker</div>
+      <div class="kicker">The beta is live — Rounds 1–5 of our public bug hunt are complete · See the Fix Tracker</div>
       <h1>Real opinions,<br><span class="hl">in real time.</span></h1>
       <p class="lead">MILA is a friendly place to ask questions and answer them together. Post a poll, watch the votes roll in live, call the winner before it closes, and make your closing argument when the dust settles. Just people, answering.</p>
       <div class="btnrow">
@@ -202,15 +202,29 @@
   <div class="wrap">
     <h2>Beta Bug Hunt — Public Fix Tracker</h2>
     <p class="sub">MILA is in closed beta. We hunt bugs in rounds, fix them, and post the results here in the open. Checked means fixed and verified live. Unchecked means found, on our list, and not fixed yet.</p>
-    <p class="bt-totals">Rounds 1–4 complete · 320+ issues found · every critical and high fixed</p>
+    <p class="bt-totals">Rounds 1–5 complete · 355+ issues found · every critical and high fixed</p>
     <div class="bt-stats">
       <span class="bt-stat">Round 1: <b>65 found</b></span>
       <span class="bt-stat">Round 2: <b>74 found</b></span>
       <span class="bt-stat">Round 3: <b>101 found</b></span>
       <span class="bt-stat">Round 4: <b>82 found</b></span>
+      <span class="bt-stat">Round 5: <b>36 found</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
+      <h3 class="bt-group">Round 5 — Oct 14, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Waitlist privacy: the sign-up waitlist (emails, reserved usernames) could be read without an admin login — it is now properly private, and new database pages no longer start out open by default</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A background cleanup job had silently stopped running — it is back, and background jobs now report their failures instead of hiding them</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Trending is much faster — and stays fast no matter how deep you scroll; the public feed no longer slows down on later pages either</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Editing a poll into a flash poll now counts toward your monthly flash poll allowance, same as creating one</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Admin tools: team members can no longer reset their own password through the member-reset tool — changing your own password still requires your current one</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll removed by a moderator can now be restored — and its owner can delete it, instead of it reappearing after a refresh</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Followers-only polls are now fully hidden from everyone else, even if someone gets hold of the direct link</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Votes no longer get wrongly reported as failed when the results are just slow to load</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Long comment threads now load completely — older comments and replies are reachable with a tap instead of stopping at 50</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Direct-message polls now close when their time runs out, like every other poll</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
       <h3 class="bt-group">Round 4 — Oct 14, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Security: a hidden way to change or delete other people&rsquo;s profiles through a data page was closed</span><span class="bt-pill fixed">Fixed</span></li>
