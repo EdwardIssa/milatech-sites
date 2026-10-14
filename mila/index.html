@@ -202,14 +202,35 @@
   <div class="wrap">
     <h2>Beta Bug Hunt — Public Fix Tracker</h2>
     <p class="sub">MILA is in closed beta. We hunt bugs in rounds, fix them, and post the results here in the open. Checked means fixed and verified live. Unchecked means found, on our list, and not fixed yet.</p>
-    <p class="bt-totals">Rounds 1–3 complete · 240+ issues found · every critical and high fixed</p>
+    <p class="bt-totals">Rounds 1–4 complete · 320+ issues found · every critical and high fixed</p>
     <div class="bt-stats">
       <span class="bt-stat">Round 1: <b>65 found</b></span>
       <span class="bt-stat">Round 2: <b>74 found</b></span>
       <span class="bt-stat">Round 3: <b>101 found</b></span>
+      <span class="bt-stat">Round 4: <b>82 found</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
+      <h3 class="bt-group">Round 4 — Oct 14, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Security: a hidden way to change or delete other people&rsquo;s profiles through a data page was closed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Account deletion completed: polls with comments or prediction results attached can be deleted again, and so can their authors&rsquo; accounts</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Scheduled polls now go live automatically, right on time — and start their clock when they publish, not when they were scheduled</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Recurring polls keep their series straight, repeats are charged fairly like normal polls, and deleting a scheduled repeat cancels the series</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Poll options can no longer be renamed after people have voted — results can&rsquo;t be quietly rewritten</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Quiz answers can no longer be changed after people have made predictions</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Editing a poll&rsquo;s duration now charges based on what you actually paid — no more double-charging on edits, and free edits stay free</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Flash poll quotas now count what you&rsquo;ve used — deleting and recreating a poll no longer resets them</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Password reset from the phone app now completes end to end (it used to silently go nowhere)</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sign-in codes: emails now include a 6-digit code that matches what the app asks for</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Changing your password now requires your current password first, and you get an email when it changes</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Poll photos and videos can only come from your own uploads — outside image links are rejected</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Language filter fairer and stronger: innocent words like &ldquo;grape&rdquo; and &ldquo;data analysis&rdquo; pass, and lookalike-letter tricks no longer sneak blocked words through</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Your notification bell now updates live when something new arrives</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Direct-message polls no longer leak into your main feed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Leaderboard loads much faster</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Admin portal: failed sign-ins now count toward the lockout like they should, referral decisions leave a record, and bug reports are size-limited</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
       <h3 class="bt-group">Post-launch QA pass — Oct 14, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Quiz polls: the correct answer could be peeked at before voting — it now stays hidden until you vote (or the poll closes)</span><span class="bt-pill fixed">Fixed</span></li>
@@ -265,8 +286,7 @@
       <ul class="bt-list">
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Leaderboard daily and weekly prize payouts — in design</span><span class="bt-pill open">Open</span></li>
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">&ldquo;Notify me when this person posts&rdquo; bell subscriptions — subscriptions save, alerts don't send yet</span><span class="bt-pill open">Open</span></li>
-        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Fairer pricing when editing a poll's duration — in the queue for the next round</span><span class="bt-pill open">Open</span></li>
-        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Managing scheduled polls (edit or cancel before they go live) — in the queue</span><span class="bt-pill open">Open</span></li>
+        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">A dedicated screen to see and manage all your scheduled polls — in the queue</span><span class="bt-pill open">Open</span></li>
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Changing your account email inside the app — planned</span><span class="bt-pill open">Open</span></li>
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Birthdate correction through support — planned</span><span class="bt-pill open">Open</span></li>
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">In-app purchases — arrive with the App Store / Google Play launch</span><span class="bt-pill open">Open</span></li>
