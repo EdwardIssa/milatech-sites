@@ -44,7 +44,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <div class="kicker">The beta is live — Rounds 1–5 of our public bug hunt are complete · See the Fix Tracker</div>
+      <div class="kicker">The beta is live — Rounds 1–6 of our public bug hunt are complete · See the Fix Tracker</div>
       <h1>Real opinions,<br><span class="hl">in real time.</span></h1>
       <p class="lead">MILA is a friendly place to ask questions and answer them together. Post a poll, watch the votes roll in live, call the winner before it closes, and make your closing argument when the dust settles. Just people, answering.</p>
       <div class="btnrow">
@@ -210,16 +210,30 @@
   <div class="wrap">
     <h2>Beta Bug Hunt — Public Fix Tracker</h2>
     <p class="sub">MILA is in closed beta. We hunt bugs in rounds, fix them, and post the results here in the open. Checked means fixed and verified live. Unchecked means found, on our list, and not fixed yet.</p>
-    <p class="bt-totals">Rounds 1–5 complete · 355+ issues found · every critical and high fixed</p>
+    <p class="bt-totals">Rounds 1–6 complete · 389+ issues found · every critical and high fixed</p>
     <div class="bt-stats">
       <span class="bt-stat">Round 1: <b>65 found</b></span>
       <span class="bt-stat">Round 2: <b>74 found</b></span>
       <span class="bt-stat">Round 3: <b>101 found</b></span>
       <span class="bt-stat">Round 4: <b>82 found</b></span>
       <span class="bt-stat">Round 5: <b>36 found</b></span>
+      <span class="bt-stat">Round 6: <b>34 found</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
+      <h3 class="bt-group">Round 6 — Oct 14, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Tapping a poll in your feed now opens it — the question and photo on each card used to be dead zones that did nothing</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Referral rewards can no longer be farmed by deleting your account and signing up again — the one-claim rule now survives account deletion</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts are now blocked from the money features — no claiming referrals, sending tips, or collecting referral rewards while banned</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The language filter on stories actually works now (it was silently checking nothing), and community and channel names and posts are screened too</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Daily Pulse only features public polls — followers-only, close-friends, and explicit polls can no longer be pushed to everyone&rsquo;s notifications</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Waitlist lookup privacy: anyone can see their place in line, but your referral link and reserved username now require your own referral code to reveal</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Anonymous bug reports are rate-limited — the report system can no longer be flooded</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Hashtag counts stay accurate when polls are deleted, and trending hashtags reflect what&rsquo;s actually trending now — not all-time totals</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banning someone from a community now removes their membership too — a ban is no longer just a block on rejoining</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Empty feeds now have working buttons — ask the first question or find people to follow — and search shows a retry option when it hiccups instead of pretending nobody exists</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
       <h3 class="bt-group">Round 5 — Oct 14, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Waitlist privacy: the sign-up waitlist (emails, reserved usernames) could be read without an admin login — it is now properly private, and new database pages no longer start out open by default</span><span class="bt-pill fixed">Fixed</span></li>
