@@ -28,6 +28,7 @@
     <div class="brand"><img src="icon-nav.png" alt="MILA icon" width="32" height="32">MILA<span>.</span></div>
     <div class="navlinks">
       <a href="#features">Features</a>
+      <a href="#bug-tracker">Fix Tracker</a>
       <a href="#how">How it works</a>
       <a href="demo.html">Demo</a>
       <a href="#pricing">Pricing</a>
@@ -43,7 +44,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <div class="kicker">The beta is live</div>
+      <div class="kicker">The beta is live — Rounds 1–3 of our public bug hunt are complete · See the Fix Tracker</div>
       <h1>Real opinions,<br><span class="hl">in real time.</span></h1>
       <p class="lead">MILA is a friendly place to ask questions and answer them together. Post a poll, watch the votes roll in live, call the winner before it closes, and make your closing argument when the dust settles. Just people, answering.</p>
       <div class="btnrow">
@@ -193,6 +194,78 @@
         <h3>DMs &amp; communities</h3>
         <p>Take any debate into direct messages, join a community around what you love, or broadcast to your own channel. Your crowd, your conversation.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="bug-tracker">
+  <div class="wrap">
+    <h2>Beta Bug Hunt — Public Fix Tracker</h2>
+    <p class="sub">MILA is in closed beta. We hunt bugs in rounds, fix them, and post the results here in the open. Checked means fixed and verified live. Unchecked means found, on our list, and not fixed yet.</p>
+    <p class="bt-totals">Rounds 1–3 complete · 240+ issues found · every critical and high fixed</p>
+    <div class="bt-stats">
+      <span class="bt-stat">Round 1: <b>65 found</b></span>
+      <span class="bt-stat">Round 2: <b>74 found</b></span>
+      <span class="bt-stat">Round 3: <b>101 found</b></span>
+      <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
+    </div>
+    <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
+      <h3 class="bt-group">Round 3 — Oct 14, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Account security: protected account fields (coins, premium, admin, age group) can no longer be edited outside official actions</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Account deletion repaired end to end — deleting an account now removes everything it owns and frees the username</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Admin bans from the portal now actually apply</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Polls with votes can be deleted again (by their creators and during account deletion)</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Privacy: a private poll shared into a chat can no longer be opened by people outside the conversation</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Poll options and results for private polls are no longer readable by other signed-in users</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Communities: members can no longer grant themselves moderator or owner roles</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Communities: moderators can no longer remove other moderators or the owner</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Stories from people you follow now show their real name and avatar</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Stories can no longer be made permanent or point to outside images</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Deleting your story now deletes its photo too</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sentiment Archive was showing empty — closed polls appear again</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Direct-message and channel notifications can no longer be faked or replayed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">&ldquo;Poll ending soon&rdquo; reminders now actually send, on a schedule</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Follow requests now notify the account owner, and requesters hear back on acceptance</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Prediction results now arrive as a notification when a poll closes</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Mentions now notify you when the content is visible to you</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Blocked users can no longer comment on your polls or subscribe to your channels</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Image moderation now works on the web app (it was silently inactive)</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Waitlist invite links can no longer be redeemed twice</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Leaderboard Daily/Weekly tabs are now proper, tappable tabs</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sharing a poll from its page now names the real leading options (it used to say &ldquo;Yes&rdquo; for everything)</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Slider polls now show their average result on public pages</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">New notification settings: tips, mentions, and channel posts can each be muted</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Round 2 — Oct 14, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Leaderboard never loaded a single row — fixed, rankings are live</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Public poll links (/p/…) all returned &ldquo;not found&rdquo; — fixed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Polls in direct messages could never be created — fixed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Followers/Following lists showed the wrong audience — fixed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Predictions on closed polls were never scored — fixed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Ranked and slider results now count every ballot, not just your own</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Photo and video uploads restored after a security update blocked them</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Expired stories are now cleaned up automatically, including their files</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Round 1 — Oct 14, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Signups were failing for new accounts — fixed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The birthdate/age gate could never be completed — fixed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Referral codes were rejected every time — fixed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Usernames chosen at signup are now kept (accounts got random names)</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Reporting, banning, and story privacy protections tightened across the app</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Still open</h3>
+      <ul class="bt-list">
+        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Leaderboard daily and weekly prize payouts — in design</span><span class="bt-pill open">Open</span></li>
+        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">&ldquo;Notify me when this person posts&rdquo; bell subscriptions — subscriptions save, alerts don't send yet</span><span class="bt-pill open">Open</span></li>
+        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Fairer pricing when editing a poll's duration — in the queue for the next round</span><span class="bt-pill open">Open</span></li>
+        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Managing scheduled polls (edit or cancel before they go live) — in the queue</span><span class="bt-pill open">Open</span></li>
+        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Changing your account email inside the app — planned</span><span class="bt-pill open">Open</span></li>
+        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Birthdate correction through support — planned</span><span class="bt-pill open">Open</span></li>
+        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">In-app purchases — arrive with the App Store / Google Play launch</span><span class="bt-pill open">Open</span></li>
+      </ul>
     </div>
   </div>
 </section>
