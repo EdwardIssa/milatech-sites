@@ -132,6 +132,12 @@
         <p id="wl-copy-ok" class="hint" style="text-align:center" hidden>Copied.</p>
       </div>
     </div>
+    <style>
+      .wl-code-label{display:block;font-size:16px;font-weight:600;color:var(--muted);margin:14px 0 6px;text-align:left}
+      .wl-code-label .wl-code-optional{font-size:13px;font-weight:600}
+      #wl-lookup-code{width:100%;box-sizing:border-box;padding:12px 14px;font-size:16px;color:var(--text);background:#FFFBF4;border:1.5px solid #E9DCC3;border-radius:12px;font-family:inherit}
+      #wl-lookup-code:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 4px rgba(106,61,240,.16)}
+    </style>
     <div class="wl-lookup">
       <p>Already joined? <button id="wl-lookup-toggle" type="button" class="linklike">Check your position</button></p>
       <div id="wl-lookup-box" hidden>
@@ -139,6 +145,8 @@
           <input id="wl-lookup-email" type="email" placeholder="you@example.com" aria-label="Email to look up" autocomplete="email">
           <button id="wl-lookup-btn" class="btn ghost" type="button">Look up</button>
         </div>
+        <label class="wl-code-label" for="wl-lookup-code">Have your referral code? Enter it to reveal your link <span class="wl-code-optional">optional</span></label>
+        <input id="wl-lookup-code" type="text" placeholder="Your referral code" aria-label="Your referral code (optional)" autocomplete="off" autocapitalize="characters" spellcheck="false">
         <p id="wl-lookup-result" class="hint" role="status"></p>
       </div>
     </div>
@@ -503,6 +511,14 @@
     $('wl-pos').textContent=(d&&d.position!=null)?d.position:'–';
     $('wl-already').hidden=!already;
     $('wl-link').value=(d&&d.referral_link)||'';
+    /* A proof-less "already on the list" reply carries no link — hide the
+       share row instead of showing an empty box. The lookup box above can
+       reveal the link when the owner enters their referral code. */
+    var hasLink=!!(d&&d.referral_link);
+    var shareLabel=document.querySelector('#wl-success .wl-share-label');
+    var shareRow=$('wl-link').parentNode;
+    if(shareLabel)shareLabel.style.display=hasLink?'':'none';
+    if(shareRow)shareRow.style.display=hasLink?'':'none';
     var un=d&&d.username_reserved;
     $('wl-ureserved').hidden=!un;
     if(un)$('wl-ureserved-name').textContent=un;
@@ -527,7 +543,7 @@
 
   /* "Already joined? Check your position" lookup */
   var toggle=$('wl-lookup-toggle'), box=$('wl-lookup-box'),
-      lemail=$('wl-lookup-email'), lbtn=$('wl-lookup-btn'), lres=$('wl-lookup-result');
+      lemail=$('wl-lookup-email'), lcode=$('wl-lookup-code'), lbtn=$('wl-lookup-btn'), lres=$('wl-lookup-result');
   toggle.addEventListener('click',function(){
     box.hidden=!box.hidden;
     if(!box.hidden)lemail.focus();
@@ -538,7 +554,10 @@
     if(!validEmail(email)){ lres.textContent='Enter a valid email.'; lemail.focus(); return; }
     lbtn.disabled=true;
     lres.textContent='Looking up...';
-    fetch(ENDPOINT+'?email='+encodeURIComponent(email),{headers:{'apikey':APIKEY}})
+    var lookupUrl=ENDPOINT+'?email='+encodeURIComponent(email);
+    var codeVal=lcode.value.trim();
+    if(codeVal)lookupUrl+='&code='+encodeURIComponent(codeVal);
+    fetch(lookupUrl,{headers:{'apikey':APIKEY}})
     .then(parseBody)
     .then(function(r){
       if((r.status===200||r.status===409)&&r.data&&r.data.position!=null){
