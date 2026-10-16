@@ -44,7 +44,7 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <div class="kicker">The beta is live — Rounds 1–7 of our public bug hunt are complete · See the Fix Tracker</div>
+      <div class="kicker">The beta is live — bug checks now run around the clock, every 12 hours · See the Fix Tracker</div>
       <h1>Real opinions,<br><span class="hl">in real time.</span></h1>
       <p class="lead">MILA is a friendly place to ask questions and answer them together. Post a poll, watch the votes roll in live, call the winner before it closes, and make your closing argument when the dust settles. Just people, answering.</p>
       <div class="btnrow">
@@ -210,7 +210,7 @@
   <div class="wrap">
     <h2>Beta Bug Hunt — Public Fix Tracker</h2>
     <p class="sub">MILA is in closed beta. We hunt bugs in rounds, fix them, and post the results here in the open. Checked means fixed and verified live. Unchecked means found, on our list, and not fixed yet.</p>
-    <p class="bt-totals">Rounds 1–7 complete · 447+ issues found · every critical and high fixed</p>
+    <p class="bt-totals">Rounds 1–7 complete · 447+ issues found · every critical and high fixed · checks now run every 12 hours</p>
     <div class="bt-stats">
       <span class="bt-stat">Round 1: <b>65 found</b></span>
       <span class="bt-stat">Round 2: <b>74 found</b></span>
@@ -219,9 +219,35 @@
       <span class="bt-stat">Round 5: <b>36 found</b></span>
       <span class="bt-stat">Round 6: <b>34 found</b></span>
       <span class="bt-stat">Round 7: <b>58 found</b></span>
+      <span class="bt-stat">Oct 15–16: <b>19 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
+      <h3 class="bt-group">Latest — Oct 16, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A crafted vote could smuggle in a fake answer and poison a poll&rsquo;s results — every vote is now checked against its poll&rsquo;s real shape before it counts</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">New polls kept silently coming out marked &ldquo;anonymous&rdquo; even with the switch off — the leftover defaults are fixed at every layer, and all 1,032 existing polls were confirmed public</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Photo uploads were broken in the web app — a missing piece meant cover photos, stories, and avatars failed; uploads work again</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The admin bug inbox couldn&rsquo;t load its own list of reports — fixed, and every report in it has now been reviewed and closed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Marking a bug report resolved in the admin portal failed with a database error — fixed and tested end to end</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The &ldquo;Anonymous votes&rdquo; label stretched across the whole poll card — it now hugs its text</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Photos left behind by deleted polls piled up in storage — they are now cleaned up automatically</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Polls posted in a community never told its members — community polls now send a notification</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The Daily Pulse could feature poll formats it can&rsquo;t score — it now only picks standard polls</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The leaderboard footer told players outside the top list they were &ldquo;Not ranked&rdquo; — it now shows your real rank and points</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Notifications now delete themselves after 48 hours — your list stays fresh and storage stays lean</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">MILA can now be installed to your home screen straight from the browser, like a native app</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Pull down to refresh now works on the web app — feed, notifications, profile, and leaderboard</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Feed cleanup: 500 stale polls removed, and the database trimmed to a third of its size</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Every poll in the feed now carries a real photo, and a fresh set of all seven poll formats posts daily</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Oct 15, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Prize payouts and tips are paused until launch day — enforced in the database itself, not just hidden in the app; standings still display</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Admin accounts no longer appear on any leaderboard, including the prediction board</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Creator badges arrived — a new profile badge that creators can show off</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Bug hunting is now continuous: a full check runs every 12 hours, safe fixes ship automatically, and anything needing a product decision is held for review</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
       <h3 class="bt-group">Round 7 — Oct 14, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Direct messages are now screened like every other surface — and bans now apply to messaging</span><span class="bt-pill fixed">Fixed</span></li>
@@ -334,7 +360,7 @@
       </ul>
       <h3 class="bt-group">Still open</h3>
       <ul class="bt-list">
-        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Leaderboard daily and weekly prize payouts — in design</span><span class="bt-pill open">Open</span></li>
+        <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Leaderboard prize payouts — paused until launch day by design; standings still display, and claiming unlocks at launch</span><span class="bt-pill open">Open</span></li>
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">&ldquo;Notify me when this person posts&rdquo; bell subscriptions — subscriptions save, alerts don't send yet</span><span class="bt-pill open">Open</span></li>
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">A dedicated screen to see and manage all your scheduled polls — in the queue</span><span class="bt-pill open">Open</span></li>
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Changing your account email inside the app — planned</span><span class="bt-pill open">Open</span></li>
