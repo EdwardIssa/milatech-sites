@@ -221,7 +221,7 @@
       <span class="bt-stat">Round 7: <b>58 found</b></span>
       <span class="bt-stat">Oct 15–16: <b>19 more fixed</b></span>
       <span class="bt-stat">Oct 17: <b>10 more fixed</b></span>
-      <span class="bt-stat">Oct 18: <b>6 more fixed</b></span>
+      <span class="bt-stat">Oct 18: <b>11 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
@@ -233,6 +233,11 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">You could call a rematch on a poll you couldn&rsquo;t even see, and banned accounts could call rematches — a rematch now requires that you can view the original and aren&rsquo;t banned</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Comment reactions ignored blocks and poll privacy — you could react to comments on polls you can&rsquo;t see, and reactions on hidden comments were readable; both are now gated like comments themselves</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Anyone signed in could check whether another user was in their quiet-hours window — that check is now internal only</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Settings could show invented values when loading failed — every switch on, and a private account could even display as public; a load failure now shows an honest error instead</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Dead taps: the &ldquo;Join MILA to vote&rdquo; hint covered the polls beneath it, and tapping the feed menu&rsquo;s padding closed it without doing anything — both now let your tap through</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll report could be lost if you dismissed it while it was sending — the dialog now stays until the send finishes, and its errors come in your language</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Several actions used to fail silently — reposts, comment reactions, DM poll votes, and adding a poll to a community (which could even claim you had no polls); they now confirm or explain what happened</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Predictions and several other sections and error messages only ever appeared in English — they now follow your chosen language</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
       <h3 class="bt-group">Oct 17, 2026</h3>
       <ul class="bt-list">
