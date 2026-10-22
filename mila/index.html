@@ -224,16 +224,24 @@
       <span class="bt-stat">Oct 18: <b>26 more fixed</b></span>
       <span class="bt-stat">Oct 19: <b>26 more fixed</b></span>
       <span class="bt-stat">Oct 20: <b>40 more fixed</b></span>
-      <span class="bt-stat">Oct 21: <b>4 more fixed</b></span>
+      <span class="bt-stat">Oct 21: <b>5 more fixed</b></span>
+      <span class="bt-stat">Oct 22: <b>3 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Oct 21, 2026</h3>
+      <h3 class="bt-group">Latest — Oct 22, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Duplicating a poll that was set to repeat daily or weekly silently turned the copy into a one-off — the copy now tells you it won&rsquo;t repeat, and that you can turn repeating back on in the schedule options before posting</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">If opening one of your polls as a template failed, the error could show raw database or network text — it now shows a plain message that the poll isn&rsquo;t available anymore</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The Scheduled Polls manager only looked through your newest 100 polls, so an older scheduled poll that was still waiting could vanish from the manager even though it would still go live on time — it now looks up your waiting scheduled polls directly, so everything pending is listed</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Oct 21, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still @mention people and deliver a &ldquo;You were mentioned&rdquo; notification — a ban now covers mentions too, so a banned account can&rsquo;t reach anyone that way</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">An unknown topic link fell through to the feed instead of saying the topic isn&rsquo;t there — it now shows a proper not-found state</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The weekly digest now also arrives by email — the same weekly summary, delivered to your inbox, with a working unsubscribe in every message</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Scheduled polls shipped — you can now schedule a poll to go live later, see it in a scheduled-polls manager, change its time or cancel it, and duplicate one of your polls as a template for a new one</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Duplicating one of your quiz polls as a template could silently mark the first answer as the correct one when the real answer couldn&rsquo;t be loaded — it now warns you to check which answer is correct before posting</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
       <h3 class="bt-group">Oct 20, 2026</h3>
       <ul class="bt-list">
