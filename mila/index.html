@@ -225,15 +225,25 @@
       <span class="bt-stat">Oct 19: <b>26 more fixed</b></span>
       <span class="bt-stat">Oct 20: <b>40 more fixed</b></span>
       <span class="bt-stat">Oct 21: <b>5 more fixed</b></span>
-      <span class="bt-stat">Oct 22: <b>3 more fixed</b></span>
+      <span class="bt-stat">Oct 22: <b>8 more fixed</b></span>
+      <span class="bt-stat">Oct 23: <b>1 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Oct 22, 2026</h3>
+      <h3 class="bt-group">Latest — Oct 23, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A late-night update briefly overwrote the template and privacy fixes shipped earlier that day, so the live app was missing them for a while — every one of them is restored, back in the live app, and re-checked</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Oct 22, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Duplicating a poll that was set to repeat daily or weekly silently turned the copy into a one-off — the copy now tells you it won&rsquo;t repeat, and that you can turn repeating back on in the schedule options before posting</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">If opening one of your polls as a template failed, the error could show raw database or network text — it now shows a plain message that the poll isn&rsquo;t available anymore</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The Scheduled Polls manager only looked through your newest 100 polls, so an older scheduled poll that was still waiting could vanish from the manager even though it would still go live on time — it now looks up your waiting scheduled polls directly, so everything pending is listed</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Opening one of your polls as a template could hang forever with no sign anything was happening — one slow photo check could stall the whole opening in silence. Every step is now time-boxed, the button shows it&rsquo;s loading while it works, and a stall ends with a clear &ldquo;that took too long&rdquo; message instead of silence</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A private account&rsquo;s profile tagline could be read by anyone signed in, even though its bio, location and links were correctly hidden from non-followers — the tagline is now hidden the same way until someone follows the account</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Data export shipped — Settings now lets you download your own data as one file: your profile, your polls, votes, comments, communities, coin history and settings, and nothing belonging to anyone else</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Channel editing shipped — channel owners can now edit their channel&rsquo;s name, description and picture, and an edit the server didn&rsquo;t actually accept can no longer pose as saved</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Celebrations shipped — posting a poll now bursts confetti in MILA&rsquo;s colors, casting a vote gets a smaller burst, and nailing a quiz answer gets a celebration of its own</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
       <h3 class="bt-group">Oct 21, 2026</h3>
       <ul class="bt-list">
