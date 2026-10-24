@@ -226,13 +226,36 @@
       <span class="bt-stat">Oct 20: <b>40 more fixed</b></span>
       <span class="bt-stat">Oct 21: <b>5 more fixed</b></span>
       <span class="bt-stat">Oct 22: <b>8 more fixed</b></span>
-      <span class="bt-stat">Oct 23: <b>1 more fixed</b></span>
+      <span class="bt-stat">Oct 23: <b>18 more fixed</b></span>
+      <span class="bt-stat">Oct 24: <b>2 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Oct 23, 2026</h3>
+      <h3 class="bt-group">Latest — Oct 24, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A banned account could still get followers-only access through follow requests — a private account accepting a banned requester created a real follow, and a banned private account could still accept requests itself; a ban now covers follow requests on both sides, so no follow is created either way</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Someone who had voted and was then banned could still publish a &ldquo;why I voted&rdquo; note on a live poll — posting and editing those notes now checks for a ban too</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Oct 23, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A late-night update briefly overwrote the template and privacy fixes shipped earlier that day, so the live app was missing them for a while — every one of them is restored, back in the live app, and re-checked</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still publish polls through the app&rsquo;s main posting path, even though posting directly was blocked — a ban now blocks poll creation there too</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still make predictions and move the prediction leaderboard — predictions are now covered by a ban, and someone you&rsquo;ve blocked can&rsquo;t predict on your polls</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Liking a comment had no safety checks at all — a banned or blocked account could like any comment, even on a poll it couldn&rsquo;t see, and liking a comment that doesn&rsquo;t exist pretended to succeed; comment likes now follow the same ban, block and visibility rules as everything else</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Reposts ignored bans and blocks — a banned account, or someone the author had blocked, could still repost a poll and spread it further; reposts now follow the same rules as votes and comments</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still create public communities — creating a community is now covered by a ban</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still join public communities — joining is now covered by a ban too</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still share polls into communities, which notifies every member — sharing into a community is now covered by a ban, so a banned account can&rsquo;t reach a whole community that way</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still send follow requests to private accounts, notifying the person they targeted — follow requests are now covered by a ban on both sides</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still send poll suggestions to other people — sending a suggestion is now covered by a ban</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Comment likes added the direct way bypassed every check and could leave a comment&rsquo;s like count out of sync — that path now carries the same ban, block and visibility checks, so counts stay honest</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">&ldquo;Use as template&rdquo; could fail on a real phone tap with a missing-module error, even though the button looked fine — the template code now loads with the app itself, and opening a poll as a template is verified working end to end: the composer opens pre-filled with the question, photos, format and the quiz&rsquo;s correct answer</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Retrying a poll post after a lost connection could create a second, duplicate poll — the same retry now returns your original poll instead, with no second poll created</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sponsored polls in the logged-out public feed now carry a clear &ldquo;Sponsored&rdquo; label, so paid placement is disclosed where everyone can see it</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Data export is hardened — an export now only ever includes your own data, coin-history details are limited to safe fields, and the in-app explanation honestly says what is and isn&rsquo;t included, in every language</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Data export on the phone app now delivers a real file — it saves your data file and opens the share sheet, instead of only working as a web download, and only reports success when the handoff actually happened</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Replacing or removing a channel&rsquo;s picture left the old picture behind in storage — the old picture is now cleaned up when a channel picture changes</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Uploading a new channel picture over an existing one didn&rsquo;t show its progress properly — the upload spinner now shows over the current picture while the new one saves</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
       <h3 class="bt-group">Oct 22, 2026</h3>
       <ul class="bt-list">
