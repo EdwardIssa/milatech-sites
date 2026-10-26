@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Drift Is a Governance Problem, Not Just a Data Problem — Mila Tech Insights</title>
+<meta name="description" content="Models rarely drift alone — they drift inside organizations where nobody owns the decision to stop them. Why drift is a governance problem first, and what changes in what you build when you treat it that way.">
+<link rel="stylesheet" href="styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="mt-family" role="navigation" aria-label="Mila Tech sites">
+    <a class="mt-family-brand" href="https://milatech.tech">Mila Tech</a>
+    <nav class="mt-family-links">
+      <a href="https://milatech.tech" class="is-current" aria-current="true">Company</a>
+      <a href="https://mila.milatech.tech">MILA</a>
+      <a href="https://app.milatech.tech">MILA App</a>
+      <a href="https://drae.milatech.tech">DRAE</a>
+      <a href="https://owed.milatech.tech">Owed</a>
+    </nav>
+    <span data-vc hidden style="font-weight:600;color:rgba(247,245,239,.78);white-space:nowrap;margin-left:10px">👁 <b style="color:#f7f5ef">…</b> visits</span>
+  </div>
+
+<div class="bg-fx" aria-hidden="true"></div>
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Mila Tech logo">MILA<span>TECH</span></a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a class="active" href="insights.html">Insights</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="https://mila.milatech.tech">MILA</a>
+      <a href="https://drae.milatech.tech">DRAE</a>
+      <a class="cta" href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap page-hero">
+    <div class="article-meta">ML safety &middot; Oct 26, 2026 &middot; Mila Tech Insights</div>
+    <h1>Model Drift Is a Governance Problem, Not Just a Data Problem</h1>
+    <p class="lead">Ask a team why their model degraded and you will hear a data story. It will be true — and incomplete. Models drift inside organizations, and the harder question is who is allowed to decide a model is still fit to run.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="article-body">
+      <h2>The data story is true — and incomplete</h2>
+      <p>Ask a machine-learning team why their model degraded in production and you will usually hear a data story: the input distribution shifted, a feature pipeline changed, the world moved. All true — and incomplete. Models rarely drift alone. They drift inside organizations, where the question &ldquo;who is allowed to decide this model is still fit to run?&rdquo; often has no answer until something breaks in front of a customer or a regulator.</p>
+      <p>That gap is easy to miss while things are working. A model that performs well does not force anyone to write down what &ldquo;well&rdquo; means, which signals would count as a warning, or whose judgment would prevail if the dashboard and the business disagreed. The decisions still get made — they just get made implicitly, by default, by whoever happens to notice something odd and feels senior enough to act on it. Drift does not create that weakness. It exposes it, at the worst available moment.</p>
+
+      <h2>What drift governance actually means</h2>
+      <p>Drift governance treats that as the primary problem. It means deciding, in advance and in writing:</p>
+      <ul>
+        <li><strong>Acceptable behavior, defined.</strong> Which signals define acceptable behavior for a model in production — not in a notebook, but in the live system, on live traffic.</li>
+        <li><strong>Thresholds with consequences.</strong> Which thresholds trigger review, rollback, or retraining — decided before an alert fires, not negotiated during an incident.</li>
+        <li><strong>Named ownership.</strong> Who owns each of those decisions, by name or role, so an alert lands on a person with authority rather than a channel with bystanders.</li>
+        <li><strong>Reconstructable evidence.</strong> What evidence an auditor — internal or external — would need to reconstruct why a model was allowed to keep running on a given day.</li>
+      </ul>
+      <p>Statistical drift detection is one input to that system. It is not the system. A score can tell you something moved; it cannot tell you whether the movement matters, what to do about it, or who answers for the choice. Those are governance questions, and they have to be answered by people and rules, in advance.</p>
+
+      <h2>Why the framing changes what you build</h2>
+      <p>This framing changes what you build. A drift detector that only emits a score leaves the hardest work — judgment, accountability, evidence — to whoever happens to be on call. A governance layer, by contrast, keeps an ensemble view of model behavior, ties alerts to pre-registered decision rules, and preserves the record of what was decided and why.</p>
+      <p>That is the approach behind DRAE, Mila Tech&rsquo;s drift-governance library: ensemble drift signals treated as evidence for governed decisions, with transition support and documentation aimed at teams who must answer to risk, compliance, or acquirers — audiences for whom &ldquo;the dashboard looked fine&rdquo; is not an answer. DRAE governs ML ensembles and AI agents by expert disagreement — re-weighting models that are failing and halting execution fail-closed when the disagreement says the ensemble can no longer be trusted. The fail-closed part is a governance stance expressed in code: when the evidence says stop, the system stops, rather than averaging its way forward and hoping.</p>
+      <p>Built this way, the tooling and the policy stop being separate projects. The decision rules are written down because the software needs them. The evidence trail exists because the software keeps it as it works. An audit stops being an archaeological dig through chat logs and memory, and becomes a read of records the system produced while governing itself.</p>
+
+      <h2>The test you can run today</h2>
+      <p>The lesson generalizes beyond any one tool. If your organization cannot name, today, the person and the rule that would stop a drifting model, you do not have a monitoring gap. You have a governance gap — and it is cheaper to close before the incident than after it.</p>
+      <p>Closing it does not start with buying anything. It starts with four sentences, written down and agreed: what acceptable behavior means for your most important model, what threshold would trigger a review, who owns that call, and where the evidence will live. If those sentences are hard to write, that difficulty is itself the finding — it means the decisions currently have no home. Give them one while the model is still behaving, and the next drift event becomes a procedure instead of a postmortem.</p>
+    </div>
+  </section>
+
+  <section id="contact-cta">
+    <div class="contact-panel">
+      <span class="sec-label">Next step</span>
+      <h2>Govern your models before they drift.</h2>
+      <p class="sub">DRAE is Mila Tech&rsquo;s working drift-governance library — governing ML ensembles and AI agents by expert disagreement, re-weighting failing models and halting execution fail-closed. Explore the full details, or talk to us about a pilot for your team.</p>
+      <div class="btnrow left">
+        <a class="btn primary" href="https://drae.milatech.tech">Explore DRAE <span class="arr">&rarr;</span></a>
+        <a class="btn ghost" href="contact.html?segment=drae-pilot">Talk to us about a DRAE pilot</a>
+        <a class="btn ghost" href="insights.html">More Insights</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-brand"><img src="logo.png" alt="Mila Tech logo">MILA<span>TECH</span></div>
+    <p>&copy; 2026 Mila Tech LLC &middot; A Delaware limited liability company &middot; Metro Detroit, Michigan</p>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="insights.html">Insights</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://mila.milatech.tech">mila.milatech.tech</a>
+      <a href="https://drae.milatech.tech">drae.milatech.tech</a>
+      <a href="https://app.milatech.tech">app.milatech.tech</a>
+      <a href="https://owed.milatech.tech">owed.milatech.tech</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  try {
+    var el = document.querySelector("[data-vc]");
+    if (!el) return;
+    var SITE = "company";
+    var KEY = "vc-" + SITE;
+    var isHit = !sessionStorage.getItem(KEY);
+    if (isHit) sessionStorage.setItem(KEY, "1");
+    fetch("https://visits.milatech.tech" + (isHit ? "/hit" : "/count") + "?site=" + SITE)
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && typeof d.total === "number") {
+          el.querySelector("b").textContent = d.total.toLocaleString("en-US");
+          el.hidden = false;
+        }
+      })
+      .catch(function () {});
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

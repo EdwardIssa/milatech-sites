@@ -379,3 +379,29 @@ video.walkthrough{width:100%;max-width:760px;display:block;margin:0 auto;border-
 .mt-family-links a:hover{background:rgba(255,255,255,.1)}
 .mt-family-links a.is-current{color:#0a0e0b !important;background:#e8b33c}
 @media (max-width:560px){.mt-family-brand{display:none}.mt-family{justify-content:center}.mt-family-links{margin-left:0}}
+
+/* ---------- enterprise rebuild additions (2026-10-26) ---------- */
+.lead-form{display:grid;gap:16px;margin-top:24px;text-align:left}
+.lead-form .form-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:700px){.lead-form .form-grid{grid-template-columns:1fr 1fr}}
+.field{display:grid;gap:7px}
+.field label{font-size:14px;font-weight:700;color:var(--ink);letter-spacing:.3px}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 15px;border-radius:12px;font:inherit;font-size:16px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line-bright);color:var(--ink);
+}
+.field textarea{min-height:120px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.field select option{color:#111}
+.form-note{font-size:14.5px;color:var(--muted)}
+.form-error{font-size:15px;font-weight:700;color:#FF9D9D}
+.form-success{padding:22px;border-radius:16px;background:rgba(0,213,99,.10);border:1px solid rgba(0,213,99,.4);font-size:16.5px;color:var(--ink)}
+.article-meta{font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#FFD97A;margin-bottom:14px}
+.article-body p{max-width:68ch;margin-bottom:18px;font-size:17.5px}
+.article-body h2{font-size:clamp(24px,3.4vw,32px);margin:34px 0 12px;letter-spacing:-.5px}
+.article-body ul{max-width:68ch;margin:0 0 18px 22px}
+.article-body li{margin-bottom:8px;font-size:17px}
+.faq-list{display:grid;gap:14px}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+.faq-item h3{font-size:18px;margin-bottom:6px}
+.faq-item p{font-size:16px}
