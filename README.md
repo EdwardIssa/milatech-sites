@@ -13,7 +13,10 @@ Every site is multi-page with a shared top navigation bar and footer — no one-
   - `index.html` — Home (hero, venture/product cards, Daily Updates)
   - `products.html` — Products (lineup, capabilities, R&D pipeline)
   - `about.html` — About (company, leadership)
-  - `support.html` — Support (community donations, contact)
+  - `support.html` — Support (per-product help, FAQ, community donations, contact)
+  - `services.html` — Services (mortgage workflow automation, ML & predictive diagnostics, product engineering; lead form)
+  - `contact.html` — Contact (lead form → Owed enterprise-leads endpoint in D1, mailto fallback)
+  - `insights.html` + `insights-*.html` — Insights (content engine; launch articles on settlement claiming, guest voting, model-drift governance)
   - `drae.html` — redirect stub to https://drae.milatech.tech (kept so old links don't 404)
   - `styles.css` — shared stylesheet
 - `mila/` → **https://mila.milatech.tech** — MILA product site
