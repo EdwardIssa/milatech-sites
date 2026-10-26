@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DRAE — For Sale | Drift Governance & Fail-Closed Safety for ML Ensembles and AI Agents</title>
+<meta name="description" content="DRAE is a working Python library that governs ML ensembles and AI agents by expert disagreement — re-weighting failing models, degrading gracefully, and halting execution fail-closed. Offered for sale by Mila Tech LLC: full source, tests, benchmarks, and IP assignment. Asking $2,500.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://drae.milatech.tech/">
+<meta property="og:title" content="DRAE — For Sale | Drift Governance & Fail-Closed Safety for ML Ensembles and AI Agents">
+<meta property="og:description" content="A working Python library that governs ML ensembles and AI agents by expert disagreement. Full source, tests, benchmarks, and IP assignment. Asking $2,500 — never publicly released.">
+<meta property="og:image" content="https://drae.milatech.tech/drae-sale-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DRAE — For Sale | Mila Tech LLC">
+<meta name="twitter:description" content="Python drift-governance & fail-closed safety for ML ensembles and AI agents. Full IP assignment, asking $2,500.">
+<meta name="twitter:image" content="https://drae.milatech.tech/drae-sale-card.png">
+<link rel="stylesheet" href="styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true"></div>
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Mila Tech logo">DRAE</a>
+    <div class="navlinks">
+      <a class="active" href="index.html">Home</a>
+      <a href="details.html">Details</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://milatech.tech">Mila Tech</a>
+      <a href="https://mila.milatech.tech">MILA</a>
+      <a class="cta" href="mailto:edward@milatech.tech?subject=DRAE%20acquisition%20inquiry">Acquire DRAE</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap hero">
+    <div class="kicker"><span class="sun-dot"></span> Project for sale &middot; Full IP assignment &middot; v1.1.0</div>
+    <h1>DRAE — governance for models that <span class="grad">drift.</span></h1>
+    <p class="lead">DRAE (Drift-Regulated Adaptive Ensemble) is a working Python library that watches <strong>expert disagreement</strong> — &omega;, omega — as a live health signal for ML ensembles and AI agents. When a model goes stale or an agent&rsquo;s proposals drift, DRAE re-weights the failing expert, degrades operation gracefully, and halts execution <strong>fail-closed</strong> when instability spikes. Mila Tech LLC is offering the complete codebase for sale so it can be developed further by a team focused on ML reliability or agent infrastructure.</p>
+    <div class="btnrow">
+      <a class="btn primary" href="contact.html">Acquire DRAE — $2,500 <span class="arr">&rarr;</span></a>
+      <a class="btn ghost" href="#see-it-run">See it run</a>
+      <a class="btn warm" href="details.html">Technical details</a>
+    </div>
+    <div class="hero-meta">
+      <span><i class="dot live"></i> Available now</span>
+      <span class="sep"></span>
+      <span>Asking price $2,500</span>
+      <span class="sep"></span>
+      <span>Escrow-protected closing</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <figure class="sale-figure">
+    <img src="drae-sale-card.png" alt="DRAE — Drift-Regulated Adaptive Ensemble. Python safety layer for ML ensembles and AI agents. Benchmark: minus 85.6% prediction error vs a static ensemble. $2,500, full IP assignment.">
+  </figure>
+
+  <section id="what">
+    <div class="sec-head">
+      <span class="sec-label">01 / The system</span>
+      <h2>What DRAE is</h2>
+      <p class="sub">Ensembles and multi-agent systems fail quietly: one model goes stale, one agent drifts, and the averaged output stays plausible while it gets worse. DRAE treats disagreement itself as the alarm — and acts on it deterministically.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><span class="p-num">01</span><b>Adaptive Controller</b><p>Re-weights experts in proportion to their local disagreement, with a Dirichlet entropy floor so the ensemble can never collapse onto a single expert.</p></div>
+      <div class="pillar"><span class="p-num">02</span><b>Regime Manager</b><p>A hysteresis switch between passive monitoring and active control tightens the system under sustained drift — without mode-flapping.</p></div>
+      <div class="pillar"><span class="p-num">03</span><b>Cold-Start Guard</b><p>Suppresses safety decisions until enough baseline statistics exist, with a smooth sigmoid activation once the system is warmed up.</p></div>
+      <div class="pillar"><span class="p-num">04</span><b>Policy Interlock</b><p>Separates level from rate of change: elevated &omega; degrades operation; a sudden &Delta;&omega; spike halts execution, fail-closed.</p></div>
+      <div class="pillar"><span class="p-num">05</span><b>Agent Governor</b><p>The same kernel arbitrates AI agents&rsquo; proposed actions by intent-vector disagreement, under the same interlock and recovery rules.</p></div>
+      <div class="pillar"><span class="p-num">06</span><b>Telemetry &amp; Recovery</b><p>Every decision frame is recorded through a queue/exporter pipeline with a Redis stream transport; cooldown recovery escalates when a fault survives it.</p></div>
+    </div>
+  </section>
+
+  <section id="see-it-run">
+    <div class="sec-head">
+      <span class="sec-label">02 / See it run</span>
+      <h2>Watch DRAE work</h2>
+      <p class="sub">A narrated walkthrough of the real codebase and its benchmark: disagreement rising as an expert corrupts, the adaptive controller re-weighting it, and the policy interlock halting execution fail-closed.</p>
+    </div>
+    <video class="walkthrough" controls preload="none" poster="drae-sale-card.png" src="drae-walkthrough.mp4">
+        Your browser does not support embedded video — <a href="drae-walkthrough.mp4">download the DRAE walkthrough (MP4)</a>.
+      </video>
+    <p class="updates-note" style="text-align:center">Recorded from the actual v1.1.0 code — the same benchmark that ships in <strong>reports/BENCHMARK_RESULTS.md</strong>.</p>
+    <div class="card" style="margin-top:26px;text-align:center">
+      <h3>Want the live version?</h3>
+      <p>Book a live demo with the author: the benchmark run in real time, the interlock firing, and your questions — on a call, before you commit to anything.</p>
+      <div class="btnrow" style="justify-content:center">
+        <a class="btn primary" href="mailto:edward@milatech.tech?subject=DRAE%20live%20demo">Book a live demo <span class="arr">&rarr;</span></a>
+        <a class="btn ghost" href="details.html">Read the technical details</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="sec-head">
+      <span class="sec-label">03 / Evidence</span>
+      <h2>Measured, not asserted</h2>
+      <p class="sub">A reproducible benchmark ships with the code (seed-locked): the same three base learners, the same data, a static equal-weight ensemble versus DRAE&rsquo;s adaptive weighting.</p>
+    </div>
+    <article class="card featured">
+      <div class="feat-body">
+        <span class="tag live">Benchmark &middot; Reproducible</span>
+        <h3>When one expert corrupts, DRAE holds the line</h3>
+        <p>In the expert-degradation scenario — one of three models progressively corrupts mid-stream, the classic stale-model failure — the static ensemble keeps averaging the broken model at full weight. DRAE detects the disagreement, down-weights it, and its interlock fires on 20 of 30 evaluation batches.</p>
+        <div class="chips">
+          <span class="chip-fact">&minus;85.6% MSE vs static ensemble</span>
+          <span class="chip-fact">&minus;91.9% MSE in the second half</span>
+          <span class="chip-fact">Interlock active on 20 of 30 batches</span>
+        </div>
+        <p style="margin-top:14px">A second scenario is reported just as honestly: when <em>every</em> expert fails identically at once (abrupt sign-flip drift), disagreement carries no signal and DRAE shows no gain — a documented limit, printed in the results file next to the win. The full methodology and numbers ship in <strong>reports/BENCHMARK_RESULTS.md</strong>.</p>
+      </div>
+      <div class="feat-side" aria-hidden="true">
+        <div class="sun-orb"></div>
+        <div class="feat-stats">
+          <div><b>19</b><span>Passing tests</span></div>
+          <div><b>CI</b><span>Gate on every push</span></div>
+          <div><b>~50</b><span>Source files</span></div>
+        </div>
+      </div>
+    </article>
+    <div class="btnrow left" style="margin-top:26px">
+      <a class="btn ghost" href="details.html">What the buyer receives <span class="arr">&rarr;</span></a>
+      <a class="btn primary" href="contact.html">Acquire DRAE <span class="arr">&rarr;</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-brand"><img src="logo.png" alt="Mila Tech logo">DRAE</div>
+    <p>DRAE is an asset of Mila Tech LLC &middot; &copy; 2026 Mila Tech LLC &middot; A Delaware limited liability company &middot; Metro Detroit, Michigan</p>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="details.html">Details</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://milatech.tech">milatech.tech</a>
+      <a href="https://mila.milatech.tech">mila.milatech.tech</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

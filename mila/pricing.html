@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — MILA | Free tier, Premium $2.99/mo, coin packs</title>
+<meta name="description" content="MILA pricing: a generous free tier, Premium at $2.99/month or $19.99/year, and coin packs from $0.99. The beta is free to try.">
+<link rel="stylesheet" href="styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="logo.png" alt="MILA logo" width="32" height="32">MILA<span>.</span></a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a class="active" href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#bug-tracker">Fix Tracker</a>
+      <a href="demo.html">Demo</a>
+      <a href="feedback.html">Feedback</a>
+      <a class="cta" href="https://app.milatech.tech">Open the app</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero slim">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Pricing</div>
+      <h1>Honest pricing,<br><span class="hl">tiny prices.</span></h1>
+      <p class="lead">Free to enjoy — including voting from any link with no signup. Premium when you want every option on the table.</p>
+    </div>
+  </div>
+</header>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Honest pricing, tiny prices</h2>
+    <p class="sub">Free to enjoy. Premium when you want every option on the table.</p>
+    <p class="betanote">Beta note: the beta is free to try right now at <a href="https://app.milatech.tech">app.milatech.tech</a> — everyone gets the full experience while we test.</p>
+    <div class="plans">
+      <div class="plan">
+        <div class="pname">Free</div>
+        <div class="price">$0 <small>forever</small></div>
+        <ul>
+          <li>Unlimited 3-hour &amp; 24-hour polls</li>
+          <li>1 one-minute flash poll / month</li>
+          <li>1 five-minute flash poll / month</li>
+          <li>Vote on everything, earn coins</li>
+          <li>DMs, hashtags, communities</li>
+          <li class="no">All poll durations &amp; formats</li>
+          <li class="no">Ad-free experience</li>
+        </ul>
+        <a class="btn ghost" href="https://app.milatech.tech" style="text-align:center">Start free</a>
+      </div>
+      <div class="plan featured">
+        <div class="pname">Premium</div>
+        <div class="price">$2.99 <small>/ month</small></div>
+        <p class="persave">or $19.99 / year — save 44%</p>
+        <ul>
+          <li>All poll durations (1 min → 30 days)</li>
+          <li>All poll formats unlocked</li>
+          <li>5 one-minute flash polls / month</li>
+          <li>5 five-minute flash polls / month</li>
+          <li>Zero ads — no banners, no interstitials</li>
+          <li>Everything in Free</li>
+        </ul>
+        <a class="btn primary" href="https://app.milatech.tech" style="text-align:center">Go Premium</a>
+      </div>
+    </div>
+    <div class="coins">
+      <h3><span class="gold">Coin packs</span></h3>
+      <p>Need more flash polls after your monthly quota? Top up with coins. Coins never expire and have no cash value.</p>
+      <div class="coinrow">
+        <div class="coin"><b>50</b><span>$0.99</span></div>
+        <div class="coin"><b>160</b><span>$1.99</span></div>
+        <div class="coin"><b>450</b><span>$3.99</span></div>
+        <div class="coin"><b>1,200</b><span>$7.99</span></div>
+      </div>
+      <p class="pricenote">After quota: 1-minute flash = 10 coins · 5-minute flash = 5 coins (or 1 rewarded ad on Free).<br>Prices in USD, purchased through the App Store. Subscriptions auto-renew; cancel anytime.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="band">
+  <div class="wrap">
+    <h2>Your opinion is <span class="hl">the content.</span></h2>
+    <p>The makeover is live — vote from a link, no signup.</p>
+    <a class="btn bandbtn" href="https://app.milatech.tech">Vote now — no signup</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><h4>MILA</h4><a href="features.html">Features</a><a href="demo.html">Demo</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div>
+      <div><h4>Company</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="feedback.html">Feedback</a><a href="mailto:milatechnogies@gmail.com">Contact</a></div>
+      <div><h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
+    </div>
+    <div class="fbottom"><span>© 2026 Mila Tech LLC. All rights reserved.</span><span>Metro Detroit, Michigan</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.hamburger'), nav=document.querySelector('.navlinks');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','Open menu');
+    });
+  });
+})();
+</script>
+</body>
+</html>

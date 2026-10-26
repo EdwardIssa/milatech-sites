@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — MILA | Is it free? What are coins? Who can use it?</title>
+<meta name="description" content="Answers about MILA: the live free beta, guest voting with no signup, coins, flash polls, age rules, and how your data is handled.">
+<link rel="stylesheet" href="styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="logo.png" alt="MILA logo" width="32" height="32">MILA<span>.</span></a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a class="active" href="faq.html">FAQ</a>
+      <a href="index.html#bug-tracker">Fix Tracker</a>
+      <a href="demo.html">Demo</a>
+      <a href="feedback.html">Feedback</a>
+      <a class="cta" href="https://app.milatech.tech">Open the app</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero slim">
+  <div class="wrap">
+    <div>
+      <div class="kicker">FAQ</div>
+      <h1>Questions,<br><span class="hl">answered.</span></h1>
+      <p class="lead">The short version — and the links to the long one.</p>
+    </div>
+  </div>
+</header>
+
+<section id="faq" class="alt">
+  <div class="wrap">
+    <h2>Questions, answered</h2>
+    <p class="sub">The short version.</p>
+    <div class="faq">
+      <details><summary>Is the beta really live?</summary><p>Yes. The web beta is live right now at <a href="https://app.milatech.tech">app.milatech.tech</a> — it's free to try, no invite needed. We're also opening city by city, Detroit first, through the waitlist: <a href="index.html#waitlist">join here</a> and we'll email you when your wave opens. The native iOS and Android apps are on the way.</p></details>
+      <details><summary>What makes MILA different?</summary><p>MILA is built around opinions instead of posts. The questions are the content: you ask, people answer live, and things like Closing Arguments and Predictions keep the conversation going after the votes are in.</p></details>
+      <details><summary>Is MILA really free?</summary><p>Yes. The free tier includes unlimited 3-hour and 24-hour polls, monthly flash polls, voting on everything, DMs, hashtags, communities, and coin rewards. Premium ($2.99/mo or $19.99/yr) unlocks all durations and formats, more flash polls, and removes ads.</p></details>
+      <details><summary>What are coins?</summary><p>Coins are MILA's in-app currency. You earn them by voting and creating polls, or buy coin packs. Spend them on extra flash polls, visibility boosts, and cover images. Coins have no cash value and can't be transferred.</p></details>
+      <details><summary>What is a flash poll?</summary><p>A poll that runs for just 1 or 5 minutes — made for instant, in-the-moment reactions. Everyone gets monthly flash polls included; after that, spend coins (or watch a rewarded ad on the free tier).</p></details>
+      <details><summary>Who can use MILA?</summary><p>MILA is for ages 13 and up. We collect your date of birth at sign-up, filter content by age, and block explicit content entirely for users 15 and under. Block, mute, and report tools are one tap away.</p></details>
+      <details><summary>How is my data handled?</summary><p>See our <a href="privacy.html">Privacy Policy</a>. We don't sell your personal information, and you can request deletion of your account and data anytime.</p></details>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="wrap" style="text-align:center">
+    <h2>Still curious?</h2>
+    <p class="sub">Read the <a href="features.html">features</a>, try the <a href="demo.html">live demo</a>, or send us <a href="feedback.html">feedback</a> — we read everything.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Your opinion is <span class="hl">the content.</span></h2>
+    <p>The makeover is live — vote from a link, no signup.</p>
+    <a class="btn bandbtn" href="https://app.milatech.tech">Vote now — no signup</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><h4>MILA</h4><a href="features.html">Features</a><a href="demo.html">Demo</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div>
+      <div><h4>Company</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="feedback.html">Feedback</a><a href="mailto:milatechnogies@gmail.com">Contact</a></div>
+      <div><h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
+    </div>
+    <div class="fbottom"><span>© 2026 Mila Tech LLC. All rights reserved.</span><span>Metro Detroit, Michigan</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.hamburger'), nav=document.querySelector('.navlinks');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','Open menu');
+    });
+  });
+})();
+</script>
+</body>
+</html>

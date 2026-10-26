@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Details — DRAE v1.1.0 | Walkthrough, Benchmark, What's Included</title>
+<meta name="description" content="DRAE v1.1.0 technical details: narrated video walkthrough, the reproducible benchmark (−85.6% MSE vs a static ensemble when one expert corrupts), the component architecture, and everything the buyer receives.">
+<link rel="stylesheet" href="styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true"></div>
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Mila Tech logo">DRAE</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a class="active" href="details.html">Details</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://milatech.tech">Mila Tech</a>
+      <a href="https://mila.milatech.tech">MILA</a>
+      <a class="cta" href="mailto:edward@milatech.tech?subject=DRAE%20acquisition%20inquiry">Acquire DRAE</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap page-hero">
+    <div class="kicker"><span class="sun-dot"></span> Technical details &middot; v1.1.0</div>
+    <h1>Under the <span class="grad">hood.</span></h1>
+    <p class="lead">The walkthrough, the measured benchmark, and the complete asset inventory — everything a technical buyer needs for diligence.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="walkthrough">
+    <div class="sec-head">
+      <span class="sec-label">01 / Walkthrough</span>
+      <h2>See DRAE run</h2>
+      <p class="sub">A narrated tour of the v1.1.0 codebase and benchmark: the disagreement signal &omega;, the adaptive controller, the regime manager, and the fail-closed interlock in action.</p>
+    </div>
+    <video class="walkthrough" controls preload="none" poster="drae-sale-card.png" src="drae-walkthrough.mp4">
+        Your browser does not support embedded video — <a href="drae-walkthrough.mp4">download the DRAE walkthrough (MP4)</a>.
+      </video>
+    <p class="updates-note" style="text-align:center">Prefer to look yourself? Serious buyers may request read-only repository access for diligence under NDA — see the <a href="contact.html">contact page</a>.</p>
+  </section>
+
+  <section id="system">
+    <div class="sec-head">
+      <span class="sec-label">02 / The system</span>
+      <h2>Component architecture</h2>
+      <p class="sub">Six deterministic components, one kernel: the same disagreement signal governs ML ensembles and AI-agent proposals alike.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><span class="p-num">01</span><b>Adaptive Controller</b><p>Re-weights experts in proportion to their local disagreement, with a Dirichlet entropy floor so the ensemble can never collapse onto a single expert.</p></div>
+      <div class="pillar"><span class="p-num">02</span><b>Regime Manager</b><p>A hysteresis switch between passive monitoring and active control tightens the system under sustained drift — without mode-flapping.</p></div>
+      <div class="pillar"><span class="p-num">03</span><b>Cold-Start Guard</b><p>Suppresses safety decisions until enough baseline statistics exist, with a smooth sigmoid activation once the system is warmed up.</p></div>
+      <div class="pillar"><span class="p-num">04</span><b>Policy Interlock</b><p>Separates level from rate of change: elevated &omega; degrades operation; a sudden &Delta;&omega; spike halts execution, fail-closed.</p></div>
+      <div class="pillar"><span class="p-num">05</span><b>Agent Governor</b><p>The same kernel arbitrates AI agents&rsquo; proposed actions by intent-vector disagreement, under the same interlock and recovery rules.</p></div>
+      <div class="pillar"><span class="p-num">06</span><b>Telemetry &amp; Recovery</b><p>Every decision frame is recorded through a queue/exporter pipeline with a Redis stream transport; cooldown recovery escalates when a fault survives it.</p></div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="sec-head">
+      <span class="sec-label">03 / Evidence</span>
+      <h2>Measured, not asserted</h2>
+      <p class="sub">A reproducible benchmark ships with the code (seed-locked): the same three base learners, the same data, a static equal-weight ensemble versus DRAE&rsquo;s adaptive weighting.</p>
+    </div>
+    <article class="card featured">
+      <div class="feat-body">
+        <span class="tag live">Benchmark &middot; Reproducible</span>
+        <h3>When one expert corrupts, DRAE holds the line</h3>
+        <p>In the expert-degradation scenario — one of three models progressively corrupts mid-stream, the classic stale-model failure — the static ensemble keeps averaging the broken model at full weight. DRAE detects the disagreement, down-weights it, and its interlock fires on 20 of 30 evaluation batches.</p>
+        <div class="chips">
+          <span class="chip-fact">&minus;85.6% MSE vs static ensemble</span>
+          <span class="chip-fact">&minus;91.9% MSE in the second half</span>
+          <span class="chip-fact">Interlock active on 20 of 30 batches</span>
+        </div>
+        <p style="margin-top:14px">A second scenario is reported just as honestly: when <em>every</em> expert fails identically at once (abrupt sign-flip drift), disagreement carries no signal and DRAE shows no gain — a documented limit, printed in the results file next to the win. The full methodology and numbers ship in <strong>reports/BENCHMARK_RESULTS.md</strong>.</p>
+      </div>
+      <div class="feat-side" aria-hidden="true">
+        <div class="sun-orb"></div>
+        <div class="feat-stats">
+          <div><b>19</b><span>Passing tests</span></div>
+          <div><b>CI</b><span>Gate on every push</span></div>
+          <div><b>~50</b><span>Source files</span></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="included">
+    <div class="sec-head">
+      <span class="sec-label">04 / The asset</span>
+      <h2>What the buyer receives</h2>
+      <p class="sub">A complete, self-contained codebase — authored solely by Mila Tech LLC&rsquo;s managing member and never publicly released.</p>
+    </div>
+    <div class="card">
+      <ul class="checklist">
+        <li><strong>Full source repository with git history</strong> — core engine, agent governance, telemetry pipeline, visualization, benchmarks, and examples.</li>
+        <li><strong>19 passing automated tests</strong> and a GitHub Actions CI gate (validation suite runs on every push).</li>
+        <li><strong>Documentation set</strong> — the DASS specification, failure taxonomy, certification standard, and measured benchmark results.</li>
+        <li><strong>Exclusivity</strong> — the code has never been published on GitHub, PyPI, or anywhere else, and never distributed. The buyer receives the only copies.</li>
+        <li><strong>Full IP assignment</strong> — copyright in code and docs, the DRAE name, and the unregistered PyPI name &ldquo;drae,&rdquo; free for the buyer to claim.</li>
+        <li><strong>30 days of transition support</strong> from the author after closing.</li>
+      </ul>
+      <div class="pricing">
+        <div class="price-main">
+          <b>Asking price</b>
+          <span class="price-big">$2,500</span>
+          <span class="price-alt">full asset sale &middot; IP included</span>
+        </div>
+        <div class="price-packs">
+          <span>Stack:</span>
+          <span class="pack">Python 3</span>
+          <span class="pack">NumPy</span>
+          <span class="pack">SciPy</span>
+          <span class="pack">scikit-learn</span>
+          <span class="pack">Redis (optional)</span>
+        </div>
+      </div>
+      <p style="margin-top:14px">DRAE is a pre-revenue code asset: no users, no recurring revenue, priced as intellectual property and working software — not as an operating business.</p>
+    </div>
+  
+    <div class="btnrow left" style="margin-top:26px">
+      <a class="btn primary" href="contact.html">Acquire DRAE <span class="arr">&rarr;</span></a>
+      <a class="btn ghost" href="mailto:edward@milatech.tech?subject=DRAE%20live%20demo">Book a live demo</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-brand"><img src="logo.png" alt="Mila Tech logo">DRAE</div>
+    <p>DRAE is an asset of Mila Tech LLC &middot; &copy; 2026 Mila Tech LLC &middot; A Delaware limited liability company &middot; Metro Detroit, Michigan</p>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="details.html">Details</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://milatech.tech">milatech.tech</a>
+      <a href="https://mila.milatech.tech">mila.milatech.tech</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
