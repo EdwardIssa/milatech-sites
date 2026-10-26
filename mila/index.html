@@ -204,10 +204,15 @@
       <span class="bt-stat">Oct 22: <b>8 more fixed</b></span>
       <span class="bt-stat">Oct 23: <b>18 more fixed</b></span>
       <span class="bt-stat">Oct 24: <b>2 more fixed</b></span>
+      <span class="bt-stat">Oct 26: <b>1 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Oct 24, 2026</h3>
+      <h3 class="bt-group">Latest — Oct 26, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The weekly digest didn&rsquo;t go out on Sunday, Oct 25 — a broken line in its scheduled job stopped it before it could run, so no digest notifications or emails were sent that week; the schedule is fixed and verified, and the next digest goes out on schedule</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Oct 24, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A banned account could still get followers-only access through follow requests — a private account accepting a banned requester created a real follow, and a banned private account could still accept requests itself; a ban now covers follow requests on both sides, so no follow is created either way</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Someone who had voted and was then banned could still publish a &ldquo;why I voted&rdquo; note on a live poll — posting and editing those notes now checks for a ban too</span><span class="bt-pill fixed">Fixed</span></li>
