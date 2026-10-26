@@ -19,6 +19,7 @@
       <a href="https://drae.milatech.tech">DRAE</a>
       <a href="https://owed.milatech.tech">Owed</a>
     </nav>
+    <span data-vc hidden style="font-weight:600;color:rgba(247,245,239,.78);white-space:nowrap;margin-left:10px">👁 <b style="color:#f7f5ef">…</b> visits</span>
   </div>
 
 <div class="bg-fx" aria-hidden="true"></div>
@@ -108,5 +109,26 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  try {
+    var el = document.querySelector("[data-vc]");
+    if (!el) return;
+    var SITE = "company";
+    var KEY = "vc-" + SITE;
+    var isHit = !sessionStorage.getItem(KEY);
+    if (isHit) sessionStorage.setItem(KEY, "1");
+    fetch("https://visits.milatech.tech" + (isHit ? "/hit" : "/count") + "?site=" + SITE)
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && typeof d.total === "number") {
+          el.querySelector("b").textContent = d.total.toLocaleString("en-US");
+          el.hidden = false;
+        }
+      })
+      .catch(function () {});
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
