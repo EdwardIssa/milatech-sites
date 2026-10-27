@@ -216,10 +216,22 @@
       <span class="bt-stat">Oct 23: <b>18 more fixed</b></span>
       <span class="bt-stat">Oct 24: <b>2 more fixed</b></span>
       <span class="bt-stat">Oct 26: <b>1 more fixed</b></span>
+      <span class="bt-stat">Oct 27: <b>8 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Oct 26, 2026</h3>
+      <h3 class="bt-group">Latest — Oct 27, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">On a group profile&rsquo;s multi-select poll, each manager&rsquo;s picks were counted separately, so a group could pick more options than the poll allows — a group&rsquo;s picks now count together toward the limit, and a manager&rsquo;s group picks no longer use up their own personal picks</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Two managers voting for the same group on a ranked poll could both put a different option in the same rank slot — a group now gets one entry per rank, like a single voter</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A banned group profile&rsquo;s polls could still show up in the public feed, even though the group itself was hidden everywhere else — those polls no longer appear in the feed while the group is banned</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">People invited to a group profile who hadn&rsquo;t joined yet had their email address visible to every member of the group — pending invite emails are now only visible to the group&rsquo;s managers and the person invited, and the address is cleared once they join</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll could be attributed to a banned group profile — attributing a poll to a group now checks that the group isn&rsquo;t banned, and that the person doing it isn&rsquo;t banned either</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A banned group manager could still invite people to the group and edit its profile — inviting, editing, removing members and changing roles are now all covered by a ban</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The Daily One showed its real total vote count before the evening reveal, even though the standings themselves were correctly hidden — the total now stays hidden too until the reveal</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Ask MILA accepted any made-up guest token, so someone could flood the review queue by inventing new ones — guest submissions now have to use a real issued token, the same check guest voting already uses</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Oct 26, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The weekly digest didn&rsquo;t go out on Sunday, Oct 25 — a broken line in its scheduled job stopped it before it could run, so no digest notifications or emails were sent that week; the schedule is fixed and verified, and the next digest goes out on schedule</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
