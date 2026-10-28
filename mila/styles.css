@@ -82,7 +82,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .float p{font-size:14.5px;line-height:1.45}
 .float .fsub{font-size:12.5px;color:var(--muted);margin-top:5px}
 .float.lb{right:-104px;top:18px;width:208px;--r:1.5deg;animation-delay:-2s}
-.float.ca{left:-118px;bottom:88px;--r:-2deg;animation-delay:-4s}
+.float.ca{left:-44px;bottom:88px;--r:-2deg;animation-delay:-4s}
 .float.pred{right:-64px;bottom:-34px;width:252px;--r:-1deg;animation-delay:-1s}
 .float.pred .flabel{color:#FFC531}
 .lb-row{display:flex;justify-content:space-between;gap:10px;font-size:14.5px;padding:5px 0;border-bottom:1px dashed var(--line)}
@@ -91,7 +91,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-8px) rotate(var(--r,0deg))}}
 @media(max-width:1240px){
   .float.lb{right:-26px}
-  .float.ca{left:-26px}
+  .float.ca{left:-12px}
   .float.pred{right:-10px}
 }
 
