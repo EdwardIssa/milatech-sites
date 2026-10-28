@@ -16,12 +16,12 @@ Every site is multi-page with a shared top navigation bar and footer — no one-
   - `support.html` — Support (per-product help, FAQ, community donations, contact)
   - `services.html` — Services (mortgage workflow automation, ML & predictive diagnostics, product engineering; lead form)
   - `contact.html` — Contact (lead form → Owed enterprise-leads endpoint in D1, mailto fallback)
-  - `brands.html` — MILA for Brands (sponsored polls, sample sentiment report from a real poll, Sentiment API waitlist → MILA Supabase `sentiment_api_waitlist`, migration 169)
+  - `brands.html` — MILA for Brands (sponsored polls, sample sentiment report from a real poll, Sentiment API section — waitlist removed 2026-10-28 at Edward's order; API interest routes to the Contact page (the `sentiment_api_waitlist` table, migration 169, is retained in the database, 0 rows))
   - `insights.html` + `insights-*.html` — Insights (content engine; launch articles on settlement claiming, guest voting, model-drift governance)
   - `drae.html` — redirect stub to https://drae.milatech.tech (kept so old links don't 404)
   - `styles.css` — shared stylesheet
 - `mila/` → **https://mila.milatech.tech** — MILA product site
-  - `index.html` — Home (post-makeover hero, what's new, waitlist, public Fix Tracker)
+  - `index.html` — Home (post-makeover hero, what's new, public Fix Tracker — signup waitlist section removed 2026-10-28 at Edward's order)
   - `features.html` — Features (makeover features, seven formats, how it works)
   - `pricing.html` — Pricing (Free / Premium / coin packs)
   - `faq.html` — FAQ

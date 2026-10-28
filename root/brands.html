@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MILA for Brands — Sponsored Polls &amp; Live Sentiment | Mila Tech LLC</title>
-<meta name="description" content="MILA for Brands: sponsored polls asked to MILA's real audience, live public results, and an exportable sentiment report. Plus the MILA Sentiment API — real-time public sentiment on tickers, products, and events. Join the waitlist.">
+<meta name="description" content="MILA for Brands: sponsored polls asked to MILA's real audience, live public results, and an exportable sentiment report. Plus the MILA Sentiment API — real-time public sentiment on tickers, products, and events.">
 <link rel="stylesheet" href="styles.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
      crossorigin="anonymous"></script>
@@ -144,43 +144,8 @@
     <div class="contact-panel">
       <span class="sec-label">05 / In development</span>
       <h2>The MILA Sentiment API</h2>
-      <p class="sub">The same live sentiment behind MILA&rsquo;s polls, exposed for builders: real-time public sentiment on <strong>tickers, products, and events</strong> — what the crowd thinks, as it moves — through a dashboard and an API. It is in development now. Join the waitlist and you&rsquo;ll be first to know when early access opens, and first in line for it.</p>
-
-      <form class="lead-form" id="api-form" novalidate>
-        <div class="form-grid">
-          <div class="field">
-            <label for="api-email">Work email *</label>
-            <input id="api-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
-          </div>
-          <div class="field">
-            <label for="api-company">Company (optional)</label>
-            <input id="api-company" name="company" type="text" autocomplete="organization" placeholder="Company or team name">
-          </div>
-        </div>
-        <div class="field">
-          <label for="api-usecase">What would you point it at? (optional)</label>
-          <textarea id="api-usecase" name="use_case" placeholder="e.g. tracking sentiment on a ticker through earnings, reaction to a product launch, a ballot question in the news&hellip;"></textarea>
-        </div>
-        <div class="field" style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
-          <label for="api-website">Website</label>
-          <input id="api-website" name="website" type="text" tabindex="-1" autocomplete="off">
-        </div>
-        <p class="form-error" id="api-error" hidden></p>
-        <div>
-          <button class="btn primary" type="submit" id="api-submit">Join the waitlist <span class="arr">&rarr;</span></button>
-        </div>
-        <p class="form-note">One email when early access opens. No list-selling, no spam — the same rule as everything else we run.</p>
-      </form>
-
-      <div class="form-success" id="api-success" hidden>
-        <b>You&rsquo;re on the list.</b>
-        <p>We&rsquo;ll email you when the MILA Sentiment API opens for early access. Want to run a sponsored poll in the meantime? <a href="contact.html?segment=mila-brands">Talk to us</a>.</p>
-      </div>
-
-      <div class="form-success" id="api-dup" hidden>
-        <b>You&rsquo;re already on the list.</b>
-        <p>That email is already registered for the Sentiment API waitlist — we&rsquo;ve got you, and we&rsquo;ll be in touch when early access opens.</p>
-      </div>
+      <p class="sub">The same live sentiment behind MILA&rsquo;s polls, exposed for builders: real-time public sentiment on <strong>tickers, products, and events</strong> — what the crowd thinks, as it moves — through a dashboard and an API. It is in development now.</p>
+      <p class="sub">For API access questions, <a href="contact.html?segment=mila-brands">talk to us</a>.</p>
     </div>
   </section>
 
@@ -206,65 +171,6 @@
   </div>
 </footer>
 
-<script>
-(function () {
-  /* Sentiment API waitlist — insert-only capture into the MILA Supabase project
-     (table sentiment_api_waitlist, migration 169: anon may INSERT, never read). */
-  var ENDPOINT = "https://tuedziedafdiwuuzzveo.supabase.co/rest/v1/sentiment_api_waitlist";
-  var APIKEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR1ZWR6aWVkYWZkaXd1dXp6dmVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEwNDkxNjMsImV4cCI6MjEwNjYyNTE2M30.WERIdb-Y2uoKddnlBdm8zr-dma-26CUFMfRb4LljXbw";
-  var form = document.getElementById("api-form");
-  if (!form) return;
-  function val(id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; }
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var errorLine = document.getElementById("api-error");
-    var submit = document.getElementById("api-submit");
-    errorLine.hidden = true;
-    /* Honeypot: a filled hidden field means a bot — accept silently, store nothing. */
-    if (val("api-website")) {
-      form.hidden = true;
-      document.getElementById("api-success").hidden = false;
-      return;
-    }
-    var email = val("api-email"), company = val("api-company"), useCase = val("api-usecase");
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errorLine.textContent = "Please add a valid work email — that's the one thing the waitlist needs.";
-      errorLine.hidden = false;
-      return;
-    }
-    submit.disabled = true; submit.textContent = "Joining…";
-    fetch(ENDPOINT, {
-      method: "POST",
-      headers: {
-        "apikey": APIKEY,
-        "Authorization": "Bearer " + APIKEY,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal"
-      },
-      body: JSON.stringify({
-        email: email,
-        company: company || null,
-        use_case: useCase || null,
-        source: "brands-page"
-      })
-    }).then(function (r) {
-      if (r.status === 201) {
-        form.hidden = true;
-        document.getElementById("api-success").hidden = false;
-      } else if (r.status === 409) {
-        form.hidden = true;
-        document.getElementById("api-dup").hidden = false;
-      } else {
-        throw new Error("bad status");
-      }
-    }).catch(function () {
-      submit.disabled = false; submit.textContent = "Join the waitlist";
-      errorLine.textContent = "The waitlist didn't respond just now — please try again, or email edward@milatech.tech and we'll add you by hand.";
-      errorLine.hidden = false;
-    });
-  });
-})();
-</script>
 
 <script>
 (function () {
