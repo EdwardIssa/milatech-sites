@@ -18,6 +18,7 @@
       <a href="https://app.milatech.tech">MILA App</a>
       <a href="https://drae.milatech.tech">DRAE</a>
       <a href="https://owed.milatech.tech">Owed</a>
+      <a href="https://loyal.milatech.tech">Loyal</a>
     </nav>
     <span data-vc hidden style="font-weight:600;color:rgba(247,245,239,.78);white-space:nowrap;margin-left:10px">👁 <b style="color:#f7f5ef">…</b> visits</span>
   </div>
@@ -46,13 +47,34 @@
     <h1>LOYAL — <span class="grad">know who&rsquo;s really out there.</span></h1>
     <p class="lead">Someone&rsquo;s dating profile is public. Their socials are public. What&rsquo;s missing is one honest place that pulls it together. LOYAL searches <strong>public data only</strong> — dating profiles, social profiles, and public records — and reports what it finds in plain tiers, with the sources shown. No hacked databases. No location tracking. No games with the answer.</p>
     <div class="btnrow left">
-      <a class="btn primary" href="contact.html?segment=loyal-early-access">Join early access <span class="arr">&rarr;</span></a>
-      <a class="btn ghost" href="#how">How it works</a>
+      <a class="btn primary" href="https://loyal.milatech.tech">Open LOYAL — it&rsquo;s live <span class="arr">&rarr;</span></a>
+      <a class="btn ghost" href="#try">Try it right here</a>
     </div>
   </div>
 </header>
 
 <main class="wrap">
+
+  <section id="try">
+    <div class="sec-head">
+      <span class="sec-label">Live · Try it now</span>
+      <h2>The product, right here</h2>
+      <p class="sub">This is LOYAL&rsquo;s real checker, running live — not a mockup. Enter a username or an email and it checks public profiles across the web in seconds. The full tool — name and phone searches included — lives at <a href="https://loyal.milatech.tech">loyal.milatech.tech</a>.</p>
+    </div>
+    <div class="card">
+      <div class="btnrow left" style="margin-bottom:14px">
+        <button class="btn primary sm" type="button" id="lt-mode-username">Username</button>
+        <button class="btn ghost sm" type="button" id="lt-mode-email">Email</button>
+      </div>
+      <form id="lt-form" class="btnrow left" style="gap:10px;flex-wrap:wrap">
+        <input id="lt-input" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. the username they use everywhere"
+          style="flex:1 1 260px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:12px;color:inherit;font:inherit;padding:13px 16px;min-height:52px">
+        <button class="btn primary" type="submit" id="lt-btn">Search</button>
+      </form>
+      <p class="sub" id="lt-status" style="margin:14px 0 0" role="status" aria-live="polite"></p>
+      <div id="lt-results" style="margin-top:10px"></div>
+    </div>
+  </section>
 
   <section id="tools">
     <div class="sec-head">
@@ -67,9 +89,9 @@
         <p>Search a name, username, or email across the major dating platforms&rsquo; public profiles. If they have a profile out there, this is the search that finds it — and if they don&rsquo;t, you get a plain &ldquo;no match found,&rdquo; not a tease.</p>
       </article>
       <article class="card">
-        <span class="tag">Search</span>
+        <span class="tag">In development</span>
         <h3>Photo Match</h3>
-        <p>Have a photo but no name? Upload it and LOYAL looks for public profiles using the same face across dating and social platforms — the picture they reused is usually the thread that unravels the rest.</p>
+        <p>Have a photo but no name? Photo Match — upload a picture and find public profiles using the same face — is the next search we&rsquo;re building. The picture they reused is usually the thread that unravels the rest.</p>
       </article>
       <article class="card">
         <span class="tag">Search</span>
@@ -79,7 +101,7 @@
       <article class="card">
         <span class="tag">Lookup</span>
         <h3>Reverse Phone &amp; Email</h3>
-        <p>A number from a dating app or a &ldquo;new email&rdquo; you&rsquo;ve never seen — run it and see what public profiles and records it connects to.</p>
+        <p>An email runs against public profile data tied to it, live. A phone number gets validated and opened into guided public-web searches — because real reverse-phone data lives with brokers, and LOYAL won&rsquo;t fake having it.</p>
       </article>
       <article class="card">
         <span class="tag">Lookup</span>
@@ -159,10 +181,10 @@
   <section id="early-access">
     <div class="contact-panel">
       <span class="sec-label">05 / Status</span>
-      <h2>In development — early access is open</h2>
-      <p class="sub">LOYAL is being built now. Join the early-access list and you&rsquo;ll be first in when the first searches open — and your first search, on yourself, is free.</p>
+      <h2>Live now at loyal.milatech.tech</h2>
+      <p class="sub">LOYAL launched October 28, 2026 — username, email, name, and phone searches are live and free, and your first search, on yourself, is the one we recommend. Photo Match is in development next. Questions or removal requests: the contact form&rsquo;s LOYAL topic reaches us directly.</p>
       <div class="btnrow left">
-        <a class="btn primary" href="contact.html?segment=loyal-early-access">Join early access <span class="arr">&rarr;</span></a>
+        <a class="btn primary" href="https://loyal.milatech.tech">Open LOYAL <span class="arr">&rarr;</span></a>
         <a class="btn ghost" href="products.html">All products</a>
       </div>
     </div>
@@ -190,6 +212,88 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var API = "https://loyal.milatech.tech";
+  var mode = "username";
+  var form = document.getElementById("lt-form");
+  if (!form) return;
+  var input = document.getElementById("lt-input");
+  var btn = document.getElementById("lt-btn");
+  var status = document.getElementById("lt-status");
+  var results = document.getElementById("lt-results");
+  var bU = document.getElementById("lt-mode-username");
+  var bE = document.getElementById("lt-mode-email");
+  function setMode(m) {
+    mode = m;
+    bU.className = "btn sm " + (m === "username" ? "primary" : "ghost");
+    bE.className = "btn sm " + (m === "email" ? "primary" : "ghost");
+    input.placeholder = m === "username" ? "e.g. the username they use everywhere" : "e.g. an email address";
+    results.innerHTML = ""; status.textContent = "";
+  }
+  bU.addEventListener("click", function () { setMode("username"); });
+  bE.addEventListener("click", function () { setMode("email"); });
+  function line(txt, strong) {
+    var p = document.createElement("p");
+    p.style.margin = "8px 0";
+    if (strong) { var b = document.createElement("b"); b.textContent = txt; p.appendChild(b); }
+    else p.textContent = txt;
+    results.appendChild(p);
+  }
+  function linkLine(label, url) {
+    var p = document.createElement("p");
+    p.style.margin = "6px 0";
+    var a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer";
+    a.textContent = label;
+    p.appendChild(a);
+    results.appendChild(p);
+  }
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var v = input.value.trim();
+    if (!v) { status.textContent = "Type something to search first."; return; }
+    results.innerHTML = ""; btn.disabled = true;
+    if (mode === "username") {
+      status.textContent = "Checking @" + v.replace(/^@/, "") + " across 13 platforms…";
+      fetch(API + "/api/check-username?u=" + encodeURIComponent(v.replace(/^@/, "")))
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          btn.disabled = false;
+          if (d.error) { status.textContent = d.error; return; }
+          status.textContent = "";
+          var found = d.results.filter(function (r) { return r.status === "found"; });
+          if (found.length) {
+            line("Verified — profiles that exist under @" + d.username + ":", true);
+            found.forEach(function (r) { linkLine(r.site + " — " + r.url.replace(/^https?:\/\//, ""), r.url); });
+          } else {
+            line("No verified profiles under @" + d.username + " on the platforms LOYAL checks live.", false);
+          }
+          line("Counts: " + d.counts.found + " verified · " + d.counts.notFound + " no match · " + d.counts.unknown + " couldn't verify — plus dating & social one-click links in the full report.", false);
+          linkLine("See the full report on loyal.milatech.tech →", "https://loyal.milatech.tech");
+        })
+        .catch(function () { btn.disabled = false; status.textContent = "The checker couldn't be reached. Try the full tool at loyal.milatech.tech."; });
+    } else {
+      status.textContent = "Looking up that email…";
+      fetch(API + "/api/check-email?e=" + encodeURIComponent(v))
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          btn.disabled = false;
+          if (d.error) { status.textContent = d.error; return; }
+          status.textContent = "";
+          if (d.gravatar && d.gravatar.exists) {
+            line("Verified — a public Gravatar profile is tied to this email" + (d.gravatar.displayName ? " (" + d.gravatar.displayName + ")" : "") + ".", true);
+            if (d.gravatar.profileUrl) linkLine("Gravatar profile", d.gravatar.profileUrl);
+          } else {
+            line("No public Gravatar profile for this email. The full tool can still check its username part (" + d.usernamePart + ") across 13 platforms.", false);
+          }
+          linkLine("Open the full tool on loyal.milatech.tech →", "https://loyal.milatech.tech");
+        })
+        .catch(function () { btn.disabled = false; status.textContent = "The lookup couldn't be reached. Try the full tool at loyal.milatech.tech."; });
+    }
+  });
+})();
+</script>
 <script>
 (function () {
   try {
