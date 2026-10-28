@@ -86,7 +86,7 @@
       <article class="card">
         <span class="tag">Search</span>
         <h3>Dating Profile Search</h3>
-        <p>Search a username across public dating profiles. <strong>Tinder is checked live</strong> — when a public profile exists, LOYAL brings back its name and photo as the evidence. Every other major dating site is accounted for in every report, each with its reason: Plenty of Fish and OkCupid get exact one-click links, and the apps that keep profiles locked inside (Bumble, Hinge, Grindr) are reported plainly as app-only — no public profile exists to check — instead of an invented verdict.</p>
+        <p>Search a username across public dating profiles. <strong>Tinder is checked live</strong> — when a public profile exists, LOYAL brings back its name and photo as the evidence. Every other major dating site is accounted for in every report, each with its reason: Plenty of Fish and OkCupid serve identical empty shells for real and invented names, and the apps that keep profiles locked inside (Bumble, Hinge, Grindr) have no public profiles at all — all of them are accounted for by name in every report instead of an invented verdict or a guessed link.</p>
       </article>
       <article class="card">
         <span class="tag">In development</span>
@@ -255,7 +255,7 @@
     if (!v) { status.textContent = "Type something to search first."; return; }
     results.innerHTML = ""; btn.disabled = true;
     if (mode === "username") {
-      status.textContent = "Checking @" + v.replace(/^@/, "") + " across 14 platforms…";
+      status.textContent = "Checking @" + v.replace(/^@/, "") + " across 15 platforms…";
       fetch(API + "/api/check-username?u=" + encodeURIComponent(v.replace(/^@/, "")))
         .then(function (r) { return r.json(); })
         .then(function (d) {
@@ -269,7 +269,7 @@
           } else {
             line("No verified profiles under @" + d.username + " on the platforms LOYAL checks live.", false);
           }
-          line("Counts: " + d.counts.found + " verified · " + d.counts.notFound + " no match · " + d.counts.unknown + " couldn't verify — plus dating & social one-click links in the full report.", false);
+          line("Counts: " + d.counts.found + " verified · " + d.counts.notFound + " no match · " + d.counts.unknown + " couldn't verify — the full report also accounts for every walled platform by name.", false);
           linkLine("See the full report on loyal.milatech.tech →", "https://loyal.milatech.tech");
         })
         .catch(function () { btn.disabled = false; status.textContent = "The checker couldn't be reached. Try the full tool at loyal.milatech.tech."; });
@@ -285,7 +285,7 @@
             line("Verified — a public Gravatar profile is tied to this email" + (d.gravatar.displayName ? " (" + d.gravatar.displayName + ")" : "") + ".", true);
             if (d.gravatar.profileUrl) linkLine("Gravatar profile", d.gravatar.profileUrl);
           } else {
-            line("No public Gravatar profile for this email. The full tool can still check its username part (" + d.usernamePart + ") across 14 platforms.", false);
+            line("No public Gravatar profile for this email. The full tool can still check its username part (" + d.usernamePart + ") across 15 platforms.", false);
           }
           linkLine("Open the full tool on loyal.milatech.tech →", "https://loyal.milatech.tech");
         })
