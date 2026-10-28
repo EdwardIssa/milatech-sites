@@ -161,11 +161,18 @@
       <span class="bt-stat">Oct 23: <b>18 more fixed</b></span>
       <span class="bt-stat">Oct 24: <b>2 more fixed</b></span>
       <span class="bt-stat">Oct 26: <b>1 more fixed</b></span>
-      <span class="bt-stat">Oct 27: <b>8 more fixed</b></span>
+      <span class="bt-stat">Oct 27: <b>10 more fixed</b></span>
+      <span class="bt-stat">Oct 28: <b>3 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Oct 27, 2026</h3>
+      <h3 class="bt-group">Latest — Oct 28, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Link-only polls — meant to be reachable only by the people sent the link — were listed on public topic pages, where anyone could find the question and the standings — topic pages and the public topic list now leave link-only polls out</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Anyone could pull up the series summary for a followers-only poll and see its earlier rounds&rsquo; standings, even though they couldn&rsquo;t open the poll itself — series information now follows the same visibility rules as the poll</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sharing a followers-only or close-friends poll was recorded as a public share, inflating share counts and rankings for polls that aren&rsquo;t public — share recording now uses the same public check as view recording (link-only polls still count, since sharing is how they spread)</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Oct 27, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">On a group profile&rsquo;s multi-select poll, each manager&rsquo;s picks were counted separately, so a group could pick more options than the poll allows — a group&rsquo;s picks now count together toward the limit, and a manager&rsquo;s group picks no longer use up their own personal picks</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Two managers voting for the same group on a ranked poll could both put a different option in the same rank slot — a group now gets one entry per rank, like a single voter</span><span class="bt-pill fixed">Fixed</span></li>
@@ -175,6 +182,8 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A banned group manager could still invite people to the group and edit its profile — inviting, editing, removing members and changing roles are now all covered by a ban</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The Daily One showed its real total vote count before the evening reveal, even though the standings themselves were correctly hidden — the total now stays hidden too until the reveal</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Ask MILA accepted any made-up guest token, so someone could flood the review queue by inventing new ones — guest submissions now have to use a real issued token, the same check guest voting already uses</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Someone you blocked — or who blocked you — could still record a view on your poll and move your view count, even though their vote on the same poll was correctly rejected — recording a poll view now checks blocks in both directions (just reading a poll is unchanged)</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">When a scheduled job failed before it could even make its call — the kind of failure that lost a weekly digest — the health check couldn&rsquo;t see it, because it only watched completed calls — the health check now also watches the scheduled jobs&rsquo; own failure log and reports those failures too</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
       <h3 class="bt-group">Oct 26, 2026</h3>
       <ul class="bt-list">
