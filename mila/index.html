@@ -162,15 +162,22 @@
       <span class="bt-stat">Oct 24: <b>2 more fixed</b></span>
       <span class="bt-stat">Oct 26: <b>1 more fixed</b></span>
       <span class="bt-stat">Oct 27: <b>10 more fixed</b></span>
-      <span class="bt-stat">Oct 28: <b>3 more fixed</b></span>
+      <span class="bt-stat">Oct 28: <b>4 more fixed</b></span>
+      <span class="bt-stat">Oct 29: <b>2 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Oct 28, 2026</h3>
+      <h3 class="bt-group">Latest — Oct 29, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Pinned polls and poll views had a missing read permission behind them — their privacy rules existed, but signed-in users couldn&rsquo;t actually read them directly (and pinned polls couldn&rsquo;t be read that way signed-out either), so those reads were refused; read permission now matches the rules, and writing still only happens through the checked in-app paths</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Your Prediction Record and Daily One streak could flicker to empty — showing &ldquo;No predictions yet&rdquo; and no streak — when a quick account check came back empty by mistake, even though you really had predictions and a streak; those reads now use your known account and treat a failed check as an error instead of a real zero, so your actual record stays on screen</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Oct 28, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Link-only polls — meant to be reachable only by the people sent the link — were listed on public topic pages, where anyone could find the question and the standings — topic pages and the public topic list now leave link-only polls out</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Anyone could pull up the series summary for a followers-only poll and see its earlier rounds&rsquo; standings, even though they couldn&rsquo;t open the poll itself — series information now follows the same visibility rules as the poll</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sharing a followers-only or close-friends poll was recorded as a public share, inflating share counts and rankings for polls that aren&rsquo;t public — share recording now uses the same public check as view recording (link-only polls still count, since sharing is how they spread)</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Achievements couldn&rsquo;t be read directly by signed-in users — the rules say achievements are public, but the read permission behind them was missing, so a direct read was refused; that permission is now in place, read-only — adding or changing achievements that way is still blocked</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
       <h3 class="bt-group">Oct 27, 2026</h3>
       <ul class="bt-list">
