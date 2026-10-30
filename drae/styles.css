@@ -370,12 +370,14 @@ video.walkthrough{width:100%;max-width:760px;display:block;margin:0 auto;border-
 .sale-figure img{display:block;width:100%;max-width:560px;margin:0 auto;border-radius:18px;border:1px solid var(--line-bright)}
 
 /* Mila Tech family bar — shared across all Mila Tech sites */
-.mt-family{position:relative;z-index:60;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#07090a;color:#f7f5ef;padding:7px 16px;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px;line-height:1.3;border-bottom:1px solid rgba(255,255,255,.09)}
+.mt-family{position:relative;z-index:60;display:flex;align-items:center;gap:10px;flex-wrap:nowrap;background:#07090a;color:#f7f5ef;padding:7px 16px;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13.5px;line-height:1.3;border-bottom:1px solid rgba(255,255,255,.09)}
 .mt-family a{color:rgba(247,245,239,.78);text-decoration:none;font-weight:600}
 .mt-family a:hover{color:#fff}
-.mt-family-brand{color:#f7f5ef !important;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
-.mt-family-links{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
-.mt-family-links a{padding:4px 10px;border-radius:999px}
+.mt-family-brand{color:#f7f5ef !important;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px;white-space:nowrap}
+.mt-family-links{display:flex;gap:4px;flex-wrap:nowrap;align-items:center}
+.mt-family-links a{padding:4px 10px;border-radius:999px;white-space:nowrap}
 .mt-family-links a:hover{background:rgba(255,255,255,.1)}
 .mt-family-links a.is-current{color:#0a0e0b !important;background:#e8b33c}
-@media (max-width:560px){.mt-family-brand{display:none}.mt-family{justify-content:center}.mt-family-links{margin-left:0}}
+.mt-family [data-vc]{font-weight:600;color:rgba(247,245,239,.78);white-space:nowrap;margin-left:auto}
+.mt-family [data-vc] b{color:#f7f5ef}
+@media (max-width:560px){.mt-family{padding:5px 10px;gap:6px;font-size:12.5px}.mt-family-brand{display:none}.mt-family-links{gap:2px}.mt-family-links a{padding:3px 7px}.mt-vc-word{display:none}}
