@@ -163,7 +163,7 @@
       <span class="bt-stat">Oct 26: <b>1 more fixed</b></span>
       <span class="bt-stat">Oct 27: <b>10 more fixed</b></span>
       <span class="bt-stat">Oct 28: <b>4 more fixed</b></span>
-      <span class="bt-stat">Oct 29: <b>2 more fixed</b></span>
+      <span class="bt-stat">Oct 29: <b>3 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
@@ -171,6 +171,7 @@
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Pinned polls and poll views had a missing read permission behind them — their privacy rules existed, but signed-in users couldn&rsquo;t actually read them directly (and pinned polls couldn&rsquo;t be read that way signed-out either), so those reads were refused; read permission now matches the rules, and writing still only happens through the checked in-app paths</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Your Prediction Record and Daily One streak could flicker to empty — showing &ldquo;No predictions yet&rdquo; and no streak — when a quick account check came back empty by mistake, even though you really had predictions and a streak; those reads now use your known account and treat a failed check as an error instead of a real zero, so your actual record stays on screen</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Opening your Profile briefly claimed &ldquo;No predictions yet&rdquo; at the top of your Prediction Record every time, before your record had even finished loading — even if you really had predictions; it now shows a neutral placeholder while it loads, and only says that once your record has loaded and is actually empty</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
       <h3 class="bt-group">Oct 28, 2026</h3>
       <ul class="bt-list">
