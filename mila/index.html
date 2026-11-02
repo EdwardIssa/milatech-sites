@@ -164,7 +164,7 @@
       <span class="bt-stat">Oct 27: <b>10 more fixed</b></span>
       <span class="bt-stat">Oct 28: <b>4 more fixed</b></span>
       <span class="bt-stat">Oct 29: <b>3 more fixed</b></span>
-      <span class="bt-stat">Nov 1: <b>2 more fixed</b></span>
+      <span class="bt-stat">Nov 1: <b>3 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
@@ -172,6 +172,7 @@
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The new live chat on each poll had a word filter that quietly did nothing for anyone but admins — the blocked-words list behind it had no read permission for regular users, so their apps loaded an empty list and nothing ever matched, on sending or on receiving; everyone can now read the list (changing it stays admin-only), so blocked language is filtered in chat the same way it already was in polls and comments</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A blocked word spelled with lookalike letters from other alphabets — Cyrillic or Greek characters that look just like Latin ones — slipped straight past the live chat&rsquo;s filter, even though the exact same spelling was already blocked in polls and comments; the chat filter now folds those lookalikes back into the letters they imitate before checking, so a disguised spelling no longer gets through</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">After a block, someone could still reach the person who blocked them two ways the block missed: they could publish or edit a &ldquo;why I voted&rdquo; note on that person&rsquo;s poll, and they could still send them a poll suggestion, even though their votes, comments and reposts were already stopped — blocks now cover vote notes and poll suggestions the same way in both directions, while deleting your own note still works so you can always clean up your own words</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
       <h3 class="bt-group">Oct 29, 2026</h3>
       <ul class="bt-list">
