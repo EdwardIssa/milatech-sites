@@ -166,10 +166,17 @@
       <span class="bt-stat">Oct 28: <b>4 more fixed</b></span>
       <span class="bt-stat">Oct 29: <b>3 more fixed</b></span>
       <span class="bt-stat">Nov 1: <b>3 more fixed</b></span>
+      <span class="bt-stat">Nov 2: <b>3 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Nov 1, 2026</h3>
+      <h3 class="bt-group">Latest — Nov 2, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">After a block, someone could still share the poll of the person who blocked them into a community — the share put the poll in front of the community and sent its members a notification carrying the question, even though their votes and comments were already stopped; sharing a poll into a community now checks blocks in both directions the same way, while sharing your own poll still works</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A comment&rsquo;s like count could be set to any number by editing the comment directly — and the comment could pin itself to the top of someone else&rsquo;s poll the same way — instead of earning its place through the normal like button; a comment&rsquo;s like count, pinned state, image and parent can no longer be changed that way, so like counts only move when people actually like or unlike, and pinning stays a moderation action</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Editing the quote on a repost slipped past blocks and bans — someone blocked by a poll&rsquo;s author, or even banned, could rewrite their quote text on that author&rsquo;s poll, even though posting a new repost was correctly stopped; quote edits now follow the same block and ban rules as new reposts, while removing your own repost still works</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Nov 1, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The new live chat on each poll had a word filter that quietly did nothing for anyone but admins — the blocked-words list behind it had no read permission for regular users, so their apps loaded an empty list and nothing ever matched, on sending or on receiving; everyone can now read the list (changing it stays admin-only), so blocked language is filtered in chat the same way it already was in polls and comments</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A blocked word spelled with lookalike letters from other alphabets — Cyrillic or Greek characters that look just like Latin ones — slipped straight past the live chat&rsquo;s filter, even though the exact same spelling was already blocked in polls and comments; the chat filter now folds those lookalikes back into the letters they imitate before checking, so a disguised spelling no longer gets through</span><span class="bt-pill fixed">Fixed</span></li>
