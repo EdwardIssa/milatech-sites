@@ -20,3 +20,10 @@ Requested in Edward's signed-in AdSense session (edward@milatech.tech): ticked "
 
 ## If it is denied again
 Do not re-request immediately. Likely levers, in order: more Insights articles (2/month cadence already planned), more time with the new content live, and the copy-truth swap (a) if not yet done.
+
+## Round 3 — Nov 4, 2026
+- Oct 26 re-review verdict arrived Nov 4, 8:09 AM: REJECTED again — "Needs attention / Low value content" (dashboard + email agree; Policy center clean; ads.txt Authorized).
+- Audit against Google's own approval video (lZUG0XGlZZY): ad code exact + in head on all 14 root pages ✓; site reachable, robots.txt has NO Disallow rules ✓; replication vs subdomain pages low (jaccard ~0.14) ✓. DEFECT FOUND: root drae.html was still a 15-word meta-refresh redirect stub — a content-free page on the reviewed domain (the Oct 26 rebuild missed it; README even documented it as an intentional stub).
+- Fixes (commit dde8f16, verified live): drae.html = full DRAE product page (837 visible words); new Insights article insights-election-night.html (~1,107 words, Michigan election board field note); card added to insights.html; sitemap.xml created (domain had none).
+- Re-review requested Nov 4, 12:02 PM EST (confirm-fixed ticked). Status after: "Getting ready", ads.txt Authorized. Google: a few days, up to 2–4 weeks.
+- On approval: Side rails + verify ads on all family sites (same "moment it approves" list above).
