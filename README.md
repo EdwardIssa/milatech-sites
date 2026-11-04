@@ -18,7 +18,9 @@ Every site is multi-page with a shared top navigation bar and footer — no one-
   - `contact.html` — Contact (lead form → Owed enterprise-leads endpoint in D1, mailto fallback)
   - `brands.html` — MILA for Brands (sponsored polls, sample sentiment report from a real poll, Sentiment API section — waitlist removed 2026-10-28 at Edward's order; API interest routes to the Contact page (the `sentiment_api_waitlist` table, migration 169, is retained in the database, 0 rows))
   - `insights.html` + `insights-*.html` — Insights (content engine; launch articles on settlement claiming, guest voting, model-drift governance)
-  - `drae.html` — redirect stub to https://drae.milatech.tech (kept so old links don't 404)
+  - `drae.html` — full DRAE product page (runtime governance for ML ensembles and AI agents; replaced the old redirect stub on 2026-11-04 — a 15-word meta-refresh page on the AdSense-reviewed root domain was a low-value-content liability)
+  - `loyal.html` — full LOYAL product page (public profile search; live embedded checker)
+  - `sitemap.xml` — sitemap for the root domain (added 2026-11-04)
   - `styles.css` — shared stylesheet
 - `mila/` → **https://mila.milatech.tech** — MILA product site
   - `index.html` — Home (post-makeover hero, what's new, public Fix Tracker — signup waitlist section removed 2026-10-28 at Edward's order)
