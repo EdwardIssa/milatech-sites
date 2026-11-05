@@ -168,10 +168,19 @@
       <span class="bt-stat">Nov 1: <b>3 more fixed</b></span>
       <span class="bt-stat">Nov 2: <b>3 more fixed</b></span>
       <span class="bt-stat">Nov 3: <b>10 more fixed</b></span>
+      <span class="bt-stat">Nov 4: <b>5 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Nov 3, 2026</h3>
+      <h3 class="bt-group">Latest — Nov 4, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll could be created already claiming a future Daily One slot for itself — and the app would then serve it as that day&rsquo;s Daily One, with its streaks and reminders attached, even though it was never chosen; a poll can no longer set its own Daily One date when it is created either, so only the real selection path decides the daily question</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll could be created already carrying the Sponsored label, a label that is only supposed to be set through the app&rsquo;s own placement process; a poll can no longer give itself that label when it is created</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Creating a poll directly could also pre-set several things that are only supposed to be set by the app itself: attributing the poll to someone else&rsquo;s group profile, showing it as asked by someone it did not come from, linking it as a rematch of another poll without going through the rematch checks, backdating it by a year, or giving it a closing time ten years away so it effectively never ended; none of those can be set at creation anymore, and a new poll&rsquo;s closing time is now capped just over a month out, the same way the app itself caps it</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A comment could be created already pinned to the top of someone else&rsquo;s poll, with a like count of any size already set, and dated a year into the future — instead of earning its place through the normal like button and a moderator&rsquo;s pin; a new comment now starts unpinned, with a true like count of zero and its real time, matching the protections that already stopped those changes on an existing comment</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll suggestion could be sent already marked as accepted, skipping the recipient&rsquo;s say entirely — a suggestion the other person never agreed to would look settled from the moment it arrived; a new suggestion now always starts out pending, and only the recipient&rsquo;s own choice can change that</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Nov 3, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Any author could claim a future Daily One slot for their own poll by editing it directly — and the app would then serve it as that day&rsquo;s Daily One, with its streaks and reminders attached, even though it was never chosen; a poll can no longer set its own Daily One date that way, so only the real selection path decides the daily question</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll&rsquo;s question could be rewritten by editing the poll directly after votes had already been cast, bypassing the checked edit path — so ballots cast on one question could end up counted under a different one; question text can no longer be changed that way, while editing through the normal path still works</span><span class="bt-pill fixed">Fixed</span></li>
