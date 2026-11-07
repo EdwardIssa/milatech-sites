@@ -170,10 +170,15 @@
       <span class="bt-stat">Nov 3: <b>10 more fixed</b></span>
       <span class="bt-stat">Nov 4: <b>5 more fixed</b></span>
       <span class="bt-stat">Nov 5: <b>1 more fixed</b></span>
+      <span class="bt-stat">Nov 6: <b>1 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Nov 5, 2026</h3>
+      <h3 class="bt-group">Latest — Nov 6, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sending a message in a poll&rsquo;s live chat could show your own message twice — the copy that came back from the server was added on top of the one already on your screen, so a single send looked like a duplicate post; each chat message is now shown only once, however it arrives</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Nov 5, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The live chat on each poll checked who you were and what you wrote, but not whether you belonged in that room — someone could post into the chat of a followers-only poll they could not even see, keep posting in a poll that had already closed or expired, post into a room for a poll that does not exist, or post in the chat of someone who had blocked them; a chat message now checks all of that before it goes through — the poll has to exist and still be open, you have to be able to see it, and blocks and bans stop a chat message the same way they already stopped votes and comments</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
