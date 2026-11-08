@@ -10,19 +10,6 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="mt-family" role="navigation" aria-label="Mila Tech sites">
-    <a class="mt-family-brand" href="https://milatech.tech">Mila Tech</a>
-    <nav class="mt-family-links">
-      <a href="https://milatech.tech" class="is-current" aria-current="true">Company</a>
-      <a href="https://mila.milatech.tech">MILA</a>
-      <a href="https://app.milatech.tech">MILA App</a>
-      <a href="https://drae.milatech.tech">DRAE</a>
-      <a href="https://owed.milatech.tech">Owed</a>
-      <a href="https://leadminerx.milatech.tech">LeadMiner X</a>
-      <a href="https://loyal.milatech.tech">Loyal</a>
-    </nav>
-    <span data-vc hidden>👁 <b style="color:#f7f5ef">…</b> <span class="mt-vc-word">visits</span></span>
-  </div>
 
 <div class="bg-fx" aria-hidden="true"></div>
 <nav>
@@ -43,6 +30,9 @@
 </nav>
 
 <header>
+  <div class="wrap" style="padding-top:28px">
+    <p class="sub" style="border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 18px"><strong>Read this first:</strong> MILA is in public beta with a small founding audience. A sponsored poll today reaches that founding audience — real people, honestly counted, and few of them. The sample report below shows an actual run at n&nbsp;=&nbsp;2, labeled as a format sample, not a finding. If that scale fits your question, welcome. If you need launch-scale sample, do not buy a run yet — join the waitlist in &sect;04 and we will tell you when the audience is there.</p>
+  </div>
   <div class="wrap page-hero">
     <div class="kicker"><span class="sun-dot"></span> MILA for Brands</div>
     <h1>Ask the crowd. <span class="grad">Watch it answer.</span></h1>
@@ -112,7 +102,7 @@
         <div class="meter"><div class="meter-fill" style="width:0%"></div></div>
 
         <p style="margin-top:18px"><strong>The takeaway:</strong> both responses favored new restrictions on congressional trading — one an outright ban, one real-time disclosure — and the permissive option drew no support at all. At n&nbsp;=&nbsp;2 that is a format sample, not a finding; a sponsored run reports the same structure at whatever size your audience delivers.</p>
-        <p style="margin-top:10px"><strong>Read this honestly:</strong> MILA is in open beta — 11 members today — so live counts are small, and this sample shows them exactly as they are. We would rather show you a real 2 than an invented 20,000. Sponsored reports never pad, seed, or simulate responses.</p>
+        <p style="margin-top:10px"><strong>Read this honestly:</strong> MILA is in public beta with a small founding membership today, so live counts are small, and this sample shows them exactly as they are. We would rather show you a real 2 than an invented 20,000. Sponsored reports never pad, seed, or simulate responses.</p>
       </div>
     </article>
   </section>
@@ -135,9 +125,9 @@
         <div class="btnrow left" style="margin-top:14px"><a class="btn ghost sm" href="contact.html?segment=mila-brands">Build a program <span class="arr">&rarr;</span></a></div>
       </article>
       <article class="card">
-        <h3>Custom &amp; API Access</h3>
-        <p>Multi-question campaigns, a category focus (politics, tech, markets, sports, culture), and early access to the MILA Sentiment API below as it opens. If your team wants sentiment as a feed rather than a report, start here.</p>
-        <div class="btnrow left" style="margin-top:14px"><a class="btn ghost sm" href="contact.html?segment=mila-brands">Talk to us <span class="arr">&rarr;</span></a></div>
+        <h3>Waitlist — launch-scale runs &amp; API</h3>
+        <p><strong>Who should not buy yet:</strong> anyone who needs statistically meaningful sample today. Multi-question campaigns at scale and the MILA Sentiment API are not buyable products yet — the API is in development (&sect;05). Join the waitlist instead: tell us the audience size you need, and we will contact you when a run can honestly deliver it. One route for everything on this page: <a href="contact.html?segment=mila-brands">talk to us</a>.</p>
+        <div class="btnrow left" style="margin-top:14px"><a class="btn ghost sm" href="contact.html?segment=mila-brands">Join the waitlist <span class="arr">&rarr;</span></a></div>
       </article>
     </div>
   </section>
@@ -165,35 +155,18 @@
       <a href="about.html">About</a>
       <a href="support.html">Support</a>
       <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
       <a href="https://mila.milatech.tech">mila.milatech.tech</a>
       <a href="https://drae.milatech.tech">drae.milatech.tech</a>
       <a href="https://app.milatech.tech">app.milatech.tech</a>
       <a href="https://owed.milatech.tech">owed.milatech.tech</a>
+      <a href="https://leadminerx.milatech.tech">leadminerx.milatech.tech</a>
+      <a href="https://loyal.milatech.tech">loyal.milatech.tech</a>
     </div>
   </div>
 </footer>
 
 
-<script>
-(function () {
-  try {
-    var el = document.querySelector("[data-vc]");
-    if (!el) return;
-    var SITE = "company";
-    var KEY = "vc-" + SITE;
-    var isHit = !sessionStorage.getItem(KEY);
-    if (isHit) sessionStorage.setItem(KEY, "1");
-    fetch("https://visits.milatech.tech" + (isHit ? "/hit" : "/count") + "?site=" + SITE)
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && typeof d.total === "number") {
-          el.querySelector("b").textContent = d.total.toLocaleString("en-US");
-          el.hidden = false;
-        }
-      })
-      .catch(function () {});
-  } catch (e) {}
-})();
-</script>
 </body>
 </html>

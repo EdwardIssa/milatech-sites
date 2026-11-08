@@ -10,19 +10,6 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="mt-family" role="navigation" aria-label="Mila Tech sites">
-    <a class="mt-family-brand" href="https://milatech.tech">Mila Tech</a>
-    <nav class="mt-family-links">
-      <a href="https://milatech.tech">Company</a>
-      <a href="https://mila.milatech.tech" class="is-current" aria-current="true">MILA</a>
-      <a href="https://app.milatech.tech">MILA App</a>
-      <a href="https://drae.milatech.tech">DRAE</a>
-      <a href="https://owed.milatech.tech">Owed</a>
-      <a href="https://leadminerx.milatech.tech">LeadMiner X</a>
-      <a href="https://loyal.milatech.tech">Loyal</a>
-    </nav>
-    <span data-vc hidden>👁 <b style="color:#f7f5ef">…</b> <span class="mt-vc-word">visits</span></span>
-  </div>
 <nav>
   <div class="wrap">
     <a class="brand" href="index.html"><img src="logo.png" alt="MILA logo" width="32" height="32">MILA<span>.</span></a>
@@ -31,7 +18,7 @@
       <a href="features.html">Features</a>
       <a class="active" href="pricing.html">Pricing</a>
       <a href="faq.html">FAQ</a>
-      <a href="index.html#bug-tracker">Fix Tracker</a>
+      <a href="fix-tracker.html">Fix Tracker</a>
       <a href="demo.html">Demo</a>
       <a href="feedback.html">Feedback</a>
       <a class="cta" href="https://app.milatech.tech">Open the app</a>
@@ -54,7 +41,7 @@
   <div class="wrap">
     <h2>Free to start — <span class="hl">Premium when you're ready.</span></h2>
     <p class="sub">Every plan votes on everything. Premium adds every format, every duration, and an ad-free experience.</p>
-    <p class="betanote">Beta note: the beta is free to try right now at <a href="https://app.milatech.tech">app.milatech.tech</a> — everyone gets the full experience while we test.</p>
+    <p class="betanote">Beta note: purchases are paused in the beta — the beta is free to try right now at <a href="https://app.milatech.tech">app.milatech.tech</a>, and everyone gets the full experience while we test. The plans below are the launch pricing; nobody is charged today.</p>
     <div class="plans">
       <div class="plan">
         <div class="pname">Free</div>
@@ -65,9 +52,10 @@
           <li>1 five-minute flash poll / month</li>
           <li>Vote on everything, earn coins</li>
           <li>DMs, hashtags, communities</li>
-          <li class="no">All poll durations &amp; formats</li>
-          <li class="no">Ad-free experience</li>
+          <li class="no">Not included: all poll durations &amp; formats</li>
+          <li class="no">Not included: ad-free experience</li>
         </ul>
+        <p class="betanote">Beta: live today — this is the plan you are on, free.</p>
         <a class="btn ghost" href="https://app.milatech.tech" style="text-align:center">Start free</a>
       </div>
       <div class="plan featured">
@@ -82,7 +70,8 @@
           <li>Zero ads — no banners, no interstitials</li>
           <li>Everything in Free</li>
         </ul>
-        <a class="btn primary" href="https://app.milatech.tech" style="text-align:center">Go Premium</a>
+        <p class="betanote">Beta: not purchasable yet — Premium features are open to everyone free while we test.</p>
+        <a class="btn primary" href="https://app.milatech.tech" style="text-align:center">Try the beta — free</a>
       </div>
     </div>
     <div class="coins">
@@ -94,7 +83,7 @@
         <div class="coin"><b>450</b><span>$3.99</span></div>
         <div class="coin"><b>1,200</b><span>$7.99</span></div>
       </div>
-      <p class="pricenote">After quota: 1-minute flash = 10 coins · 5-minute flash = 5 coins (or 1 rewarded ad on Free).<br>Prices in USD, purchased through the App Store. Subscriptions auto-renew; cancel anytime.</p>
+      <p class="pricenote">After quota: 1-minute flash = 10 coins · 5-minute flash = 5 coins (or 1 rewarded ad on Free).<br>Prices in USD. Purchases are paused during the beta — no one is charged today. When purchases open, they will run through the billing path for your platform (App Store / Google Play via RevenueCat, or the web checkout) at the prices shown at purchase; subscriptions will auto-renew and can be cancelled anytime.</p>
     </div>
   </div>
 </section>
@@ -103,7 +92,7 @@
 <section class="band">
   <div class="wrap">
     <h2>Your opinion is <span class="hl">the content.</span></h2>
-    <p>The makeover is live — vote from a link, no signup.</p>
+    <p>Public beta, live on the web — vote from a link, no signup.</p>
     <a class="btn bandbtn" href="https://app.milatech.tech">Vote now — no signup</a>
   </div>
 </section>
@@ -114,6 +103,7 @@
       <div><h4>MILA</h4><a href="features.html">Features</a><a href="demo.html">Demo</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div>
       <div><h4>Company</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="feedback.html">Feedback</a><a href="mailto:edward@milatech.tech">Contact</a></div>
       <div><h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
+      <div><h4>Mila Tech family</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="https://drae.milatech.tech">DRAE</a><a href="https://owed.milatech.tech">Owed</a><a href="https://leadminerx.milatech.tech">LeadMiner X</a><a href="https://loyal.milatech.tech">Loyal</a></div>
     </div>
     <div class="fbottom"><span>© 2026 Mila Tech LLC. All rights reserved.</span><span>Metro Detroit, Michigan</span></div>
   </div>
@@ -135,27 +125,6 @@
       btn.setAttribute('aria-label','Open menu');
     });
   });
-})();
-</script>
-<script>
-(function () {
-  try {
-    var el = document.querySelector("[data-vc]");
-    if (!el) return;
-    var SITE = "mila";
-    var KEY = "vc-" + SITE;
-    var isHit = !sessionStorage.getItem(KEY);
-    if (isHit) sessionStorage.setItem(KEY, "1");
-    fetch("https://visits.milatech.tech" + (isHit ? "/hit" : "/count") + "?site=" + SITE)
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && typeof d.total === "number") {
-          el.querySelector("b").textContent = d.total.toLocaleString("en-US");
-          el.hidden = false;
-        }
-      })
-      .catch(function () {});
-  } catch (e) {}
 })();
 </script>
 </body>

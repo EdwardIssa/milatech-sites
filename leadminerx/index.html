@@ -4,50 +4,50 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LeadMiner X — Mine Google business leads into a CSV. One payment. No per-result meter.</title>
-<meta name="description" content="LeadMiner X is a Windows desktop app that pulls business leads — name, category, rating, review count, address, phone, website — from Google's official Places API using your own API key. $149 launch price, one-time. Free trial: 25 leads.">
+<meta name="description" content="LeadMiner X is a Windows desktop app that pulls business leads — name, category, rating, review count, address, phone, website, and the email each business publishes on its own site — from Google's official Places API using your own API key. Up to ~20,000 leads/month if every free request returns 20 unique businesses. $149 launch price, one-time. Free trial: 25 leads.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://leadminerx.milatech.tech/">
 <meta property="og:title" content="LeadMiner X — Mine Google business leads into a CSV">
-<meta property="og:description" content="One payment. No per-result meter. Pull business leads from Google's official Places API at Google's raw rate — about $0.002 per lead, with up to ~20,000 leads a month inside Google's free allotment.">
+<meta property="og:description" content="One payment. No per-result meter to us. Pull business leads from Google's official Places API at Google's raw rate — $35 per 1,000 API requests past 1,000 free requests/month, as low as ~$1.75 per 1,000 leads when pages come back full. Up to ~20,000 leads/month if every free request returns 20 unique businesses.">
 <meta property="og:image" content="https://leadminerx.milatech.tech/assets/leadminerx-ui.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LeadMiner X | Mila Tech LLC">
-<meta name="twitter:description" content="A Windows app that mines Google business leads into a CSV. One payment, no per-result meter, free 25-lead trial.">
+<meta name="twitter:description" content="A Windows app that mines Google business leads into a CSV. One payment, no per-result meter to us, free 25-lead trial.">
 <meta name="twitter:image" content="https://leadminerx.milatech.tech/assets/leadminerx-ui.png">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="mt-family" role="navigation" aria-label="Mila Tech sites">
-    <a class="mt-family-brand" href="https://milatech.tech">Mila Tech</a>
-    <nav class="mt-family-links">
-      <a href="https://milatech.tech">Company</a>
-      <a href="https://mila.milatech.tech">MILA</a>
-      <a href="https://app.milatech.tech">MILA App</a>
-      <a href="https://drae.milatech.tech">DRAE</a>
-      <a href="https://owed.milatech.tech">Owed</a>
-      <a href="https://leadminerx.milatech.tech" class="is-current" aria-current="true">LeadMiner X</a>
-      <a href="https://loyal.milatech.tech">Loyal</a>
-    </nav>
-    <span data-vc hidden>👁 <b style="color:#f7f5ef">…</b> <span class="mt-vc-word">visits</span></span>
-  </div>
-
 <div class="bg-fx" aria-hidden="true"></div>
+
+<div class="stickybar" id="stickybar" aria-hidden="true">
+  <div class="wrap stickybar-in">
+    <span class="stickybar-name">LeadMiner X v3.1.0 — <b>$149</b> one-time</span>
+    <span class="stickybar-actions">
+      <a class="btn primary sm" href="https://milatech.gumroad.com/l/sgciy" tabindex="-1">Try free — 25 leads</a>
+      <a class="btn warm sm" href="https://milatech.gumroad.com/l/leadminerx" tabindex="-1">Buy — $149</a>
+    </span>
+  </div>
+</div>
 
 <header id="top">
   <div class="wrap hero">
-    <div class="kicker"><span class="sun-dot"></span> Windows desktop app &middot; v3 &middot; By Mila Tech LLC</div>
+    <div class="kicker"><span class="sun-dot"></span> Windows desktop app &middot; v3.1.0 &middot; By Mila Tech LLC</div>
     <h1>LeadMiner <span class="grad">X</span></h1>
-    <p class="lead"><strong>Mine Google business leads into a CSV. One payment. No per-result meter.</strong> LeadMiner X pulls business leads — name, category, rating, review count, address, phone, website — from Google&rsquo;s official Places API using <strong>your own API key</strong>. You pay Google&rsquo;s raw rate (about two-tenths of a cent per lead, and the first chunk every month is free). You never pay a per-result fee again.</p>
+    <p class="lead"><strong>Mine Google business leads into a CSV. One payment. No per-result meter.</strong> LeadMiner X pulls business leads — name, category, rating, review count, address, phone, website, and the email each business publishes on its own website — from Google&rsquo;s official Places API using <strong>your own API key</strong>. Google charges per request, not per lead: <strong>$35 per 1,000 API requests past 1,000 free requests/month — as low as ~$1.75 per 1,000 leads when pages come back full</strong>. You never pay a per-result fee to us again.</p>
     <div class="btnrow">
       <a class="btn primary" href="https://milatech.gumroad.com/l/sgciy">Try it free — 25 leads <span class="arr">&rarr;</span></a>
       <a class="btn warm" href="https://milatech.gumroad.com/l/leadminerx">Buy LeadMiner X — $149</a>
+      <a class="btn ghost" href="assets/sample-output.csv" download>See a sample CSV — 50 rows <span class="arr">&darr;</span></a>
     </div>
+    <p class="req-note">Windows PC &middot; ~16 MB app, delivered as a ZIP from Gumroad &middot; license key by email &middot; bring your own free Google API key (Google requires a billing card on the account, even for free use)</p>
     <div class="hero-meta">
       <span><i class="dot live"></i> Available now</span>
       <span class="sep"></span>
       <span>$149 launch price (regular $199)</span>
       <span class="sep"></span>
       <span>One-time payment &middot; No subscription</span>
+      <span class="sep"></span>
+      <span>14-day full refund</span>
     </div>
   </div>
 </header>
@@ -55,9 +55,11 @@
 <main class="wrap">
 
   <figure class="sale-figure">
-    <img src="assets/leadminerx-ui.png" alt="The real LeadMiner X v3 app window: API key field with a Test my key button, first-time setup wizard, free-trial counter and license activation, keyword and location fields, bulk mode, deep sweep option, output CSV, Start Mining and Stop buttons, and the run log.">
+    <img src="assets/leadminerx-ui.png" alt="The real LeadMiner X app window: API key field with a Test my key button, first-time setup wizard, free-trial counter and license activation, keyword and location fields, bulk mode, deep sweep option, output CSV, Start Mining and Stop buttons, and the run log.">
     <figcaption style="text-align:center;color:var(--muted);font-size:14.5px;margin-top:10px">The actual app, running — setup wizard, trial counter, and mining controls in one window.</figcaption>
   </figure>
+
+  <p class="proof-note"><strong>New product, first buyers.</strong> LeadMiner X is a new release from Mila Tech LLC, so there are no buyer reviews to quote yet — we&rsquo;d rather say that plainly than pad the page. Judge it the way we built it to be judged: <a href="assets/sample-output.csv" download>download the sample CSV</a>, then run the <a href="https://milatech.gumroad.com/l/sgciy">free 25-lead trial</a> on your own territory. If it doesn&rsquo;t work for you, the paid license carries a 14-day full refund.</p>
 
   <section id="who">
     <div class="sec-head">
@@ -67,9 +69,10 @@
     </div>
     <div class="pillars">
       <div class="pillar"><span class="p-num">01</span><b>Realtors</b><p>Building a list of local businesses for referral partnerships, sponsorships, and relocation packets.</p></div>
-      <div class="pillar"><span class="p-num">02</span><b>Loan officers</b><p>Prospecting real estate offices, builders, and every business category in their farm area.</p></div>
+      <div class="pillar"><span class="p-num">02</span><b>Loan officers</b><p>Prospecting real estate offices, builders, and businesses across your farm area.</p></div>
       <div class="pillar"><span class="p-num">03</span><b>Local agencies</b><p>Pulling lead lists for clients — without handing a cut of every list to a metered service.</p></div>
-      <div class="pillar"><span class="p-num">04</span><b>Home-services marketers</b><p>Roofers, HVAC, plumbers, solar, cleaning — every competitor and partner business in a service area, with phone numbers, in a spreadsheet.</p></div>
+      <div class="pillar"><span class="p-num">04</span><b>Home-services marketers</b><p>Roofers, HVAC, plumbers, solar, cleaning — competitor and partner businesses across your service area, with phone numbers, in a spreadsheet.</p></div>
+      <div class="pillar"><span class="p-num">05</span><b>Web-design &amp; SEO freelancers</b><p>Find the businesses with a phone number but a weak — or missing — website. LeadMiner&rsquo;s rating and website fields make them easy to spot in the CSV: those are your warmest web-design and SEO prospects.</p></div>
     </div>
   </section>
 
@@ -79,50 +82,83 @@
       <h2>A full city pull, not the first 60 results</h2>
     </div>
     <div class="pillars">
-      <div class="pillar"><span class="p-num">01</span><b>Single search</b><p>Type a keyword and a location (&ldquo;Real estate agents | Troy, MI&rdquo;) and get a CSV of every matching business: name, category, rating, review count, address, phone, website.</p></div>
+      <div class="pillar"><span class="p-num">01</span><b>Single search</b><p>Type a keyword and a location (&ldquo;Real estate agents | Troy, MI&rdquo;) and get a CSV of matching businesses: name, category, rating, review count, address, phone, website. A single Google query returns up to 60 results — use deep sweep to go past that.</p></div>
       <div class="pillar"><span class="p-num">02</span><b>Bulk mode</b><p>Paste a list, one <i>keyword | location</i> per line, and mine a whole territory in one run.</p></div>
-      <div class="pillar"><span class="p-num">03</span><b>Grid deep sweep</b><p>A single Google search stops at about 60 results. Deep sweep divides the map into a grid and searches each cell, so a full city pull returns hundreds of leads instead of the first 60.</p></div>
-      <div class="pillar"><span class="p-num">04</span><b>Persistent dedup database</b><p>Every mined lead is remembered. Run the same search next month and duplicates are skipped automatically — you never pay for the same lead twice.</p></div>
+      <div class="pillar"><span class="p-num">03</span><b>Grid deep sweep</b><p>A single Google search stops at about 60 results. Deep sweep divides the map into a grid and searches each cell, so a full city pull returns hundreds of leads instead of the first 60 — coverage depends on Google&rsquo;s listings for that area, so a sparse or rural pull can still come back under 60 total.</p></div>
+      <div class="pillar"><span class="p-num">04</span><b>Persistent dedup database</b><p>Every mined lead is remembered. Run the same search next month and duplicates are removed automatically, so re-runs only add new businesses to your CSV.</p></div>
       <div class="pillar"><span class="p-num">05</span><b>Streaming CSV</b><p>Rows are written to the file as they arrive, not at the end. Stop a run at any point and everything mined so far is already saved.</p></div>
-      <div class="pillar"><span class="p-num">06</span><b>Your data stays yours</b><p>The app runs entirely on your machine. Your API key, your searches, and your CSVs never pass through us.</p></div>
+      <div class="pillar"><span class="p-num">06</span><b>Your data stays yours</b><p>The app runs entirely on your machine. Your API key, your searches, and your CSVs never pass through us. Google processes your searches under your own Google Cloud account.</p></div>
     </div>
+
+    <h3 class="table-title">Exactly what&rsquo;s in the CSV — 9 columns</h3>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead><tr><th>Column</th><th>What it is</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td><b>Name</b></td><td>The business name as listed on Google</td><td>Google Places API</td></tr>
+          <tr><td><b>Category</b></td><td>The business&rsquo;s primary category (e.g. Dentist, Plumber)</td><td>Google Places API</td></tr>
+          <tr><td><b>Rating</b></td><td>Star rating (e.g. 4.8)</td><td>Google Places API</td></tr>
+          <tr><td><b>Reviews</b></td><td>Number of Google reviews</td><td>Google Places API</td></tr>
+          <tr><td><b>Address</b></td><td>Full formatted street address</td><td>Google Places API</td></tr>
+          <tr><td><b>Phone</b></td><td>Phone number, normalized to international format</td><td>Google Places API</td></tr>
+          <tr><td><b>Website</b></td><td>The business&rsquo;s website URL, when it has one</td><td>Google Places API</td></tr>
+          <tr><td><b>Email</b></td><td>The email address the business itself publishes on its own website (homepage plus up to two likely contact pages). Roughly half of website-owning businesses publish one; the rest get an empty cell. Nothing is guessed, and no third-party lookup service is used.</td><td>The business&rsquo;s own website</td></tr>
+          <tr><td><b>Search Location</b></td><td>The location you searched, so bulk runs stay traceable row by row</td><td>Your search</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="updates-note"><strong>What&rsquo;s not in the CSV:</strong> contact names or job titles, social profiles, and owner details — Google&rsquo;s API doesn&rsquo;t provide them, and this tool doesn&rsquo;t pretend to. <a href="assets/sample-output.csv" download>Download a 50-row sample CSV</a> (example businesses, formatted exactly as the app exports) and see the real columns before you spend anything.</p>
   </section>
 
   <section id="math">
     <div class="sec-head">
       <span class="sec-label">03 / The math</span>
       <h2>Stop renting your own leads</h2>
-      <p class="sub">Per-result lead services rent you your own leads. LeadMiner X sits on the official API instead — one purchase, and your only ongoing cost is Google&rsquo;s raw API rate on your key.</p>
+      <p class="sub">Per-result lead services rent you your own leads. LeadMiner X sits on the official API instead — one purchase, and your only ongoing cost is Google&rsquo;s raw API rate on your key. The rate works per <em>request</em>, not per lead: each request returns up to 20 leads, and Google gives you the first 1,000 requests every month free.</p>
     </div>
     <article class="card featured">
       <div class="feat-body">
         <span class="tag live">The comparison</span>
         <h3>Metered service vs. owning the tool</h3>
-        <p>Outscraper, the best-known per-result service, charges <strong>$3 per 1,000 records</strong> (first 500 a month free) — and that&rsquo;s every run, forever. Re-run the same city next quarter for a fresh list and you pay for the same businesses again. The other route — scraping Google Maps directly — violates Google&rsquo;s terms and breaks every time they change the page.</p>
+        <p>Outscraper, the best-known per-result service, charges <strong>$3 per 1,000 records</strong> (first 500 a month free) — and that&rsquo;s every run, forever. Re-run the same city next quarter for a fresh list and you pay for the same businesses again. The other route — scraping Google Maps directly — violates Google&rsquo;s terms and breaks every time they change the page. (Using LeadMiner X doesn&rsquo;t make every downstream use compliant by itself: you&rsquo;re responsible for using exported data in line with Google&rsquo;s terms and the laws that apply to your outreach, same as any list you buy or build.)</p>
         <div class="chips">
           <span class="chip-fact">Outscraper: $28.50 per 10,000-record pull</span>
-          <span class="chip-fact">$342 a year at that pace, monthly</span>
-          <span class="chip-fact">LeadMiner: ~$1.75 per 1,000 leads past the free allotment</span>
+          <span class="chip-fact">LeadMiner X: ~$17.50 per 10,000 leads past the free allotment</span>
+          <span class="chip-fact">Break-even: ~52,000 metered records — about five 10k pulls</span>
         </div>
         <p style="margin-top:14px">Prices checked against Google&rsquo;s Maps Platform pricing list and Outscraper&rsquo;s published rates on Nov 3, 2026. Google sets its own prices and can change them; the app doesn&rsquo;t mark them up by a cent.</p>
       </div>
       <div class="feat-side" aria-hidden="true">
         <div class="sun-orb"></div>
         <div class="feat-stats">
-          <div><b>~20,000</b><span>Leads/mo in the free allotment</span></div>
-          <div><b>$0.002</b><span>Per lead after that</span></div>
+          <div><b>Up to ~20,000</b><span>Leads/mo in the free allotment — if every free request returns 20 unique businesses</span></div>
+          <div><b>$35</b><span>Per 1,000 API requests past the free allotment</span></div>
           <div><b>$0</b><span>Cut taken by the app</span></div>
         </div>
       </div>
     </article>
+
+    <h3 class="table-title">Side by side, at real volumes</h3>
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead><tr><th>Leads pulled</th><th>Outscraper (metered, every run)</th><th>LeadMiner X (one-time $149 + Google)</th></tr></thead>
+        <tbody>
+          <tr><td><b>1,000</b></td><td>$1.50 — first 500 free, then $3 per 1,000</td><td>$149 once + $0 to Google (inside the free allotment)</td></tr>
+          <tr><td><b>10,000</b></td><td>$28.50 per pull — and again on every re-run</td><td>$149 once + $0 to Google (inside the free allotment)</td></tr>
+          <tr><td><b>50,000</b></td><td>$148.50 per pull</td><td>$149 once + ~$52.50 to Google (30,000 leads past the free allotment, at full pages)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="updates-note">LeadMiner X figures assume full pages (20 leads per request) for the Google-cost math; partial pages and duplicates mean real pulls land somewhat higher per lead. After roughly 52,000 metered records — about five 10,000-record pulls — the $149 license has paid for itself against Outscraper&rsquo;s meter, and every pull after that is just Google&rsquo;s raw rate.</p>
   </section>
 
   <section id="api-key">
     <div class="sec-head">
       <span class="sec-label">04 / Your API key</span>
       <h2>Bring your own key — that&rsquo;s the whole point</h2>
-      <p class="sub">This is a bring-your-own-key tool. That&rsquo;s deliberate — it&rsquo;s why there&rsquo;s no per-result fee.</p>
+      <p class="sub">This is a bring-your-own-key tool. That&rsquo;s deliberate — it&rsquo;s why there&rsquo;s no per-result fee. No invented stopwatch here: the in-app wizard walks you through setup step by step and tests your key before you mine — most people are running in a few minutes.</p>
     </div>
+    <p class="key-checklist"><strong>Get your key (about a minute once your account exists):</strong> 1) Open <a href="https://console.cloud.google.com/" rel="noopener">Google Cloud Console</a> and create a project. 2) Enable billing on the project (required even for the free allotment). 3) APIs &amp; Services &rarr; Library: enable <strong>Places API (New)</strong>. 4) APIs &amp; Services &rarr; Credentials: create an API key and restrict it to the Places API — Google&rsquo;s own walkthrough is on <a href="https://developers.google.com/maps/documentation/places/web-service/get-api-key" rel="noopener">Google&rsquo;s API key page</a>. 5) Paste the key into LeadMiner X and hit <strong>Test my key</strong>. <strong>Set a Google Cloud budget alert</strong> on the project while you&rsquo;re there — it takes a few seconds and means Google emails you before spend ever surprises you.</p>
     <ol class="pipeline">
       <li>
         <div class="pipe-main"><strong>Create a free Google Cloud account</strong><span class="chip">Step 1</span></div>
@@ -130,7 +166,7 @@
       </li>
       <li>
         <div class="pipe-main"><strong>Follow the in-app setup wizard</strong><span class="chip">Step 2</span></div>
-        <p>The wizard walks you through the key step by step and tests it before you mine anything. Most people are running in a few minutes.</p>
+        <p>The wizard walks you through the key step by step and tests it before you mine anything.</p>
       </li>
       <li>
         <div class="pipe-main"><strong>Your key stays on your machine</strong><span class="chip">Step 3</span></div>
@@ -138,10 +174,10 @@
       </li>
       <li>
         <div class="pipe-main"><strong>What it costs you</strong><span class="chip">The rate</span></div>
-        <p>Because LeadMiner requests phone, website, rating, and review count, Google bills its requests at the Text Search Enterprise rate — <strong>1,000 requests free per month, then $35 per 1,000 requests</strong>. Each request returns up to 20 leads, so your first ~1,000 requests each month cost $0 (up to ~20,000 leads), and every 1,000 leads after that cost about $1.75 — paid to Google, not us. LeadMiner adds nothing on top.</p>
+        <p>Because LeadMiner requests phone, website, rating, and review count, Google bills its requests at the Text Search Enterprise rate — <strong>1,000 requests free per month, then $35 per 1,000 requests</strong>. Each request returns up to 20 leads, so your first ~1,000 requests each month cost $0 (up to ~20,000 leads, if every request returns 20 unique businesses), and past the free allotment the cost works out to about $1.75 per 1,000 leads when pages come back full — paid to Google, not us. LeadMiner adds nothing on top.</p>
       </li>
     </ol>
-    <p class="updates-note">What the API does <strong>not</strong> provide: email addresses. Google doesn&rsquo;t return them, and this tool doesn&rsquo;t pretend to. You get the business&rsquo;s phone and website — the contact points the business itself publishes.</p>
+    <p class="updates-note">What the API does <strong>not</strong> provide: email addresses. Google doesn&rsquo;t return them, and this tool doesn&rsquo;t pretend to. So LeadMiner X reads each business&rsquo;s own website and adds the address the business itself publishes — that&rsquo;s the Email column above. Between the phone number, the website, and that published email, you have the contact points the business itself puts out for customers: use them for calls, walk-ins, and contact-form and email outreach.</p>
   </section>
 
   <section id="pricing">
@@ -152,24 +188,35 @@
     <div class="card">
       <div class="pricing">
         <div class="price-main">
-          <b>LeadMiner X v3</b>
+          <b>LeadMiner X v3.1.0</b>
           <span class="price-big">$149 <small>launch price</small></span>
           <span class="price-alt">Regular $199</span>
         </div>
         <div class="price-packs">
           <span class="pack">One-time payment</span>
           <span class="pack">No subscription</span>
-          <span class="pack">No per-result fees</span>
+          <span class="pack">No per-result fees to us</span>
+          <span class="pack guarantee">14-day full refund</span>
         </div>
       </div>
       <ul class="checklist" style="margin-top:18px">
-        <li><strong>Free trial included:</strong> mine your first <strong>25 leads</strong> before the license key unlocks full mining, so you can watch it work on your own territory first.</li>
-        <li><strong>All v3.x updates for life</strong> — every improvement and fix in the v3 line, no upgrade fee.</li>
-        <li><strong>No monthly cap</strong> — the limit is your own API usage, and you control it. A metered service charges $28.50 for a single 10,000-record pull and bills you again on every re-run; LeadMiner pays for itself against that in the first month.</li>
+        <li><strong>Download the free trial first:</strong> 25 leads, no card to us; buy the key only if it works on your territory.</li>
+        <li><strong>All v3.x updates included</strong> — every improvement and fix in the v3 line, no upgrade fee within v3.</li>
+        <li><strong>No LeadMiner X cap or per-result fee</strong> — you control spend in your own Google account. A metered service charges $28.50 for a single 10,000-record pull and bills you again on every re-run; LeadMiner X pays for itself after ~52,000 metered records — about five 10k pulls.</li>
+        <li><strong>License:</strong> install it on your own machines for your own business use; not for resale, sharing, or running a list-selling service for third parties.</li>
+        <li><strong>Earn 30% promoting LeadMiner X:</strong> our Gumroad affiliate program pays 30% on every sale you refer — <a href="https://milatech.gumroad.com/l/leadminerx">join via the product page on Gumroad</a>.</li>
+      </ul>
+      <h3 class="table-title">What&rsquo;s in the download</h3>
+      <ul class="checklist">
+        <li><strong>LeadMinerX.exe</strong> — the Windows app, ~16 MB, delivered as a ZIP from Gumroad (unzip it and double-click). Windows may show a SmartScreen prompt on first run — the app isn&rsquo;t code-signed yet; click <em>More info</em> &rarr; <em>Run anyway</em>.</li>
+        <li><strong>Your license key</strong>, delivered by email from Gumroad at checkout.</li>
+        <li><strong>In-app API key setup wizard</strong> — no separate manual needed to get started.</li>
+        <li><strong>Free trial mode</strong> — 25 leads included before activation.</li>
       </ul>
       <div class="btnrow" style="margin-top:24px">
         <a class="btn primary" href="https://milatech.gumroad.com/l/sgciy">Try it free — 25 leads <span class="arr">&rarr;</span></a>
         <a class="btn warm" href="https://milatech.gumroad.com/l/leadminerx">Buy LeadMiner X — $149</a>
+        <span class="guarantee-badge">14-day full refund — if it doesn&rsquo;t work on your machine or isn&rsquo;t what you expected, email us within 14 days of purchase.</span>
       </div>
     </div>
   </section>
@@ -181,16 +228,36 @@
     </div>
     <div class="grid">
       <div class="card">
+        <h3>Is this legal? Where does the data come from?</h3>
+        <p>LeadMiner X uses Google&rsquo;s official Places API — the same paid data channel Google sells to developers — with your own key on your own account. It does not scrape Google Maps or automate a browser against it (that&rsquo;s what violates Google&rsquo;s terms). You&rsquo;re responsible for using the exported data in line with Google&rsquo;s terms and the laws that apply to your outreach, same as any list you buy or build.</p>
+      </div>
+      <div class="card">
+        <h3>What do I need to run it?</h3>
+        <p>A Windows PC and a free Google Cloud account for the API key. The setup wizard inside the app walks you through the key; you don&rsquo;t need to be a developer.</p>
+      </div>
+      <div class="card">
+        <h3>How much will Google charge me, really?</h3>
+        <p>First 1,000 API requests each month are free — up to ~20,000 leads, if every request returns 20 unique businesses. Past that, $35 per 1,000 requests works out to about $1.75 per 1,000 leads when pages come back full. A typical local campaign — a few thousand leads — costs $0 in API fees in a normal month. Google requires a billing card on the account even for free usage.</p>
+      </div>
+      <div class="card">
+        <h3>What happened to the $200 credit?</h3>
+        <p>Google retired the old $200/month credit in March 2025 and replaced it with per-service free usage caps. For the tier this app uses (Text Search Enterprise), the cap is 1,000 free requests a month. Anyone still quoting you the $200 credit is working from an old price sheet.</p>
+      </div>
+      <div class="card">
+        <h3>How many computers can I install it on?</h3>
+        <p>Your license covers your own machines for your own business use. It&rsquo;s not for resale, sharing, or running a list-selling service for third parties.</p>
+      </div>
+      <div class="card">
         <h3>Does it work on Mac?</h3>
-        <p>Not natively — v3 is Windows-only. Mac users run it inside a Windows virtual machine (Parallels, VMware, UTM) and it works the same there. If a native Mac build ships, it&rsquo;ll be part of the v3.x updates your license already covers; we won&rsquo;t promise a date we can&rsquo;t keep.</p>
+        <p>Not natively — v3.1.0 is Windows-only. Mac users run it inside a Windows virtual machine (Parallels, VMware, UTM) and it works the same there. If a native Mac build ships, it&rsquo;ll be part of the v3.x updates your license already covers; we won&rsquo;t promise a date we can&rsquo;t keep. Want to hear if a Mac build ships? <a href="https://milatech.gumroad.com/l/sgciy">Grab the free trial listing on Gumroad</a> and you&rsquo;re on the list.</p>
       </div>
       <div class="card">
         <h3>Does it export emails?</h3>
-        <p>No. Google&rsquo;s API doesn&rsquo;t return email addresses. You get name, category, rating, review count, address, phone, and website — the contact details businesses publish on their listings.</p>
+        <p>Google&rsquo;s API doesn&rsquo;t return email addresses — but LeadMiner X reads each business&rsquo;s own website during the run and adds the address the business itself publishes to an Email column. Roughly half of website-owning businesses publish one; the rest get an empty cell. You also always get name, category, rating, review count, address, phone, and website — the contact details businesses publish on their listings.</p>
       </div>
       <div class="card">
         <h3>Do you see my leads, my searches, or my API key?</h3>
-        <p>No. Everything runs on your machine: your key is stored locally, searches go straight from your computer to Google, and CSVs are written to your disk. There is no LeadMiner server in the middle collecting anything.</p>
+        <p>No. Everything runs on your machine: your key is stored locally, searches go straight from your computer to Google, and CSVs are written to your disk. There is no LeadMiner server in the middle collecting anything. Google processes your searches under your own Google Cloud account.</p>
       </div>
       <div class="card">
         <h3>What&rsquo;s the refund policy?</h3>
@@ -205,10 +272,13 @@
   <div class="wrap foot-in">
     <div class="foot-brand">LeadMiner X</div>
     <p>LeadMiner X is a product of Mila Tech LLC &middot; &copy; 2026 Mila Tech LLC &middot; A Delaware limited liability company &middot; Metro Detroit, Michigan</p>
-    <p>Support: <a href="mailto:edward@milatech.tech">edward@milatech.tech</a></p>
+    <p>Support by email — setup + licensing help: <a href="mailto:edward@milatech.tech">edward@milatech.tech</a></p>
     <div class="foot-links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
       <a href="https://milatech.tech">milatech.tech</a>
       <a href="https://mila.milatech.tech">mila.milatech.tech</a>
+      <a href="https://app.milatech.tech">MILA App</a>
       <a href="https://drae.milatech.tech">drae.milatech.tech</a>
       <a href="https://owed.milatech.tech">owed.milatech.tech</a>
       <a href="https://loyal.milatech.tech">loyal.milatech.tech</a>
@@ -218,23 +288,16 @@
 
 <script>
 (function () {
-  try {
-    var el = document.querySelector("[data-vc]");
-    if (!el) return;
-    var SITE = "leadminerx";
-    var KEY = "vc-" + SITE;
-    var isHit = !sessionStorage.getItem(KEY);
-    if (isHit) sessionStorage.setItem(KEY, "1");
-    fetch("https://visits.milatech.tech" + (isHit ? "/hit" : "/count") + "?site=" + SITE)
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && typeof d.total === "number") {
-          el.querySelector("b").textContent = d.total.toLocaleString("en-US");
-          el.hidden = false;
-        }
-      })
-      .catch(function () {});
-  } catch (e) {}
+  var bar = document.getElementById("stickybar");
+  if (!bar) return;
+  function onScroll() {
+    var show = window.scrollY > 560;
+    bar.classList.toggle("show", show);
+    bar.setAttribute("aria-hidden", show ? "false" : "true");
+    bar.querySelectorAll("a").forEach(function (a) { a.tabIndex = show ? 0 : -1; });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 })();
 </script>
 </body>

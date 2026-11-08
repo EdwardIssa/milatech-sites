@@ -10,19 +10,6 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="mt-family" role="navigation" aria-label="Mila Tech sites">
-    <a class="mt-family-brand" href="https://milatech.tech">Mila Tech</a>
-    <nav class="mt-family-links">
-      <a href="https://milatech.tech" class="is-current" aria-current="true">Company</a>
-      <a href="https://mila.milatech.tech">MILA</a>
-      <a href="https://app.milatech.tech">MILA App</a>
-      <a href="https://drae.milatech.tech">DRAE</a>
-      <a href="https://owed.milatech.tech">Owed</a>
-      <a href="https://leadminerx.milatech.tech">LeadMiner X</a>
-      <a href="https://loyal.milatech.tech">Loyal</a>
-    </nav>
-    <span data-vc hidden>👁 <b style="color:#f7f5ef">…</b> <span class="mt-vc-word">visits</span></span>
-  </div>
 
 <div class="bg-fx" aria-hidden="true"></div>
 <nav>
@@ -69,7 +56,7 @@
         <span class="tag">MILA</span>
         <h3>MILA for Brands</h3>
         <p>Sponsored polls and live sentiment reporting from MILA&rsquo;s real-time audience — ask the crowd a question and get a breakdown you can act on.</p>
-        <div class="btnrow left"><button class="btn ghost sm" type="button" data-set-segment="mila-brands">Use this topic <span class="arr">&rarr;</span></button> <a class="btn ghost sm" href="https://mila.milatech.tech">mila.milatech.tech</a></div>
+        <div class="btnrow left"><button class="btn ghost sm" type="button" data-set-segment="mila-brands">Use this topic <span class="arr">&rarr;</span></button> <a class="btn ghost sm" href="brands.html">MILA for Brands</a></div>
       </article>
       <article class="card">
         <span class="tag">Owed</span>
@@ -143,7 +130,7 @@
         <div>
           <button class="btn primary" type="submit" id="lead-submit">Send inquiry <span class="arr">&rarr;</span></button>
         </div>
-        <p class="form-note">We use this only to reply. No list-selling, no spam. Prefer email? Write to <a href="mailto:edward@milatech.tech">edward@milatech.tech</a>.</p>
+        <p class="form-note">Privacy: your submission is stored in our lead system so we can reply to your inquiry, kept while the inquiry is active (generally no longer than three years after last contact), seen only by Mila Tech, and never sold or added to a marketing list — full details in our <a href="privacy.html">Privacy Policy</a>. Prefer email? Write to <a href="mailto:edward@milatech.tech">edward@milatech.tech</a>.</p>
       </form>
 
       <div class="form-success" id="lead-success" hidden>
@@ -162,7 +149,8 @@
     <div class="sec-head">
       <span class="sec-label">03 / Direct routes</span>
       <h2>Looking for a product instead?</h2>
-      <p class="sub">Product support and product-specific help live with each product: <a href="https://mila.milatech.tech">MILA</a> for the polling app and its live beta at <a href="https://app.milatech.tech">app.milatech.tech</a>, <a href="https://owed.milatech.tech">Owed</a> for money recovery and its enterprise page, and <a href="https://drae.milatech.tech">DRAE</a> for the governance library, its walkthrough, and its sale details. Company-level questions — partnerships, pilots, press, and business inquiries — belong on this page, at <a href="mailto:edward@milatech.tech">edward@milatech.tech</a>, and nowhere else needs to be guessed. Mila Tech LLC is a Delaware limited liability company operated from Troy, in Metro Detroit, Michigan, and every route above reaches the same small, builder-led team that ships the products.</p>
+      <p class="sub">Product support and product-specific help live with each product: <a href="https://mila.milatech.tech">MILA</a> for the polling app and its live beta at <a href="https://app.milatech.tech">app.milatech.tech</a>, <a href="https://owed.milatech.tech">Owed</a> for money recovery and its enterprise page, and <a href="https://drae.milatech.tech">DRAE</a> for the governance library, its walkthrough, and its sale details. Company-level questions — partnerships, pilots, press, and business inquiries — belong on this page, at <a href="mailto:edward@milatech.tech">edward@milatech.tech</a>, and nowhere else needs to be guessed. Mila Tech LLC is a Delaware limited liability company operated from Troy, in Metro Detroit, Michigan, and every route above reaches the same one-person, builder-led operation that ships the products.</p>
+      <p class="sub" style="margin-top:14px"><strong>Request a call:</strong> we do not run an online calendar, so a call is booked by email — write to <a href="mailto:edward@milatech.tech?subject=Call%20request">edward@milatech.tech</a> with &ldquo;Call request&rdquo; in the subject and two or three times that suit you, and we will reply by email to confirm one. The reply is the booking; business inquiries are answered within 2 business days.</p>
     </div>
   </section>
 
@@ -180,35 +168,18 @@
       <a href="about.html">About</a>
       <a href="support.html">Support</a>
       <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
       <a href="https://mila.milatech.tech">mila.milatech.tech</a>
       <a href="https://drae.milatech.tech">drae.milatech.tech</a>
       <a href="https://app.milatech.tech">app.milatech.tech</a>
       <a href="https://owed.milatech.tech">owed.milatech.tech</a>
+      <a href="https://leadminerx.milatech.tech">leadminerx.milatech.tech</a>
+      <a href="https://loyal.milatech.tech">loyal.milatech.tech</a>
     </div>
   </div>
 </footer>
 
-<script>
-(function () {
-  try {
-    var el = document.querySelector("[data-vc]");
-    if (!el) return;
-    var SITE = "company";
-    var KEY = "vc-" + SITE;
-    var isHit = !sessionStorage.getItem(KEY);
-    if (isHit) sessionStorage.setItem(KEY, "1");
-    fetch("https://visits.milatech.tech" + (isHit ? "/hit" : "/count") + "?site=" + SITE)
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && typeof d.total === "number") {
-          el.querySelector("b").textContent = d.total.toLocaleString("en-US");
-          el.hidden = false;
-        }
-      })
-      .catch(function () {});
-  } catch (e) {}
-})();
-</script>
 
 <script>
 (function () {

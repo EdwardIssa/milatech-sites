@@ -19,19 +19,6 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="mt-family" role="navigation" aria-label="Mila Tech sites">
-    <a class="mt-family-brand" href="https://milatech.tech">Mila Tech</a>
-    <nav class="mt-family-links">
-      <a href="https://milatech.tech" class="is-current" aria-current="true">Company</a>
-      <a href="https://mila.milatech.tech">MILA</a>
-      <a href="https://app.milatech.tech">MILA App</a>
-      <a href="https://drae.milatech.tech">DRAE</a>
-      <a href="https://owed.milatech.tech">Owed</a>
-      <a href="https://leadminerx.milatech.tech">LeadMiner X</a>
-      <a href="https://loyal.milatech.tech">Loyal</a>
-    </nav>
-    <span data-vc hidden>👁 <b style="color:#f7f5ef">…</b> <span class="mt-vc-word">visits</span></span>
-  </div>
 
 <div class="bg-fx" aria-hidden="true"></div>
 <nav>
@@ -55,7 +42,7 @@
   <div class="wrap page-hero">
     <div class="kicker"><span class="sun-dot"></span> Products · ML Safety</div>
     <h1>DRAE — <span class="grad">when your models disagree, something should stop.</span></h1>
-    <p class="lead">Most production ML fails quietly. The ensemble still answers, the API still returns 200, and the first sign of trouble is a customer, an auditor, or a regulator finding the bad output before you do. DRAE is a runtime governance layer that sits between your models and the world: it measures how much your models disagree with each other on every live decision, blocks outputs that cross the lines you set — fail-closed, never fail-silent — and governs what your autonomous agents are permitted to do. It is governance that runs in the request path, not in a quarterly review.</p>
+    <p class="lead">DRAE is Mila Tech&rsquo;s ML and agent governance library — a finished product with its own site. This page is the one-paragraph version.</p>
     <div class="btnrow left">
       <a class="btn primary" href="https://drae.milatech.tech">DRAE in full — demos, benchmark, plans <span class="arr">&rarr;</span></a>
       <a class="btn ghost" href="contact.html">Talk to us about a pilot</a>
@@ -64,68 +51,19 @@
 </header>
 
 <main class="wrap">
-
-  <section id="problem">
+  <section id="summary">
     <div class="sec-head">
-      <span class="sec-label">The problem</span>
-      <h2>Ensembles hide their own failure</h2>
-      <p class="sub">An ensemble exists because no single model is trustworthy everywhere. But averaging models together also averages away the most useful danger signal you have: the moments when they sharply disagree. A confident average can conceal a coin-flip underneath — two models near-certain of opposite answers produce the same bland score as two models in calm agreement. Standard monitoring watches inputs and outputs; it rarely watches the spread between the models themselves, so drift, edge cases, and adversarial inputs all present the same way: as normal traffic, until they don&rsquo;t. And when teams bolt autonomous agents onto those models, the blast radius grows — an agent doesn&rsquo;t just answer, it acts.</p>
-    </div>
-  </section>
-
-  <section id="how">
-    <div class="sec-head">
-      <span class="sec-label">How DRAE works</span>
-      <h2>Three mechanisms, one runtime layer</h2>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <span class="tag">Measure</span>
-        <h3>&omega;-Disagreement monitoring</h3>
-        <p>On every decision, DRAE computes a live disagreement score across your ensemble&rsquo;s members — not a nightly batch job, but a per-request signal you can alert on, log, and route by. Rising disagreement is the earliest honest indicator that the world has moved away from your training data: new inputs, new behavior, new failure modes. Instead of discovering drift from a complaint, you watch it arrive, with the exact decisions that carried it attached.</p>
-      </article>
-      <article class="card">
-        <span class="tag">Stop</span>
-        <h3>Fail-closed Policy Interlock</h3>
-        <p>You define the lines: disagreement ceilings, confidence floors, output policies per model, per route, per customer tier. When a live decision crosses one, the Interlock blocks it — the request fails closed to a safe default, a human queue, or a fallback model, and the block itself is logged with its reasons. Nothing degrades silently into production. The interlock is deliberately boring technology: explicit rules, evaluated in-path, with an audit trail your compliance team can actually read.</p>
-      </article>
-      <article class="card">
-        <span class="tag">Govern</span>
-        <h3>Agent Governor</h3>
-        <p>Autonomous agents get the same treatment as models, at the action layer. The Governor holds each agent&rsquo;s permissions — which tools it may call, which actions require the interlock&rsquo;s approval, which are never allowed — and enforces them at runtime rather than trusting the prompt. An agent that tries to step outside its mandate is stopped and logged, not scolded. Autonomy becomes something you grant in measured amounts, with evidence, instead of something you hope holds.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="evidence">
-    <div class="sec-head">
-      <span class="sec-label">Evidence</span>
-      <h2>Benchmarked, tested, inspectable</h2>
-      <p class="sub">DRAE ships with a reproducible benchmark (fixed seed, published methodology) that measures how the governance layer behaves when ensemble members are pushed into disagreement — what gets blocked, what gets through, and what it costs in latency. The current release, v1.1.1, passes its full test suite (22 of 22) and carries a proprietary Mila Tech LLC license. We would rather show you a benchmark you can re-run than a testimonial you can&rsquo;t. The full walkthrough video, architecture notes, and benchmark details live on the DRAE site.</p>
-    </div>
-  </section>
-
-  <section id="who">
-    <div class="sec-head">
-      <span class="sec-label">Who it&rsquo;s for</span>
-      <h2>Teams whose models make decisions that matter</h2>
-      <p class="sub">DRAE is built for ML platform teams running ensembles in production, for organizations in regulated industries — finance, insurance, healthcare — where &ldquo;the model said so&rdquo; is not an acceptable audit answer, and for teams putting autonomous agents to work who need the agent&rsquo;s authority written down and enforced somewhere other than its system prompt. If a wrong model output costs you money, customers, or a conversation with a regulator, DRAE is the layer that makes sure you hear about it first — from your own systems, in time to act.</p>
-    </div>
-  </section>
-
-  <section id="plans">
-    <div class="sec-head">
-      <span class="sec-label">Plans</span>
-      <h2>Straightforward pricing</h2>
-      <p class="sub">Team is $49/mo, Enterprise $149/mo, and Regulated $299/mo, with annual billing at ten times the monthly rate. A paid pilot runs $500, credited for 90 days. Subscriptions cancel anytime with a 30-day wind-down, and there is no DRM phoning home — DRAE is a library and a runtime you host, governed by a plain proprietary license. DRAE is also available for outright acquisition; the full details, demo, and contact path are on the DRAE site.</p>
+      <span class="sec-label">Summary</span>
+      <h2>DRAE, in one paragraph</h2>
+      <p class="sub">DRAE is a working Python library that governs ML ensembles and AI agents by expert disagreement: it measures how much your models disagree on each live decision, re-weights failing models, and halts execution fail-closed when the ensemble stops agreeing with itself — with an audit trail your compliance team can read. It ships with tests and a reproducible benchmark, and it is offered for acquisition at $2,500 with full IP assignment (subscription plans for teams that license it instead are published on its own site). This page is a summary; the full offer — demos, benchmark, plans, and the sale details — lives on DRAE&rsquo;s own site. Status as of Nov 2026.</p>
     </div>
     <div class="btnrow left">
-      <a class="btn primary" href="https://drae.milatech.tech">See plans and the demo <span class="arr">&rarr;</span></a>
-      <a class="btn ghost" href="insights-model-drift-governance.html">Read: drift is a governance problem</a>
+      <a class="btn primary" href="https://drae.milatech.tech">drae.milatech.tech — the full DRAE site <span class="arr">&rarr;</span></a>
+      <a class="btn ghost" href="products.html">All products</a>
     </div>
   </section>
-
 </main>
+
 
 <footer>
   <div class="wrap foot-in">
@@ -139,34 +77,17 @@
       <a href="about.html">About</a>
       <a href="support.html">Support</a>
       <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
       <a href="https://mila.milatech.tech">mila.milatech.tech</a>
       <a href="https://drae.milatech.tech">drae.milatech.tech</a>
       <a href="https://app.milatech.tech">app.milatech.tech</a>
       <a href="https://owed.milatech.tech">owed.milatech.tech</a>
+      <a href="https://leadminerx.milatech.tech">leadminerx.milatech.tech</a>
+      <a href="https://loyal.milatech.tech">loyal.milatech.tech</a>
     </div>
   </div>
 </footer>
 
-<script>
-(function () {
-  try {
-    var el = document.querySelector("[data-vc]");
-    if (!el) return;
-    var SITE = "company";
-    var KEY = "vc-" + SITE;
-    var isHit = !sessionStorage.getItem(KEY);
-    if (isHit) sessionStorage.setItem(KEY, "1");
-    fetch("https://visits.milatech.tech" + (isHit ? "/hit" : "/count") + "?site=" + SITE)
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && typeof d.total === "number") {
-          el.querySelector("b").textContent = d.total.toLocaleString("en-US");
-          el.hidden = false;
-        }
-      })
-      .catch(function () {});
-  } catch (e) {}
-})();
-</script>
 </body>
 </html>

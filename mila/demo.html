@@ -33,19 +33,6 @@
 </style>
 </head>
 <body>
-  <div class="mt-family" role="navigation" aria-label="Mila Tech sites">
-    <a class="mt-family-brand" href="https://milatech.tech">Mila Tech</a>
-    <nav class="mt-family-links">
-      <a href="https://milatech.tech">Company</a>
-      <a href="https://mila.milatech.tech" class="is-current" aria-current="true">MILA</a>
-      <a href="https://app.milatech.tech">MILA App</a>
-      <a href="https://drae.milatech.tech">DRAE</a>
-      <a href="https://owed.milatech.tech">Owed</a>
-      <a href="https://leadminerx.milatech.tech">LeadMiner X</a>
-      <a href="https://loyal.milatech.tech">Loyal</a>
-    </nav>
-    <span data-vc hidden>👁 <b style="color:#f7f5ef">…</b> <span class="mt-vc-word">visits</span></span>
-  </div>
 
 <nav>
   <div class="wrap">
@@ -55,7 +42,7 @@
       <a href="features.html">Features</a>
       <a href="pricing.html">Pricing</a>
       <a href="faq.html">FAQ</a>
-      <a href="index.html#bug-tracker">Fix Tracker</a>
+      <a href="fix-tracker.html">Fix Tracker</a>
       <a class="active" href="demo.html">Demo</a>
       <a href="feedback.html">Feedback</a>
       <a class="cta" href="https://app.milatech.tech">Open the app</a>
@@ -109,7 +96,7 @@
       </div>
 
       <div class="poll-meta">
-        <span><span class="live-dot">●</span> <span id="votersNow">128</span> voting now</span>
+        <span><span class="live-dot">●</span> Simulated — <span id="votersNow">128</span> is an illustrative number, not live voters</span>
         <span><strong id="totalVotes">0</strong> total votes</span>
       </div>
 
@@ -127,7 +114,7 @@
     <div class="grid">
       <div class="card"><h3>⚡ Real-time results</h3><p>Results move the instant votes land. No refresh, no waiting — the numbers are alive.</p></div>
       <div class="card"><h3>⏱ Flash polls</h3><p>1-minute and 5-minute polls turn any hot take into a sixty-second event.</p></div>
-      <div class="card"><h3>🪙 Stakes &amp; rewards</h3><p>In the app, votes earn coins and leaderboard points. Winning a flash poll pays.</p></div>
+      <div class="card"><h3>🪙 Stakes &amp; rewards</h3><p>In the app, votes earn coins and leaderboard points. Winning a flash poll pays out in coins and points — coins have no cash value.</p></div>
     </div>
   </div>
 </section>
@@ -149,6 +136,7 @@
       <div><h4>MILA</h4><a href="features.html">Features</a><a href="demo.html">Demo</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div>
       <div><h4>Company</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="feedback.html">Feedback</a><a href="mailto:edward@milatech.tech">Contact</a></div>
       <div><h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
+      <div><h4>Mila Tech family</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="https://drae.milatech.tech">DRAE</a><a href="https://owed.milatech.tech">Owed</a><a href="https://leadminerx.milatech.tech">LeadMiner X</a><a href="https://loyal.milatech.tech">Loyal</a></div>
     </div>
     <div class="fbottom"><span>© 2026 Mila Tech LLC. All rights reserved.</span><span>Metro Detroit, Michigan</span></div>
   </div>
@@ -226,27 +214,6 @@
       btn.setAttribute('aria-label','Open menu');
     });
   });
-})();
-</script>
-<script>
-(function () {
-  try {
-    var el = document.querySelector("[data-vc]");
-    if (!el) return;
-    var SITE = "mila";
-    var KEY = "vc-" + SITE;
-    var isHit = !sessionStorage.getItem(KEY);
-    if (isHit) sessionStorage.setItem(KEY, "1");
-    fetch("https://visits.milatech.tech" + (isHit ? "/hit" : "/count") + "?site=" + SITE)
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && typeof d.total === "number") {
-          el.querySelector("b").textContent = d.total.toLocaleString("en-US");
-          el.hidden = false;
-        }
-      })
-      .catch(function () {});
-  } catch (e) {}
 })();
 </script>
 </body>

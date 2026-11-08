@@ -20,19 +20,6 @@
 </style>
 </head>
 <body>
-  <div class="mt-family" role="navigation" aria-label="Mila Tech sites">
-    <a class="mt-family-brand" href="https://milatech.tech">Mila Tech</a>
-    <nav class="mt-family-links">
-      <a href="https://milatech.tech">Company</a>
-      <a href="https://mila.milatech.tech" class="is-current" aria-current="true">MILA</a>
-      <a href="https://app.milatech.tech">MILA App</a>
-      <a href="https://drae.milatech.tech">DRAE</a>
-      <a href="https://owed.milatech.tech">Owed</a>
-      <a href="https://leadminerx.milatech.tech">LeadMiner X</a>
-      <a href="https://loyal.milatech.tech">Loyal</a>
-    </nav>
-    <span data-vc hidden>👁 <b style="color:#f7f5ef">…</b> <span class="mt-vc-word">visits</span></span>
-  </div>
 
 <nav>
   <div class="wrap">
@@ -42,7 +29,7 @@
       <a href="features.html">Features</a>
       <a href="pricing.html">Pricing</a>
       <a href="faq.html">FAQ</a>
-      <a href="index.html#bug-tracker">Fix Tracker</a>
+      <a href="fix-tracker.html">Fix Tracker</a>
       <a href="demo.html">Demo</a>
       <a class="active" href="feedback.html">Feedback</a>
       <a class="cta" href="https://app.milatech.tech">Open the app</a>
@@ -56,7 +43,7 @@
     <div>
       <div class="kicker">Feedback</div>
       <h1>Tell us what's<br><span class="hl">on your mind.</span></h1>
-      <p class="lead">Found a bug, want a feature, or just want to talk polls? We read everything.</p>
+      <p class="lead">Found a bug, want a feature, or just want to talk polls? We read everything. Reports are triaged into the public <a href="fix-tracker.html">Fix Tracker</a>, where fixes are logged round by round — so the status of your report is something you can check, not something you have to ask about.</p>
     </div>
   </div>
 </header>
@@ -100,6 +87,7 @@
       <div><h4>MILA</h4><a href="features.html">Features</a><a href="demo.html">Demo</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div>
       <div><h4>Company</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="feedback.html">Feedback</a><a href="mailto:edward@milatech.tech">Contact</a></div>
       <div><h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
+      <div><h4>Mila Tech family</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="https://drae.milatech.tech">DRAE</a><a href="https://owed.milatech.tech">Owed</a><a href="https://leadminerx.milatech.tech">LeadMiner X</a><a href="https://loyal.milatech.tech">Loyal</a></div>
     </div>
     <div class="fbottom"><span>© 2026 Mila Tech LLC. All rights reserved.</span><span>Metro Detroit, Michigan</span></div>
   </div>
@@ -133,27 +121,6 @@ document.getElementById('fbForm').addEventListener('submit',function(e){
       btn.setAttribute('aria-label','Open menu');
     });
   });
-})();
-</script>
-<script>
-(function () {
-  try {
-    var el = document.querySelector("[data-vc]");
-    if (!el) return;
-    var SITE = "mila";
-    var KEY = "vc-" + SITE;
-    var isHit = !sessionStorage.getItem(KEY);
-    if (isHit) sessionStorage.setItem(KEY, "1");
-    fetch("https://visits.milatech.tech" + (isHit ? "/hit" : "/count") + "?site=" + SITE)
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && typeof d.total === "number") {
-          el.querySelector("b").textContent = d.total.toLocaleString("en-US");
-          el.hidden = false;
-        }
-      })
-      .catch(function () {});
-  } catch (e) {}
 })();
 </script>
 </body>
