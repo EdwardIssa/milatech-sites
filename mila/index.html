@@ -171,10 +171,16 @@
       <span class="bt-stat">Nov 4: <b>5 more fixed</b></span>
       <span class="bt-stat">Nov 5: <b>1 more fixed</b></span>
       <span class="bt-stat">Nov 6: <b>1 more fixed</b></span>
+      <span class="bt-stat">Nov 7: <b>2 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Nov 6, 2026</h3>
+      <h3 class="bt-group">Latest — Nov 7, 2026</h3>
+      <ul class="bt-list">
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">When a poll&rsquo;s live chat gained saved history and reactions, the room checks that had just been added were quietly lost — someone could again post or react in the chat of a followers-only poll they could not even see, keep posting in a poll that had already closed or expired, or post in the chat of someone who had blocked them, and a banned account was only stopped by accident; sending and reacting in a poll&rsquo;s chat now check all of that before anything is saved — the poll has to exist and still be open, you have to be able to see it, and blocks and bans stop a chat message the same way they already stopped votes and comments</span><span class="bt-pill fixed">Fixed</span></li>
+        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Tapping a vote could leave it hanging forever — on a stalled connection the vote request never finished, so the option you tapped faded away, the poll sat on &ldquo;Submitting&hellip;&rdquo; and your vote could already be counted in the background while the screen still showed zero, or never land at all; a vote now gets a limited time to finish, and if the answer gets lost the app checks whether your vote actually landed before deciding — a landed vote shows its real results, and one that did not land puts your option back so you can tap again, and the same protection now covers the other vote formats and guest voting too</span><span class="bt-pill fixed">Fixed</span></li>
+      </ul>
+      <h3 class="bt-group">Nov 6, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sending a message in a poll&rsquo;s live chat could show your own message twice — the copy that came back from the server was added on top of the one already on your screen, so a single send looked like a duplicate post; each chat message is now shown only once, however it arrives</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
