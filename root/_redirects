@@ -1,0 +1,6 @@
+# milatech.tech/fix-tracker lives on the MILA subdomain (the tracker is a
+# MILA product page). Added 2026-11-08: the root URL 404'd while links and
+# people kept landing on it. Canonical tracker:
+/fix-tracker https://mila.milatech.tech/fix-tracker.html 301
+/fix-tracker/ https://mila.milatech.tech/fix-tracker.html 301
+/fix-tracker.html https://mila.milatech.tech/fix-tracker.html 301
