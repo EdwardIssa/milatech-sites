@@ -49,6 +49,7 @@
         <a class="btn primary" href="https://app.milatech.tech">Vote now — no signup</a>
         <a class="btn ghost" href="features.html">See the features</a>
       </div>
+      <p class="fine">Beta status: MILA is in public beta on the web — purchases are paused and nobody is charged today; the iOS app is in TestFlight internal testing.</p>
       <p class="fine">Free on the web · The Daily One, every day · Group-link polls · Ages 13+</p>
     </div>
     <div>
@@ -139,43 +140,9 @@
   <div class="wrap">
     <h2>Beta Bug Hunt — Public Fix Tracker</h2>
     <p class="sub">MILA is in public beta on the web — no invite needed. We hunt bugs in rounds, fix them, and post the results in the open. The full tracker — every round, every dated entry — now has its own page; this is the summary.</p>
-    <p class="sub"><strong>Current status:</strong> MILA is in public beta on the web — vote free at app.milatech.tech, no invite or signup needed. The iOS app (build 9) is in TestFlight internal testing; the public TestFlight link is pending Apple beta review. Bug-hunt rounds 1–7 are complete: 447+ issues found and fixed, including 100% of critical and high-severity issues. Status as of November 8, 2026.</p>
-    <p class="bt-totals">Rounds 1–7 complete · 447+ issues found · every critical and high fixed · checks now run every 12 hours</p>
-    <div class="bt-stats">
-      <span class="bt-stat">Round 1: <b>65 found</b></span>
-      <span class="bt-stat">Round 2: <b>74 found</b></span>
-      <span class="bt-stat">Round 3: <b>101 found</b></span>
-      <span class="bt-stat">Round 4: <b>82 found</b></span>
-      <span class="bt-stat">Round 5: <b>36 found</b></span>
-      <span class="bt-stat">Round 6: <b>34 found</b></span>
-      <span class="bt-stat">Round 7: <b>58 found</b></span>
-      <span class="bt-stat">Oct 15–16: <b>19 more fixed</b></span>
-      <span class="bt-stat">Oct 17: <b>10 more fixed</b></span>
-      <span class="bt-stat">Oct 18: <b>26 more fixed</b></span>
-      <span class="bt-stat">Oct 19: <b>26 more fixed</b></span>
-      <span class="bt-stat">Oct 20: <b>40 more fixed</b></span>
-      <span class="bt-stat">Oct 21: <b>5 more fixed</b></span>
-      <span class="bt-stat">Oct 22: <b>8 more fixed</b></span>
-      <span class="bt-stat">Oct 23: <b>18 more fixed</b></span>
-      <span class="bt-stat">Oct 24: <b>2 more fixed</b></span>
-      <span class="bt-stat">Oct 26: <b>1 more fixed</b></span>
-      <span class="bt-stat">Oct 27: <b>10 more fixed</b></span>
-      <span class="bt-stat">Oct 28: <b>4 more fixed</b></span>
-      <span class="bt-stat">Oct 29: <b>3 more fixed</b></span>
-      <span class="bt-stat">Nov 1: <b>3 more fixed</b></span>
-      <span class="bt-stat">Nov 2: <b>3 more fixed</b></span>
-      <span class="bt-stat">Nov 3: <b>10 more fixed</b></span>
-      <span class="bt-stat">Nov 4: <b>5 more fixed</b></span>
-      <span class="bt-stat">Nov 5: <b>1 more fixed</b></span>
-      <span class="bt-stat">Nov 6: <b>1 more fixed</b></span>
-      <span class="bt-stat">Nov 7: <b>2 more fixed</b></span>
-      <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
-    </div>
-    <h3 class="bt-group">Latest — Nov 7, 2026</h3>
-    <ul class="bt-list">
-        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">When a poll&rsquo;s live chat gained saved history and reactions, the room checks that had just been added were quietly lost — someone could again post or react in the chat of a followers-only poll they could not even see, keep posting in a poll that had already closed or expired, or post in the chat of someone who had blocked them, and a banned account was only stopped by accident; sending and reacting in a poll&rsquo;s chat now check all of that before anything is saved — the poll has to exist and still be open, you have to be able to see it, and blocks and bans stop a chat message the same way they already stopped votes and comments</span><span class="bt-pill fixed">Fixed</span></li>
-        <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Tapping a vote could leave it hanging forever — on a stalled connection the vote request never finished, so the option you tapped faded away, the poll sat on &ldquo;Submitting&hellip;&rdquo; and your vote could already be counted in the background while the screen still showed zero, or never land at all; a vote now gets a limited time to finish, and if the answer gets lost the app checks whether your vote actually landed before deciding — a landed vote shows its real results, and one that did not land puts your option back so you can tap again, and the same protection now covers the other vote formats and guest voting too</span><span class="bt-pill fixed">Fixed</span></li>
-    </ul>
+    <p class="sub"><strong>Current status:</strong> MILA is in public beta on the web — vote free at app.milatech.tech, no invite or signup needed. The iOS app (build 9) is in TestFlight internal testing; the public TestFlight link is pending Apple beta review. Bug-hunt rounds 1–7 are complete: 647 issues found and fixed, including 100% of critical and high-severity issues. Status as of November 8, 2026.</p>
+    <p class="bt-totals">Rounds 1–7 complete · 647 issues found and fixed · every critical and high fixed · checks now run every 12 hours</p>
+    <p class="sub"><strong>Latest — Nov 7, 2026:</strong> poll chat gates restored and vote-timeout hardening landed — both fixed and verified live. The rounds found 450 issues on Oct 14, and the dated checks after them added 197 more fixed (647 in total); every round and every dated entry is on the Fix Tracker.</p>
     <p style="margin-top:22px"><a class="btn ghost" href="fix-tracker.html">Read the full Fix Tracker — all rounds, all entries</a></p>
   </div>
 </section>
@@ -184,7 +151,7 @@
 <section class="band">
   <div class="wrap">
     <h2>Your opinion is <span class="hl">the content.</span></h2>
-    <p>The makeover is live — vote from a link, no signup.</p>
+    <p>Public beta, live on the web — vote from a link, no signup.</p>
     <a class="btn bandbtn" href="https://app.milatech.tech">Vote now — no signup</a>
   </div>
 </section>

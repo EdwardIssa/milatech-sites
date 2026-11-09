@@ -3,125 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MILA — Feedback</title>
-<meta name="description" content="Report a bug, request a feature, or just say hello. Your feedback shapes MILA.">
+<title>MILA — Feedback has moved to the Fix Tracker</title>
+<meta name="description" content="MILA feedback is triaged into the public Fix Tracker — this page now redirects there.">
+<meta http-equiv="refresh" content="0; url=fix-tracker.html">
+<link rel="canonical" href="https://mila.milatech.tech/fix-tracker.html">
 <link rel="stylesheet" href="styles.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
-     crossorigin="anonymous"></script>
-<style>
-.form-card{max-width:620px;margin:0 auto}
-.field{margin-bottom:16px}
-.field label{display:block;font-weight:700;margin-bottom:6px}
-.field input,.field select,.field textarea{width:100%;box-sizing:border-box;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:inherit}
-.field textarea{min-height:140px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
-.direct{max-width:620px;margin:22px auto 0;text-align:center;color:var(--mut)}
-.navlinks a.active{color:var(--accent-bright)}
-</style>
 </head>
 <body>
-
-<nav>
-  <div class="wrap">
-    <a class="brand" href="index.html"><img src="logo.png" alt="MILA logo" width="32" height="32">MILA<span>.</span></a>
-    <div class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="features.html">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="fix-tracker.html">Fix Tracker</a>
-      <a href="demo.html">Demo</a>
-      <a class="active" href="feedback.html">Feedback</a>
-      <a class="cta" href="https://app.milatech.tech">Open the app</a>
-    </div>
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <div>
-      <div class="kicker">Feedback</div>
-      <h1>Tell us what's<br><span class="hl">on your mind.</span></h1>
-      <p class="lead">Found a bug, want a feature, or just want to talk polls? We read everything. Reports are triaged into the public <a href="fix-tracker.html">Fix Tracker</a>, where fixes are logged round by round — so the status of your report is something you can check, not something you have to ask about.</p>
-    </div>
-  </div>
-</header>
-
-<section>
-  <div class="wrap">
-    <div class="card form-card">
-      <form id="fbForm">
-        <div class="field">
-          <label for="fbName">Name <span style="color:var(--mut);font-weight:400">(optional)</span></label>
-          <input id="fbName" type="text" autocomplete="name" placeholder="Jane">
-        </div>
-        <div class="field">
-          <label for="fbEmail">Email <span style="color:var(--mut);font-weight:400">(optional — so we can reply)</span></label>
-          <input id="fbEmail" type="email" autocomplete="email" placeholder="jane@example.com">
-        </div>
-        <div class="field">
-          <label for="fbTopic">Topic</label>
-          <select id="fbTopic">
-            <option>Bug report</option>
-            <option>Feature request</option>
-            <option>Question</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="fbMsg">Message</label>
-          <textarea id="fbMsg" required placeholder="What should we know?"></textarea>
-        </div>
-        <button class="btn primary" type="submit" style="width:100%">Send feedback</button>
-      </form>
-    </div>
-    <p class="direct">Prefer plain email? Write to <a href="mailto:edward@milatech.tech" style="color:var(--accent-bright)">edward@milatech.tech</a>.<br>
-    <span style="font-size:.85rem">Submitting opens your email app with everything filled in — nothing is stored on our servers.</span></p>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="fgrid">
-      <div><h4>MILA</h4><a href="features.html">Features</a><a href="demo.html">Demo</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a></div>
-      <div><h4>Company</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="feedback.html">Feedback</a><a href="mailto:edward@milatech.tech">Contact</a></div>
-      <div><h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></div>
-      <div><h4>Mila Tech family</h4><a href="https://milatech.tech">Mila Tech LLC</a><a href="https://drae.milatech.tech">DRAE</a><a href="https://owed.milatech.tech">Owed</a><a href="https://leadminerx.milatech.tech">LeadMiner X</a><a href="https://loyal.milatech.tech">Loyal</a></div>
-    </div>
-    <div class="fbottom"><span>© 2026 Mila Tech LLC. All rights reserved.</span><span>Metro Detroit, Michigan</span></div>
-  </div>
-</footer>
-
-<script>
-document.getElementById('fbForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var name=document.getElementById('fbName').value.trim();
-  var email=document.getElementById('fbEmail').value.trim();
-  var topic=document.getElementById('fbTopic').value;
-  var msg=document.getElementById('fbMsg').value.trim();
-  var subject='MILA feedback — '+topic;
-  var body=(name?'Name: '+name+'\n':'')+(email?'Email: '+email+'\n':'')+'\n'+msg;
-  window.location.href='mailto:edward@milatech.tech?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-});
-</script>
-<script>
-(function(){
-  var btn=document.querySelector('.hamburger'), nav=document.querySelector('.navlinks');
-  if(!btn||!nav)return;
-  btn.addEventListener('click',function(){
-    var open=nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded',open);
-    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
-  });
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      nav.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-      btn.setAttribute('aria-label','Open menu');
-    });
-  });
-})();
-</script>
+<main class="wrap" style="padding:60px 20px">
+  <h1>Feedback has moved</h1>
+  <p>MILA feedback is triaged into the public <a href="fix-tracker.html">Fix Tracker</a>, where fixes are logged round by round — so the status of your report is something you can check, not something you have to ask about. You are being redirected there now; if it does not happen automatically, follow the link.</p>
+  <p>To report a bug or request a feature, email <a href="mailto:edward@milatech.tech">edward@milatech.tech</a> and it will be triaged into the Fix Tracker.</p>
+</main>
 </body>
 </html>

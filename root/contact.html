@@ -49,7 +49,7 @@
       <article class="card">
         <span class="tag">Services</span>
         <h3>Services — Mila Tech</h3>
-        <p>Mortgage workflow automation, ML and predictive diagnostics, or product engineering for your team. Scoped quote after a working call.</p>
+        <p>Workflow automation (mortgage operations experience), ML and predictive diagnostics, or product engineering for your team. Scoped quote after a working call.</p>
         <div class="btnrow left"><button class="btn ghost sm" type="button" data-set-segment="milatech-services">Use this topic <span class="arr">&rarr;</span></button> <a class="btn ghost sm" href="services.html">See Services</a></div>
       </article>
       <article class="card">
@@ -73,7 +73,7 @@
       <article class="card">
         <span class="tag">Press</span>
         <h3>Press</h3>
-        <p>Interviews, product background, and the builder-led story behind MILA, Owed, and DRAE — a Delaware LLC operated from Troy, Michigan, building in public with published updates and a public Fix Tracker.</p>
+        <p>Interviews, product background, and the builder-led story behind MILA, Owed, and DRAE — a Delaware LLC operated from Troy, Michigan, building in public with published updates and a public Fix Tracker. Read the <a href="index.html#updates">Ship Log</a> and the <a href="https://mila.milatech.tech/fix-tracker.html">MILA Fix Tracker</a> — both are public and dated.</p>
         <div class="btnrow left"><button class="btn ghost sm" type="button" data-set-segment="press">Use this topic <span class="arr">&rarr;</span></button></div>
       </article>
       <article class="card">
@@ -109,7 +109,8 @@
             <label for="lead-segment">Topic</label>
             <select id="lead-segment" name="segment">
               <option value="milatech-services">Services — Mila Tech</option>
-              <option value="mila-brands">MILA for Brands</option>
+              <option value="mila-brands">MILA for Brands — buy a sponsored poll run</option>
+              <option value="mila-brands-waitlist">MILA for Brands — waitlist (launch-scale runs / Sentiment API)</option>
               <option value="owed-enterprise">Owed Enterprise</option>
               <option value="loyal-early-access">LOYAL — early access</option>
               <option value="drae-pilot">DRAE — pilot / sale</option>
@@ -195,7 +196,7 @@
   }
   try {
     var q = new URLSearchParams(window.location.search).get("segment");
-    var map = { services: "milatech-services", "milatech-services": "milatech-services", "mila-brands": "mila-brands", brands: "mila-brands", "owed-enterprise": "owed-enterprise", owed: "owed-enterprise", "drae-pilot": "drae-pilot", drae: "drae-pilot", press: "press", general: "general" };
+    var map = { services: "milatech-services", "milatech-services": "milatech-services", "mila-brands": "mila-brands", brands: "mila-brands", "mila-brands-waitlist": "mila-brands-waitlist", "owed-enterprise": "owed-enterprise", owed: "owed-enterprise", "drae-pilot": "drae-pilot", drae: "drae-pilot", press: "press", general: "general" };
     if (q && map[q]) setSegment(map[q]);
   } catch (e) {}
   var cards = document.querySelectorAll("[data-set-segment]");

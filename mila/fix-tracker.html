@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MILA Fix Tracker — Beta Bug Hunt, Rounds 1–7 | MILA</title>
-<meta name="description" content="MILA&rsquo;s public Fix Tracker: bug-hunt rounds 1–7 complete, 447+ issues found and fixed, every dated entry published in the open. MILA is in public beta on the web.">
+<meta name="description" content="MILA&rsquo;s public Fix Tracker: bug-hunt rounds 1–7 complete, 647 issues found and fixed, every dated entry published in the open. MILA is in public beta on the web.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MILA">
 <meta property="og:title" content="MILA — Real opinions, in real time.">
@@ -44,7 +44,7 @@
     <div>
       <div class="kicker">Fix Tracker</div>
       <h1>Every bug we found,<br><span class="hl">published.</span></h1>
-      <p class="lead">MILA is in public beta on the web — vote free at app.milatech.tech, no invite or signup needed. The iOS app (build 9) is in TestFlight internal testing; the public TestFlight link is pending Apple beta review. Bug-hunt rounds 1–7 are complete: 447+ issues found and fixed, including 100% of critical and high-severity issues. Status as of November 8, 2026.</p>
+      <p class="lead">MILA is in public beta on the web — vote free at app.milatech.tech, no invite or signup needed. The iOS app (build 9) is in TestFlight internal testing; the public TestFlight link is pending Apple beta review. Bug-hunt rounds 1–7 are complete: 647 issues found and fixed, including 100% of critical and high-severity issues. Status as of November 8, 2026.</p>
     </div>
   </div>
 </header>
@@ -52,8 +52,9 @@
 <section id="bug-tracker" style="padding-top:40px">
   <div class="wrap">
     <h2>Beta Bug Hunt — Public Fix Tracker</h2>
-    <p class="sub">MILA is in public beta on the web — no invite needed. We hunt bugs in rounds, fix them, and post the results here in the open. Checked means fixed and verified live. Unchecked means found, on our list, and not fixed yet.</p>
-    <p class="bt-totals">Rounds 1–7 complete · 447+ issues found · every critical and high fixed · checks now run every 12 hours</p>
+    <p class="sub">We hunt bugs in rounds, fix them, and post the results here in the open. Checked means fixed and verified live. Unchecked means found, on our list, and not fixed yet. To report a bug or request a feature, email <a href="mailto:edward@milatech.tech">edward@milatech.tech</a> — reports are triaged into this tracker, so the status of your report is something you can check, not something you have to ask about.</p>
+    <p class="bt-totals">Rounds 1–7 complete · 647 issues found and fixed · every critical and high fixed · checks now run every 12 hours</p>
+    <p class="sub"><strong>How the total adds up:</strong> rounds 1–7 (all on Oct 14, 2026) found 450 issues — 65 + 74 + 101 + 82 + 36 + 34 + 58. The dated entries below (Oct 15 – Nov 7, 2026) are <strong>in addition to</strong> the round totals, not inside them: they came from the checks that kept running after the rounds closed, and they add 197 more fixed. 450 + 197 = 647 issues found and fixed. The list below shows 283 fixes individually (the round sections summarize the rest) and 6 items still open.</p>
     <div class="bt-stats">
       <span class="bt-stat">Round 1: <b>65 found</b></span>
       <span class="bt-stat">Round 2: <b>74 found</b></span>
@@ -84,21 +85,22 @@
       <span class="bt-stat">Nov 7: <b>2 more fixed</b></span>
       <span class="bt-stat">Critical/High fixed: <b>100%</b></span>
     </div>
+    <nav class="bt-jump" aria-label="Jump to a date or round" style="margin:14px 0"><strong>Jump to:</strong> <a href="#nov-7">Nov 7, 2026</a> · <a href="#nov-6">Nov 6, 2026</a> · <a href="#nov-5">Nov 5, 2026</a> · <a href="#nov-4">Nov 4, 2026</a> · <a href="#nov-3">Nov 3, 2026</a> · <a href="#nov-2">Nov 2, 2026</a> · <a href="#nov-1">Nov 1, 2026</a> · <a href="#oct-29">Oct 29, 2026</a> · <a href="#oct-28">Oct 28, 2026</a> · <a href="#oct-27">Oct 27, 2026</a> · <a href="#oct-26">Oct 26, 2026</a> · <a href="#oct-24">Oct 24, 2026</a> · <a href="#oct-23">Oct 23, 2026</a> · <a href="#oct-22">Oct 22, 2026</a> · <a href="#oct-21">Oct 21, 2026</a> · <a href="#oct-20">Oct 20, 2026</a> · <a href="#oct-19">Oct 19, 2026</a> · <a href="#oct-18">Oct 18, 2026</a> · <a href="#oct-17">Oct 17, 2026</a> · <a href="#oct-16">Oct 16, 2026</a> · <a href="#oct-15">Oct 15, 2026</a> · <a href="#rounds-oct-14">Rounds 1–7 + QA (Oct 14)</a> · <a href="#still-open">Still open</a></nav>
     <div class="bt-scroll" role="region" aria-label="Bug fix tracker list" tabindex="0">
-      <h3 class="bt-group">Latest — Nov 7, 2026</h3>
+      <h3 class="bt-group" id="nov-7">Latest — Nov 7, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">When a poll&rsquo;s live chat gained saved history and reactions, the room checks that had just been added were quietly lost — someone could again post or react in the chat of a followers-only poll they could not even see, keep posting in a poll that had already closed or expired, or post in the chat of someone who had blocked them, and a banned account was only stopped by accident; sending and reacting in a poll&rsquo;s chat now check all of that before anything is saved — the poll has to exist and still be open, you have to be able to see it, and blocks and bans stop a chat message the same way they already stopped votes and comments</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Tapping a vote could leave it hanging forever — on a stalled connection the vote request never finished, so the option you tapped faded away, the poll sat on &ldquo;Submitting&hellip;&rdquo; and your vote could already be counted in the background while the screen still showed zero, or never land at all; a vote now gets a limited time to finish, and if the answer gets lost the app checks whether your vote actually landed before deciding — a landed vote shows its real results, and one that did not land puts your option back so you can tap again, and the same protection now covers the other vote formats and guest voting too</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Nov 6, 2026</h3>
+      <h3 class="bt-group" id="nov-6">Nov 6, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sending a message in a poll&rsquo;s live chat could show your own message twice — the copy that came back from the server was added on top of the one already on your screen, so a single send looked like a duplicate post; each chat message is now shown only once, however it arrives</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Nov 5, 2026</h3>
+      <h3 class="bt-group" id="nov-5">Nov 5, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The live chat on each poll checked who you were and what you wrote, but not whether you belonged in that room — someone could post into the chat of a followers-only poll they could not even see, keep posting in a poll that had already closed or expired, post into a room for a poll that does not exist, or post in the chat of someone who had blocked them; a chat message now checks all of that before it goes through — the poll has to exist and still be open, you have to be able to see it, and blocks and bans stop a chat message the same way they already stopped votes and comments</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Nov 4, 2026</h3>
+      <h3 class="bt-group" id="nov-4">Nov 4, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll could be created already claiming a future Daily One slot for itself — and the app would then serve it as that day&rsquo;s Daily One, with its streaks and reminders attached, even though it was never chosen; a poll can no longer set its own Daily One date when it is created either, so only the real selection path decides the daily question</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll could be created already carrying the Sponsored label, a label that is only supposed to be set through the app&rsquo;s own placement process; a poll can no longer give itself that label when it is created</span><span class="bt-pill fixed">Fixed</span></li>
@@ -106,7 +108,7 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A comment could be created already pinned to the top of someone else&rsquo;s poll, with a like count of any size already set, and dated a year into the future — instead of earning its place through the normal like button and a moderator&rsquo;s pin; a new comment now starts unpinned, with a true like count of zero and its real time, matching the protections that already stopped those changes on an existing comment</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll suggestion could be sent already marked as accepted, skipping the recipient&rsquo;s say entirely — a suggestion the other person never agreed to would look settled from the moment it arrived; a new suggestion now always starts out pending, and only the recipient&rsquo;s own choice can change that</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Nov 3, 2026</h3>
+      <h3 class="bt-group" id="nov-3">Nov 3, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Any author could claim a future Daily One slot for their own poll by editing it directly — and the app would then serve it as that day&rsquo;s Daily One, with its streaks and reminders attached, even though it was never chosen; a poll can no longer set its own Daily One date that way, so only the real selection path decides the daily question</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll&rsquo;s question could be rewritten by editing the poll directly after votes had already been cast, bypassing the checked edit path — so ballots cast on one question could end up counted under a different one; question text can no longer be changed that way, while editing through the normal path still works</span><span class="bt-pill fixed">Fixed</span></li>
@@ -119,32 +121,32 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">An API key&rsquo;s permissions could be widened, its secret swapped for a chosen one, and new keys minted directly — all bypassing the one checked path that generates a random key and shows it only once; API keys can now only be created and changed through that checked path, so a read-only key stays read-only</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A post in a broadcast channel could have its date rewritten — backdated, or set in the future so it would sit at the top of the channel&rsquo;s feed, which is ordered by date; a channel post&rsquo;s date and channel can no longer be changed that way, so posts stay in the order they were actually made</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Nov 2, 2026</h3>
+      <h3 class="bt-group" id="nov-2">Nov 2, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">After a block, someone could still share the poll of the person who blocked them into a community — the share put the poll in front of the community and sent its members a notification carrying the question, even though their votes and comments were already stopped; sharing a poll into a community now checks blocks in both directions the same way, while sharing your own poll still works</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A comment&rsquo;s like count could be set to any number by editing the comment directly — and the comment could pin itself to the top of someone else&rsquo;s poll the same way — instead of earning its place through the normal like button; a comment&rsquo;s like count, pinned state, image and parent can no longer be changed that way, so like counts only move when people actually like or unlike, and pinning stays a moderation action</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Editing the quote on a repost slipped past blocks and bans — someone blocked by a poll&rsquo;s author, or even banned, could rewrite their quote text on that author&rsquo;s poll, even though posting a new repost was correctly stopped; quote edits now follow the same block and ban rules as new reposts, while removing your own repost still works</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Nov 1, 2026</h3>
+      <h3 class="bt-group" id="nov-1">Nov 1, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The new live chat on each poll had a word filter that quietly did nothing for anyone but admins — the blocked-words list behind it had no read permission for regular users, so their apps loaded an empty list and nothing ever matched, on sending or on receiving; everyone can now read the list (changing it stays admin-only), so blocked language is filtered in chat the same way it already was in polls and comments</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A blocked word spelled with lookalike letters from other alphabets — Cyrillic or Greek characters that look just like Latin ones — slipped straight past the live chat&rsquo;s filter, even though the exact same spelling was already blocked in polls and comments; the chat filter now folds those lookalikes back into the letters they imitate before checking, so a disguised spelling no longer gets through</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">After a block, someone could still reach the person who blocked them two ways the block missed: they could publish or edit a &ldquo;why I voted&rdquo; note on that person&rsquo;s poll, and they could still send them a poll suggestion, even though their votes, comments and reposts were already stopped — blocks now cover vote notes and poll suggestions the same way in both directions, while deleting your own note still works so you can always clean up your own words</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 29, 2026</h3>
+      <h3 class="bt-group" id="oct-29">Oct 29, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Pinned polls and poll views had a missing read permission behind them — their privacy rules existed, but signed-in users couldn&rsquo;t actually read them directly (and pinned polls couldn&rsquo;t be read that way signed-out either), so those reads were refused; read permission now matches the rules, and writing still only happens through the checked in-app paths</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Your Prediction Record and Daily One streak could flicker to empty — showing &ldquo;No predictions yet&rdquo; and no streak — when a quick account check came back empty by mistake, even though you really had predictions and a streak; those reads now use your known account and treat a failed check as an error instead of a real zero, so your actual record stays on screen</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Opening your Profile briefly claimed &ldquo;No predictions yet&rdquo; at the top of your Prediction Record every time, before your record had even finished loading — even if you really had predictions; it now shows a neutral placeholder while it loads, and only says that once your record has loaded and is actually empty</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 28, 2026</h3>
+      <h3 class="bt-group" id="oct-28">Oct 28, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Link-only polls — meant to be reachable only by the people sent the link — were listed on public topic pages, where anyone could find the question and the standings — topic pages and the public topic list now leave link-only polls out</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Anyone could pull up the series summary for a followers-only poll and see its earlier rounds&rsquo; standings, even though they couldn&rsquo;t open the poll itself — series information now follows the same visibility rules as the poll</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Sharing a followers-only or close-friends poll was recorded as a public share, inflating share counts and rankings for polls that aren&rsquo;t public — share recording now uses the same public check as view recording (link-only polls still count, since sharing is how they spread)</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Achievements couldn&rsquo;t be read directly by signed-in users — the rules say achievements are public, but the read permission behind them was missing, so a direct read was refused; that permission is now in place, read-only — adding or changing achievements that way is still blocked</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 27, 2026</h3>
+      <h3 class="bt-group" id="oct-27">Oct 27, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">On a group profile&rsquo;s multi-select poll, each manager&rsquo;s picks were counted separately, so a group could pick more options than the poll allows — a group&rsquo;s picks now count together toward the limit, and a manager&rsquo;s group picks no longer use up their own personal picks</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Two managers voting for the same group on a ranked poll could both put a different option in the same rank slot — a group now gets one entry per rank, like a single voter</span><span class="bt-pill fixed">Fixed</span></li>
@@ -157,16 +159,16 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Someone you blocked — or who blocked you — could still record a view on your poll and move your view count, even though their vote on the same poll was correctly rejected — recording a poll view now checks blocks in both directions (just reading a poll is unchanged)</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">When a scheduled job failed before it could even make its call — the kind of failure that lost a weekly digest — the health check couldn&rsquo;t see it, because it only watched completed calls — the health check now also watches the scheduled jobs&rsquo; own failure log and reports those failures too</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 26, 2026</h3>
+      <h3 class="bt-group" id="oct-26">Oct 26, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The weekly digest didn&rsquo;t go out on Sunday, Oct 25 — a broken line in its scheduled job stopped it before it could run, so no digest notifications or emails were sent that week; the schedule is fixed and verified, and the next digest goes out on schedule</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 24, 2026</h3>
+      <h3 class="bt-group" id="oct-24">Oct 24, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A banned account could still get followers-only access through follow requests — a private account accepting a banned requester created a real follow, and a banned private account could still accept requests itself; a ban now covers follow requests on both sides, so no follow is created either way</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Someone who had voted and was then banned could still publish a &ldquo;why I voted&rdquo; note on a live poll — posting and editing those notes now checks for a ban too</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 23, 2026</h3>
+      <h3 class="bt-group" id="oct-23">Oct 23, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A late-night update briefly overwrote the template and privacy fixes shipped earlier that day, so the live app was missing them for a while — every one of them is restored, back in the live app, and re-checked</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still publish polls through the app&rsquo;s main posting path, even though posting directly was blocked — a ban now blocks poll creation there too</span><span class="bt-pill fixed">Fixed</span></li>
@@ -187,7 +189,7 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Replacing or removing a channel&rsquo;s picture left the old picture behind in storage — the old picture is now cleaned up when a channel picture changes</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Uploading a new channel picture over an existing one didn&rsquo;t show its progress properly — the upload spinner now shows over the current picture while the new one saves</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 22, 2026</h3>
+      <h3 class="bt-group" id="oct-22">Oct 22, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Duplicating a poll that was set to repeat daily or weekly silently turned the copy into a one-off — the copy now tells you it won&rsquo;t repeat, and that you can turn repeating back on in the schedule options before posting</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">If opening one of your polls as a template failed, the error could show raw database or network text — it now shows a plain message that the poll isn&rsquo;t available anymore</span><span class="bt-pill fixed">Fixed</span></li>
@@ -198,7 +200,7 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Channel editing shipped — channel owners can now edit their channel&rsquo;s name, description and picture, and an edit the server didn&rsquo;t actually accept can no longer pose as saved</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Celebrations shipped — posting a poll now bursts confetti in MILA&rsquo;s colors, casting a vote gets a smaller burst, and nailing a quiz answer gets a celebration of its own</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 21, 2026</h3>
+      <h3 class="bt-group" id="oct-21">Oct 21, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still @mention people and deliver a &ldquo;You were mentioned&rdquo; notification — a ban now covers mentions too, so a banned account can&rsquo;t reach anyone that way</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">An unknown topic link fell through to the feed instead of saying the topic isn&rsquo;t there — it now shows a proper not-found state</span><span class="bt-pill fixed">Fixed</span></li>
@@ -206,7 +208,7 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Scheduled polls shipped — you can now schedule a poll to go live later, see it in a scheduled-polls manager, change its time or cancel it, and duplicate one of your polls as a template for a new one</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Duplicating one of your quiz polls as a template could silently mark the first answer as the correct one when the real answer couldn&rsquo;t be loaded — it now warns you to check which answer is correct before posting</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 20, 2026</h3>
+      <h3 class="bt-group" id="oct-20">Oct 20, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Changing your profile picture spun forever — the photo picker waited on an event that never arrives for picked photos; it now loads the photo directly, and every step has a timeout that lands on an honest error instead of an endless spinner</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Revoking a developer API key was impossible — you&rsquo;d revoke it and the key kept working; revoking now takes effect immediately and the key stops working at once</span><span class="bt-pill fixed">Fixed</span></li>
@@ -249,7 +251,7 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Embeddable polls shipped — the share sheet&rsquo;s &ldquo;Embed on a website&rdquo; gives you a snippet that puts a live poll on another site, and tapping an option there opens the full poll</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Public topic pages shipped — logged-out visitors can now browse polls by topic, with only topics that actually have public polls listed and honest counts for each</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 19, 2026</h3>
+      <h3 class="bt-group" id="oct-19">Oct 19, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Polls and comments from people you&rsquo;ve muted or blocked could still appear — Poll of the Day, Today&rsquo;s Five, hashtag pages, and every comment path now hide them, including polls arriving live and a feed that&rsquo;s just opened</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A blocked person&rsquo;s full profile could render when a safety check failed to load — the profile now stays gated instead of guessing</span><span class="bt-pill fixed">Fixed</span></li>
@@ -278,7 +280,7 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Renaming a community to a name that&rsquo;s already taken collapsed into a generic failure — it now shows the name-taken guidance</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Banned accounts could still create, post in and subscribe to broadcast channels — a ban now covers channels too</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 18, 2026</h3>
+      <h3 class="bt-group" id="oct-18">Oct 18, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Any poll author could label their own poll &ldquo;Sponsored&rdquo; — only admins can set that label now</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A poll&rsquo;s rematch link could be set directly, skipping the closed-poll and ownership rules — rematches now only link the proper way</span><span class="bt-pill fixed">Fixed</span></li>
@@ -307,7 +309,7 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Dismissing a moderation report that was already resolved claimed success for doing nothing — it now reports that it was already resolved</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Error messages across the app showed raw database text — voting, comments, DMs, uploads, and settings now explain what happened in plain, localized words instead</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 17, 2026</h3>
+      <h3 class="bt-group" id="oct-17">Oct 17, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Someone you blocked could still vote on your multi-select, ranked, and Q&amp;A polls — blocks now apply to every poll format</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A banned account that was still signed in could keep voting, following, commenting, posting stories, and creating polls — a ban now stops all of it</span><span class="bt-pill fixed">Fixed</span></li>
@@ -320,7 +322,7 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">The admin portal showed a stale error banner next to actions that had actually succeeded — errors now appear in their own section with a Retry button, and a successful action clears the old banner</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Two internal admin helper functions could be called by any signed-in account — they are now locked to the admin system only</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 16, 2026</h3>
+      <h3 class="bt-group" id="oct-16">Oct 16, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">A crafted vote could smuggle in a fake answer and poison a poll&rsquo;s results — every vote is now checked against its poll&rsquo;s real shape before it counts</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">New polls kept silently coming out marked &ldquo;anonymous&rdquo; even with the switch off — the leftover defaults are fixed at every layer, and all 1,032 existing polls were confirmed public</span><span class="bt-pill fixed">Fixed</span></li>
@@ -338,14 +340,14 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Feed cleanup: 500 stale polls removed, and the database trimmed to a third of its size</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Every poll in the feed now carries a real photo, and a fresh set of all seven poll formats posts daily</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Oct 15, 2026</h3>
+      <h3 class="bt-group" id="oct-15">Oct 15, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Prize payouts and tips are paused until launch day — enforced in the database itself, not just hidden in the app; standings still display</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Admin accounts no longer appear on any leaderboard, including the prediction board</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Creator badges arrived — a new profile badge that creators can show off</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Bug hunting is now continuous: a full check runs every 12 hours, safe fixes ship automatically, and anything needing a product decision is held for review</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Round 7 — Oct 14, 2026</h3>
+      <h3 class="bt-group" id="rounds-oct-14">Round 7 — Oct 14, 2026</h3>
       <ul class="bt-list">
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Direct messages are now screened like every other surface — and bans now apply to messaging</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Tips now respect blocks in both directions</span><span class="bt-pill fixed">Fixed</span></li>
@@ -455,7 +457,7 @@
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Usernames chosen at signup are now kept (accounts got random names)</span><span class="bt-pill fixed">Fixed</span></li>
         <li class="bt-item"><input type="checkbox" checked disabled><span class="bt-text">Reporting, banning, and story privacy protections tightened across the app</span><span class="bt-pill fixed">Fixed</span></li>
       </ul>
-      <h3 class="bt-group">Still open</h3>
+      <h3 class="bt-group" id="still-open">Still open</h3>
       <ul class="bt-list">
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">Leaderboard prize payouts — paused until launch day by design; standings still display, and claiming unlocks at launch</span><span class="bt-pill open">Open</span></li>
         <li class="bt-item open"><input type="checkbox" disabled><span class="bt-text">&ldquo;Notify me when this person posts&rdquo; bell subscriptions — subscriptions save, alerts don't send yet</span><span class="bt-pill open">Open</span></li>
