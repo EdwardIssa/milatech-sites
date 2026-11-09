@@ -440,3 +440,17 @@ video.walkthrough{width:100%;max-width:760px;display:block;margin:0 auto;border-
 .proof-strip .btn{background:#fff;color:var(--ink);box-shadow:0 10px 22px rgba(0,0,0,.22);margin-top:14px}
 .handoff-strip{background:rgba(0,180,90,.10);border:1.5px solid rgba(0,150,75,.45);border-radius:14px;padding:16px 20px;margin-top:20px;font-size:16px}
 .handoff-strip strong{color:#0B7A43}
+
+/* ---------- family nav — Mila Tech family strip (Edward's order, 2026-11-08) ----------
+   Slim secondary strip directly above the site nav on every page.
+   One pattern family-wide; colors come from this site's own palette variables.
+   The current site's entry is a white pill with a bright border + brand-colored bold text. */
+.familynav{background:rgba(255,255,255,.72);border-bottom:1px solid var(--line);font-size:13px;line-height:1.4;position:relative;z-index:60}
+.familynav-in{display:flex;align-items:center;gap:14px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+.familynav-label{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.familynav-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.familynav-links a{color:var(--body);font-weight:600;padding:3px 11px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+.familynav-links a:hover{color:var(--ink);text-decoration:none;background:rgba(127,127,200,.10)}
+.familynav-links a.current{color:var(--brand);background:#fff;border-color:var(--line-bright);font-weight:800;box-shadow:0 2px 8px rgba(30,20,60,.08)}
+.familynav-links a.current:hover{color:var(--brand);background:#fff}
+@media(max-width:640px){.familynav-in{gap:8px}.familynav-links a{padding:3px 8px}}
