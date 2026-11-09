@@ -4,3 +4,14 @@
 /fix-tracker https://mila.milatech.tech/fix-tracker.html 301
 /fix-tracker/ https://mila.milatech.tech/fix-tracker.html 301
 /fix-tracker.html https://mila.milatech.tech/fix-tracker.html 301
+
+# Legacy/ghost URLs surfaced by Google Search Console (2026-11-09): common
+# pre-site-era patterns that 404'd. Targets are the real pages that exist
+# today; both the .html form Google reported and the extensionless form
+# (which the platform 307 lands on) are covered.
+/privacy-policy.html /privacy 301
+/privacy-policy /privacy 301
+/terms-of-service.html /terms 301
+/terms-of-service /terms 301
+/mila.html https://mila.milatech.tech/ 301
+/mila https://mila.milatech.tech/ 301
