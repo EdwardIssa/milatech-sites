@@ -24,7 +24,28 @@
   if (choice === 'granted') {
     gtag('consent', 'update', { 'analytics_storage': 'granted' });
   }
-  gtag('config', GA_ID);
+  /* send_page_view is disabled on config: config's automatic page_view is
+     dispatched under the denied consent default as a cookieless ping, which
+     GA4 does not record as a page_view, and it is never re-sent after a
+     consent grant. Exactly one explicit page_view is sent instead -- here,
+     after the stored-consent update above, and in the Accept handler after
+     its consent update. Denied / no choice: no page_view, no storage. */
+  gtag('config', GA_ID, { 'send_page_view': false });
+
+  function sendPageView() {
+    gtag('event', 'page_view', {
+      'page_title': document.title,
+      'page_location': window.location.href,
+      'page_path': window.location.pathname
+    });
+  }
+  if (choice === 'granted') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', sendPageView);
+    } else {
+      sendPageView();
+    }
+  }
 
   var s = document.createElement('script');
   s.async = true;
@@ -63,6 +84,7 @@
     bar.querySelector('.mt-cookie-accept').addEventListener('click', function () {
       try { localStorage.setItem(KEY, 'granted'); } catch (e) { /* ignore */ }
       gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      sendPageView();
       bar.remove();
     });
     bar.querySelector('.mt-cookie-decline').addEventListener('click', function () {
