@@ -21,6 +21,45 @@
 <script src="analytics.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
      crossorigin="anonymous"></script>
+<style>
+/* Visual-first rebuild 2026-11-11: real app screenshots in phone frames,
+   the /demo poll embedded on home. floaty keyframes live in styles.css. */
+.phone-shot{position:relative;border-radius:38px;padding:9px;background:#120826;border:1px solid rgba(183,156,255,.35);box-shadow:var(--shadow-lg)}
+.phone-shot img{display:block;width:100%;height:auto;border-radius:30px}
+.shot-main{max-width:298px;margin-left:auto;z-index:2;--r:1.2deg;animation:floaty 7s ease-in-out infinite}
+.shot-back{position:absolute;left:-6px;top:46px;width:216px;z-index:1;opacity:.94;--r:-3deg;animation:floaty 8s ease-in-out infinite;animation-delay:-3s}
+@media(max-width:640px){.shot-back{width:148px;left:-2px;top:30px}.shot-main{max-width:232px}}
+.feat-rows{display:grid;gap:54px}
+.feat-row{display:grid;grid-template-columns:208px 1fr;gap:44px;align-items:center}
+.feat-row.flip{grid-template-columns:1fr 208px}
+.feat-row .phone-shot{max-width:208px;margin:0 auto;width:100%}
+.feat-row h3{font-size:27px;margin-bottom:10px;letter-spacing:-.5px}
+.feat-row p{font-size:19px;line-height:1.5;color:#3A3468;max-width:470px}
+@media(max-width:700px){.feat-row,.feat-row.flip{grid-template-columns:1fr;text-align:center}.feat-row p{margin:0 auto}}
+.price-line{font-size:30px;font-weight:850;letter-spacing:-.5px}
+.price-line .dim{color:var(--muted);font-weight:700}
+/* Embedded demo (same component as demo.html, hd- prefixed) */
+.hd-card{max-width:640px;margin:0 auto}
+.hd-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+.hd-tag{background:var(--accent);color:#fff;font-weight:800;font-size:.8rem;padding:4px 12px;border-radius:999px;letter-spacing:.04em}
+.hd-timer{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent-bright)}
+.hd-q{font-size:1.6rem;font-weight:800;margin:6px 0 18px}
+.hd-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.hd-btns button{padding:14px 8px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font-weight:800;font-size:1rem;cursor:pointer;transition:transform .08s,border-color .15s}
+.hd-btns button:hover{border-color:var(--accent);transform:translateY(-1px)}
+.hd-results{display:none}
+.hd-bar-row{margin:12px 0}
+.hd-bar-label{display:flex;justify-content:space-between;font-weight:700;margin-bottom:6px}
+.hd-bar-track{height:14px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);overflow:hidden}
+.hd-fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--accent),#D6339E);transition:width .6s ease}
+.hd-fill.no{background:linear-gradient(90deg,#ff7a7a,#ffb37c)}
+.hd-fill.neu{background:linear-gradient(90deg,#b9c2cc,#e6ebf0)}
+.hd-meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:var(--mut);font-size:.9rem;flex-wrap:wrap;gap:8px}
+.hd-live{color:#3ddc84;font-weight:700}
+.hd-closed{display:none;text-align:center;padding:10px;border:1px dashed var(--line);border-radius:12px;margin-top:14px;color:var(--mut)}
+.hd-note{max-width:640px;margin:18px auto 0;color:var(--mut);font-size:.9rem;text-align:center}
+@media(max-width:560px){.hd-btns{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <div class="familynav" role="navigation" aria-label="Mila Tech family">
@@ -49,131 +88,107 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <div class="kicker">Public beta — live on the web today · iOS in TestFlight testing</div>
+      <div class="kicker">Public beta — live on the web today</div>
       <h1>Real opinions,<br><span class="hl">in real time.</span></h1>
-      <p class="lead">The signup wall is gone. Anyone with a link can vote now, no account needed. Open a poll, tap your pick, watch the crowd decide live, and turn the result into a card worth sharing. <strong>Web beta live today; the iOS app is in TestFlight internal testing.</strong></p>
+      <p class="lead">Vote on live polls in five seconds — no signup, no cost, ever.</p>
       <div class="btnrow">
-        <a class="btn primary" href="https://app.milatech.tech">Vote now — no signup</a>
-        <a class="btn ghost" href="features.html">See the features</a>
+        <a class="btn primary" href="https://app.milatech.tech">Vote on a live poll</a>
       </div>
-      <p class="fine">Beta status: MILA is in public beta on the web — purchases are paused and nobody is charged today; the iOS app is in TestFlight internal testing.</p>
-      <p class="fine">Free on the web · The Daily One, every day · Group-link polls · Ages 13+</p>
+      <p class="fine">Free on the web · The Daily One, every day</p>
     </div>
     <div>
       <div class="hero-visual">
-        <div class="poll-card">
-          <div class="pc-head">
-            <span class="avatar-dot"></span>
-            <span class="pc-meta"><b>Flash poll</b><span>Asked just now</span></span>
-            <span class="timer">2:14 left</span>
-          </div>
-          <p class="pc-q">Pineapple belongs on pizza.</p>
-          <div class="pc-opt"><div class="lbl"><span>Yes</span><span>46%</span></div><div class="bar"><i style="width:46%;background:linear-gradient(90deg,#00D563,#00B8D9)"></i></div></div>
-          <div class="pc-opt"><div class="lbl"><span>Neutral</span><span>18%</span></div><div class="bar"><i style="width:18%;background:linear-gradient(90deg,#FFB300,#FFC531)"></i></div></div>
-          <div class="pc-opt"><div class="lbl"><span>No</span><span>36%</span></div><div class="bar"><i style="width:36%;background:linear-gradient(90deg,#FF2E4D,#FF7A3D)"></i></div></div>
-          <div class="vote-row"><span class="vy">Yes</span><span class="vn">Neutral</span><span class="vno">No</span></div>
-          <p class="pc-foot"><span class="dot"></span>Results update in real time, vote by vote</p>
-        </div>
-        <div class="float lb">
-          <p class="flabel">Today's leaderboard</p>
-          <div class="lb-row"><span><b>1</b>&nbsp; Top asker</span><span>142 pts</span></div>
-          <div class="lb-row"><span><b>2</b>&nbsp; Top voter</span><span>121 pts</span></div>
-          <div class="lb-row last"><span><b>3</b>&nbsp; Top predictor</span><span>98 pts</span></div>
-        </div>
-        <div class="float ca">
-          <p class="flabel">Closing Arguments</p>
-          <p>&ldquo;Sweet and salty is a top-tier combo. Case closed.&rdquo;</p>
-          <p class="fsub">One last word after the poll ends</p>
-        </div>
-        <div class="float pred">
-          <p class="flabel">Prediction</p>
-          <p><b>Yes takes it</b> — call the winner before the poll closes</p>
-        </div>
-        <p class="fine" style="margin-top:14px">Illustration: the poll, leaderboard, and quote above are samples showing how MILA looks — not live results. Live polls are in the app.</p>
+        <div class="phone-shot shot-back"><img src="13-voted.png" alt="MILA app showing a poll after voting, with live results" width="390" height="844" loading="lazy"></div>
+        <div class="phone-shot shot-main"><img src="10-feed-with-poll.png" alt="MILA app feed with a live poll" width="390" height="844"></div>
       </div>
     </div>
   </div>
 </header>
 
-<div class="stats">
+<section id="try">
   <div class="wrap">
-    <div class="stat"><b>No signup</b><span>vote from any link</span></div>
-    <div class="stat"><b>7</b><span>poll formats</span></div>
-    <div class="stat"><b>Live</b><span>results, vote by vote</span></div>
-    <div class="stat"><b>Daily</b><span>the Daily One + leaderboard</span></div>
-  </div>
-</div>
+    <h2 style="text-align:center">Try a poll right now</h2>
+    <div class="card hd-card" style="margin-top:30px">
+      <div class="hd-top">
+        <span class="hd-tag">⚡ FLASH POLL</span>
+        <span class="hd-timer" id="hdTimer">⏱ 01:00</span>
+      </div>
+      <div class="hd-q">Pineapple belongs on pizza.</div>
 
+      <div class="hd-btns" id="hdVoteBtns">
+        <button data-vote="yes">Yes</button>
+        <button data-vote="neutral">Neutral</button>
+        <button data-vote="no">No</button>
+      </div>
 
-<section id="new">
-  <div class="wrap">
-    <h2>Built for the vote</h2>
-    <p class="sub">Four things define how MILA works — no signup wall, one daily question for everyone, polls that travel by link, and results made to share:</p>
-    <div class="grid">
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#B79CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-        <h3>Guest voting — no signup</h3>
-        <p>Someone sends you a poll link, you tap your side, you&rsquo;re done. No account, no password, no wall. Voting from a link just works — try it on any live poll.</p>
+      <div class="hd-results" id="hdResults">
+        <div class="hd-bar-row">
+          <div class="hd-bar-label"><span>Yes</span><span id="hdYesPct">0%</span></div>
+          <div class="hd-bar-track"><div class="hd-fill" id="hdYesBar"></div></div>
+        </div>
+        <div class="hd-bar-row">
+          <div class="hd-bar-label"><span>Neutral</span><span id="hdNeuPct">0%</span></div>
+          <div class="hd-bar-track"><div class="hd-fill neu" id="hdNeuBar"></div></div>
+        </div>
+        <div class="hd-bar-row">
+          <div class="hd-bar-label"><span>No</span><span id="hdNoPct">0%</span></div>
+          <div class="hd-bar-track"><div class="hd-fill no" id="hdNoBar"></div></div>
+        </div>
       </div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#D6339E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3>The Daily One</h3>
-        <p>One big question, every day, that everybody votes on. Standings stay masked while it runs — the reveal lands at 9 PM Detroit time.</p>
+
+      <div class="hd-meta">
+        <span><span class="hd-live">●</span> Simulated — <span id="hdVoters">128</span> is an illustrative number, not live voters</span>
+        <span><strong id="hdTotal">0</strong> total votes</span>
       </div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC531" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Group-link polls</h3>
-        <p>Any poll can be a group link: send it to your people, they vote as guests, and the group settles it. Built for the debates your group chat never finishes.</p>
-      </div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#00B8D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-        <h3>Result cards</h3>
-        <p>Every result becomes a shareable card — a clean image of the final split, made to drop straight into the group chat or your story.</p>
+
+      <div class="hd-closed" id="hdClosed">
+        Poll closed. <button class="btn primary" id="hdAgain" style="margin-left:8px">Run it again</button>
       </div>
     </div>
-    <p style="text-align:center;margin-top:30px"><a class="btn ghost" href="features.html">Explore all features</a></p>
+    <p class="hd-note">Simulated demo — votes are illustrative and aren't counted anywhere.</p>
   </div>
 </section>
 
-
-<section id="the-loop" class="alt">
+<section class="alt">
   <div class="wrap">
-    <h2>The loop that brings you <span class="hl">back tomorrow</span></h2>
-    <p class="sub">MILA runs on a daily rhythm — vote, watch the crowd move, come back for the reveal, repeat with tomorrow&rsquo;s question:</p>
-    <div class="loop-strip">
-      <div class="loop-step"><div class="n">1</div><b>Vote — no signup</b><p>Open any poll link and tap your side. Guest voting means the vote takes seconds, not a registration form.</p></div>
-      <div class="loop-step"><div class="n">2</div><b>Watch the split move</b><p>Results update live, vote by vote. Every result becomes a card worth dropping into the group chat.</p></div>
-      <div class="loop-step"><div class="n">3</div><b>The 9 PM reveal</b><p>The Daily One keeps its standings masked while it runs — the reveal lands at 9 PM Detroit time, and predictions settle.</p></div>
-      <div class="loop-step"><div class="n">4</div><b>Tomorrow&rsquo;s Daily One</b><p>One big question, every day, that everybody votes on — plus the leaderboard to climb while you wait.</p></div>
+    <div class="feat-rows">
+      <div class="feat-row">
+        <div class="phone-shot"><img src="03-create-poll.png" alt="MILA app create-a-poll screen" width="390" height="844" loading="lazy"></div>
+        <div>
+          <h3>Create</h3>
+          <p>Ask anything. Photo, quiz, ranked — your call.</p>
+        </div>
+      </div>
+      <div class="feat-row flip">
+        <div>
+          <h3>Profile</h3>
+          <p>Build a following that votes on everything.</p>
+        </div>
+        <div class="phone-shot"><img src="08-profile.png" alt="MILA app profile screen" width="390" height="844" loading="lazy"></div>
+      </div>
+      <div class="feat-row">
+        <div class="phone-shot"><img src="01-auth.png" alt="MILA app sign-in screen" width="390" height="844" loading="lazy"></div>
+        <div>
+          <h3>Sign in</h3>
+          <p>Free forever tier. Premium when you want more.</p>
+        </div>
+      </div>
     </div>
+    <p style="text-align:center;margin-top:44px">650 issues found and fixed in the open — every round on the <a href="fix-tracker.html">Fix Tracker</a>.</p>
   </div>
 </section>
 
-<section id="live-now">
-  <div class="wrap">
-    <h2>People are voting — <span class="hl">see it live</span></h2>
-    <p class="sub">The honest social proof for a beta this size is the live product itself: open the feed and watch real polls, with real counts, moving in real time. No screenshots of numbers we picked — the app, as it is right now.</p>
-    <p style="text-align:center;margin-top:18px"><a class="btn primary" href="https://app.milatech.tech">Open the live MILA feed</a></p>
+<section>
+  <div class="wrap" style="text-align:center">
+    <p class="price-line">Free <span class="dim">· Premium $2.99/mo</span></p>
+    <p style="margin-top:14px"><a class="btn ghost" href="pricing.html">See pricing</a></p>
   </div>
 </section>
-
-<section id="bug-tracker">
-  <div class="wrap">
-    <h2>Beta Bug Hunt — Public Fix Tracker</h2>
-    <p class="sub">MILA is in public beta on the web — no invite needed. We hunt bugs in rounds, fix them, and post the results in the open. The full tracker — every round, every dated entry — now has its own page; this is the summary.</p>
-    <p class="sub"><strong>Current status:</strong> MILA is in public beta on the web — vote free at app.milatech.tech, no invite or signup needed. The iOS app is in public beta on TestFlight — builds 9 and 10 are approved and the public TestFlight link is live: <a href="https://testflight.apple.com/join/gh9mcQUK">testflight.apple.com/join/gh9mcQUK</a>. Bug-hunt rounds 1–7 are complete: 650 issues found and fixed, including 100% of critical and high-severity issues. Status as of November 10, 2026.</p>
-    <p class="bt-totals">Rounds 1–7 complete · 650 issues found and fixed · every critical and high fixed · checks now run every 12 hours</p>
-    <p class="sub"><strong>Latest — Nov 9, 2026:</strong> a signed-in account&rsquo;s notification registration can no longer be taken over by an unsigned-in registration — fixed and verified live. The rounds found 450 issues on Oct 14, and the dated checks after them added 200 more fixed (650 in total); every round and every dated entry is on the Fix Tracker.</p>
-    <p style="margin-top:22px"><a class="btn ghost" href="fix-tracker.html">Read the full Fix Tracker — all rounds, all entries</a></p>
-  </div>
-</section>
-
 
 <section class="band">
   <div class="wrap">
-    <h2>Your opinion is <span class="hl">the content.</span></h2>
-    <p>Public beta, live on the web — vote from a link, no signup.</p>
-    <a class="btn bandbtn" href="https://app.milatech.tech">Vote now — no signup</a>
+    <h2>Your opinion counts <span class="hl">somewhere.</span></h2>
+    <a class="btn bandbtn" href="https://app.milatech.tech">Vote on a live poll</a>
   </div>
 </section>
 
@@ -189,6 +204,72 @@
   </div>
 </footer>
 
+<script>
+/* The /demo poll, embedded (same simulation as demo.html; starts when
+   scrolled into view so the 60 seconds are the visitor's own). */
+(function(){
+  var votes={yes:0,neutral:0,no:0}, voted=false, seconds=60, timerId=null, simId=null, started=false;
+  var weights={yes:.46,neutral:.14,no:.40};
+  function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+  function total(){return votes.yes+votes.neutral+votes.no;}
+  function render(){
+    var t=total()||1;
+    var p={yes:votes.yes/t*100,neutral:votes.neutral/t*100,no:votes.no/t*100};
+    document.getElementById('hdYesBar').style.width=p.yes+'%';
+    document.getElementById('hdNeuBar').style.width=p.neutral+'%';
+    document.getElementById('hdNoBar').style.width=p.no+'%';
+    document.getElementById('hdYesPct').textContent=Math.round(p.yes)+'% · '+votes.yes;
+    document.getElementById('hdNeuPct').textContent=Math.round(p.neutral)+'% · '+votes.neutral;
+    document.getElementById('hdNoPct').textContent=Math.round(p.no)+'% · '+votes.no;
+    document.getElementById('hdTotal').textContent=total().toLocaleString();
+  }
+  function seed(){votes={yes:214,neutral:63,no:188};render();}
+  function tick(){
+    seconds--;
+    document.getElementById('hdTimer').textContent='⏱ '+fmt(Math.max(seconds,0));
+    document.getElementById('hdVoters').textContent=90+Math.floor(Math.random()*80);
+    if(seconds<=0){end();return;}
+  }
+  function simulate(){
+    var r=Math.random(),k=r<weights.yes?'yes':(r<weights.yes+weights.neutral?'neutral':'no');
+    votes[k]+=1+Math.floor(Math.random()*4);
+    if(voted)render();
+    simId=setTimeout(simulate,1200+Math.random()*2600);
+  }
+  function start(){
+    started=true;
+    seed();voted=false;seconds=60;
+    document.getElementById('hdVoteBtns').style.display='grid';
+    document.getElementById('hdResults').style.display='none';
+    document.getElementById('hdClosed').style.display='none';
+    document.getElementById('hdTimer').textContent='⏱ 01:00';
+    clearInterval(timerId);clearTimeout(simId);
+    timerId=setInterval(tick,1000);simulate();
+  }
+  function end(){
+    clearInterval(timerId);clearTimeout(simId);
+    document.getElementById('hdTimer').textContent='⏱ 00:00';
+    document.getElementById('hdClosed').style.display='block';
+    document.getElementById('hdVoters').textContent='0';
+  }
+  document.getElementById('hdVoteBtns').addEventListener('click',function(e){
+    if(e.target.tagName!=='BUTTON'||voted||seconds<=0)return;
+    if(!started)start();
+    voted=true;votes[e.target.getAttribute('data-vote')]++;
+    document.getElementById('hdVoteBtns').style.display='none';
+    document.getElementById('hdResults').style.display='block';
+    render();
+  });
+  document.getElementById('hdAgain').addEventListener('click',start);
+  var card=document.querySelector('.hd-card');
+  if(card&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting&&!started){start();io.disconnect();}});
+    },{threshold:0.3});
+    io.observe(card);
+  }else{start();}
+})();
+</script>
 <script>
 (function(){
   var btn=document.querySelector('.hamburger'), nav=document.querySelector('.navlinks');
