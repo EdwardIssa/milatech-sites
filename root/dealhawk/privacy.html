@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://milatech.tech/dealhawk/privacy">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealHawk Privacy Policy — Mila Tech LLC | milatech.tech</title>
+<meta name="description" content="Privacy Policy for the DealHawk Chrome extension from Mila Tech LLC: what data stays on your device, what is sent to the retailers you enable, and what is never collected.">
+<link rel="stylesheet" href="/styles.css">
+<script src="/analytics.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
+     crossorigin="anonymous"></script>
+<style>
+  .prose table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.25rem; font-size: 0.95rem; }
+  .prose th, .prose td { border: 1px solid rgba(183, 156, 255, 0.22); padding: 0.65rem 0.7rem; text-align: left; vertical-align: top; }
+  .prose th { color: #B79CFF; font-weight: 650; }
+</style>
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true"></div>
+<div class="familynav" role="navigation" aria-label="Mila Tech family">
+  <div class="wrap familynav-in">
+    <span class="familynav-label">Our products</span>
+    <div class="familynav-links"><a class="current" aria-current="page" href="https://milatech.tech">Mila Tech</a><a href="https://mila.milatech.tech">MILA</a><a href="https://loyal.milatech.tech">Loyal</a><a href="https://owed.milatech.tech">Owed</a><a href="https://drae.milatech.tech">DRAE</a><a href="https://leadminerx.milatech.tech">LeadMiner X</a></div>
+  </div>
+</div>
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="/logo.png" alt="Mila Tech logo">MILA<span>TECH</span></a>
+    <div class="navlinks">
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/services">Services</a>
+      <a href="/insights">Insights</a>
+      <a href="/about">About</a>
+      <a href="/support">Support</a>
+      <a href="https://mila.milatech.tech">MILA</a>
+      <a href="https://drae.milatech.tech">DRAE</a>
+      <a class="cta" href="/contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap page-hero">
+    <div class="kicker"><span class="sun-dot"></span> DealHawk</div>
+    <h1>Privacy Policy for <span class="grad">DealHawk.</span></h1>
+    <p class="lead">DealHawk compares a product&rsquo;s price across eBay, Walmart, Target, Amazon, and Best Buy. It has no developer server, no account, and no analytics.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="legal">
+    <div class="sec-head">
+      <span class="sec-label">Legal / Privacy</span>
+      <h2>Privacy Policy — DealHawk</h2>
+      <p class="sub">Last updated: November 13, 2026 &middot; Mila Tech LLC, a Delaware limited liability company operated from Metro Detroit, Michigan, United States &middot; Contact: <a href="mailto:edward@milatech.tech">edward@milatech.tech</a></p>
+    </div>
+    <div class="prose">
+      <p><em>This policy describes the DealHawk Chrome extension (&ldquo;DealHawk — Find It Cheaper&rdquo;). It does not replace the <a href="/privacy">milatech.tech company website policy</a>, or the privacy policies of MILA, Owed, DRAE, Loyal, or LeadMiner X.</em></p>
+
+      <h3>Who we are</h3>
+      <p>DealHawk is a browser extension from Mila Tech LLC. Contact the developer at <a href="mailto:edward@milatech.tech">edward@milatech.tech</a>, or by using the email address shown on the Chrome Web Store listing.</p>
+
+      <h3>Data the extension handles</h3>
+      <p>DealHawk handles the following, and only on your device unless a row says otherwise:</p>
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Where it comes from</th><th>Where it goes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product name, price, currency, and the current page URL</td>
+            <td>Product structured data (JSON-LD) or the Open Graph title on an eBay, Walmart, Target, Amazon, or Best Buy page you visit</td>
+            <td><code>chrome.storage.local</code> on your device. It is overwritten the next time a product is detected. It is not sent to the developer.</td>
+          </tr>
+          <tr>
+            <td>Search text</td>
+            <td>What you type, or up to 200 characters of text you highlight and choose <strong>Find cheaper</strong> for</td>
+            <td>Sent as an HTTPS request to the public search page of each retailer you enable. A highlighted query is also stored briefly in <code>chrome.storage.local</code> as <code>dealhawk_pending_query</code> and removed after the results page reads it.</td>
+          </tr>
+          <tr>
+            <td>Retailer toggles</td>
+            <td>Checkboxes you turn on or off in the popup</td>
+            <td><code>chrome.storage.local</code> on your device.</td>
+          </tr>
+          <tr>
+            <td>Optional max price</td>
+            <td>The max-price field in the popup</td>
+            <td>Used only in memory to filter results. It is not stored and not sent anywhere.</td>
+          </tr>
+          <tr>
+            <td>Search results</td>
+            <td>Public product title, price, URL, and image URL parsed from the retailer search page</td>
+            <td>Shown in the popup. Not written to storage. Product images are then loaded by the browser from the retailer image URL (for example eBay, Walmart, Target, Amazon, or Best Buy image hosts).</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The content script does not read passwords, payment fields, messages, form contents, or browsing history. It does not run on sites other than the five retailers above.</p>
+
+      <h3>How data is used</h3>
+      <p>Data is used only to detect a product, search the retailers you selected, and show cheaper listings. DealHawk does not sell data, does not use it for advertising or credit decisions, and does not transfer it to a data broker. The developer does not receive your searches or the pages you visit, because the extension does not phone home.</p>
+      <p>The only third parties that receive data are the retailers you choose to search. Each one receives the search text as a normal public search request, the same kind of request a tab to that retailer&rsquo;s search page would make. Those sites have their own privacy policies.</p>
+
+      <h3>Permissions</h3>
+      <ul>
+        <li><strong>Storage</strong> — remember which retailers are enabled, the last detected product, and a highlighted search until the results page reads it.</li>
+        <li><strong>Context menus</strong> — add <strong>Find cheaper</strong> to the right-click menu for selected text.</li>
+        <li><strong>Offscreen</strong> — parse retailer HTML inside Chrome. The extension&rsquo;s background worker cannot use <code>DOMParser</code>. Parsing stays on your device.</li>
+        <li><strong>Host access</strong> to <code>www.ebay.com</code>, <code>www.walmart.com</code>, <code>www.target.com</code>, <code>www.amazon.com</code>, and <code>www.bestbuy.com</code> — fetch those retailers&rsquo; public search pages, and detect a product when you are on one of those sites (including the apex domain, such as <code>amazon.com</code>).</li>
+      </ul>
+      <p>The extension does not use remote code. All script is packaged with the extension.</p>
+
+      <h3>Retention and deletion</h3>
+      <p>Everything DealHawk stores is in the extension&rsquo;s local storage on your device. Uninstalling DealHawk removes it. You can also clear it from <code>chrome://extensions</code> (DealHawk → Details → site data / clear data) or by removing the <code>dealhawk_detected</code>, <code>dealhawk_retailers</code>, and <code>dealhawk_pending_query</code> keys. Search results shown in the popup are discarded when you close it.</p>
+
+      <h3>Children</h3>
+      <p>DealHawk is not directed at children under 13, and it does not knowingly collect personal information from children.</p>
+
+      <h3>Changes</h3>
+      <p>Updates to this policy are posted on this page with a new &ldquo;Last updated&rdquo; date. The Chrome Web Store listing should point at this public copy of the policy.</p>
+
+      <h3>Contact</h3>
+      <p>Privacy questions or requests: <strong>edward@milatech.tech</strong><br>Mila Tech LLC &middot; Metro Detroit, Michigan, USA</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-brand"><img src="/logo.png" alt="Mila Tech logo">MILA<span>TECH</span></div>
+    <p>&copy; 2026 Mila Tech LLC &middot; A Delaware limited liability company &middot; Metro Detroit, Michigan</p>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/services">Services</a>
+      <a href="/insights">Insights</a>
+      <a href="/about">About</a>
+      <a href="/support">Support</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="https://mila.milatech.tech">mila.milatech.tech</a>
+      <a href="https://drae.milatech.tech">drae.milatech.tech</a>
+      <a href="https://owed.milatech.tech">owed.milatech.tech</a>
+      <a href="https://leadminerx.milatech.tech">leadminerx.milatech.tech</a>
+      <a href="https://loyal.milatech.tech">loyal.milatech.tech</a>
+      <a href="https://app.milatech.tech">app.milatech.tech</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
