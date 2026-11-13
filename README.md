@@ -15,8 +15,8 @@ Every site is multi-page with a shared top navigation bar and footer — no one-
   - `about.html` — About (company, leadership)
   - `support.html` — Support (per-product help, FAQ, community donations, contact)
   - `services.html` — Services (mortgage workflow automation, ML & predictive diagnostics, product engineering; lead form)
-  - `contact.html` — Contact (lead form → Owed enterprise-leads endpoint in D1, mailto fallback)
-  - `brands.html` — MILA for Brands (sponsored polls, sample sentiment report from a real poll, Sentiment API section — waitlist removed 2026-10-28 at Edward's order; API interest routes to the Contact page (the `sentiment_api_waitlist` table, migration 169, is retained in the database, 0 rows))
+  - `contact.html` — Contact (lead form with mailto fallback)
+  - `brands.html` — MILA for Brands (sponsored polls, sample sentiment report from a real poll, Sentiment API section — waitlist removed 2026-10-28 at Edward's order; API interest routes to the Contact page )
   - `insights.html` + `insights-*.html` — Insights (content engine; launch articles on settlement claiming, guest voting, model-drift governance)
   - `drae.html` — full DRAE product page (runtime governance for ML ensembles and AI agents; replaced the old redirect stub on 2026-11-04 — a 15-word meta-refresh page on the AdSense-reviewed root domain was a low-value-content liability)
   - `loyal.html` — full LOYAL product page (public profile search; live embedded checker)
@@ -69,7 +69,7 @@ Edit the HTML/CSS, commit, push. That's it for `root/` and `mila/`. For `drae/`,
 - Pricing on the MILA site must match the app's RevenueCat configuration (currently Premium $2.99/mo, $19.99/yr; coin packs 50/$0.99, 160/$1.99, 450/$3.99, 1200/$7.99).
 - "Coming soon" features (age-aware filtering, Live Activities) are marked as such until shipped in the app — do not present them as live.
 - The Daily Updates section in `root/index.html` and the Fix Tracker section in `mila/index.html` are updated in place by scheduled jobs — keep their markup and anchors intact.
-- DRAE is a pre-revenue code asset offered at $2,500 with full IP assignment — never claim ARR, revenue, or customers for it.
+- DRAE is a pre-revenue code asset; its public sale was withdrawn on 2026-11-09 and drae.milatech.tech serves an in-development notice — never claim ARR, revenue, or customers for it.
 
 
 <!-- Cloudflare Git deployment connected 2026-09-28 -->
