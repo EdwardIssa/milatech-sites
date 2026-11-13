@@ -52,6 +52,8 @@ The `root/` and `mila/` Workers are connected to this repo with their site folde
 | `milatech-root` | `root/` | milatech.tech |
 | `drae-landing` | `drae/` (deployed with wrangler from a clean dir) | drae.milatech.tech |
 
+LeadMiner X pages in this repo live at `root/leadminerx/` and are published with `milatech-root` at https://milatech.tech/leadminerx/. That is the copy the Git build serves: `milatech-root`'s root directory is `root/`. `leadminerx.milatech.tech` is the separate `leadminerx-landing` worker, deployed with wrangler, and it is not a Git build root in this repo. Do not wrangler-deploy an old checkout over that worker without comparing it to what is already live.
+
 No build step — pure static files.
 
 

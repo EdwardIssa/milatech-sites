@@ -39,15 +39,27 @@
 <h2>1. Acceptance</h2>
 <p>By using the MILA mobile app or website (the "Service") — including voting as a guest without an account, or by creating an account — you agree to these Terms. If you do not agree, do not use the Service. We may update these Terms; continued use after changes take effect means you accept the updated Terms.</p>
 
+<p><em>TODO(Edward): legal review of this November 13, 2026 update before treating it as final. Sentences marked TODO(Edward) are product facts these pages do not fully establish.</em></p>
+
 <h2>2. Eligibility</h2>
-<p>You must be at least 13 years old to use MILA. If you are under the age of majority in your jurisdiction, you may use the Service only with a parent or guardian's permission. We collect your date of birth at sign-up to enforce age requirements and to support age-appropriate content filtering as it rolls out. For users aged 15 and under, explicit content is hidden and cannot be posted.</p>
+<p>You must be at least 13 years old to use MILA. MILA is not directed at children under 13, and we do not knowingly allow an account for anyone under 13. If we learn that an account belongs to someone under 13, we will delete it. If you are 13 or older but under the age of majority where you live, you may use the Service only with a parent or guardian&rsquo;s consent. We collect your date of birth at sign-up to enforce the minimum age and to support age-appropriate content filtering. For users aged 15 and under, explicit content is hidden and cannot be posted.</p>
+<p><em>TODO(Edward): confirm how parental consent is actually collected. A date of birth at sign-up is not, by itself, verifiable parental consent, and this page should not claim a consent step the app does not have.</em></p>
 
 <h2>3. Accounts</h2>
 <p>You may sign up with an email address or a supported third-party sign-in (such as Apple or Google). You are responsible for keeping your credentials confidential and for all activity under your account. Usernames must not impersonate others or be offensive; we may reclaim or rename accounts that violate this.</p>
 <p><strong>Guest use.</strong> You can also use MILA as a guest: you may vote on public polls from a link without creating an account. Guest votes are cast under a signed, server-verified guest token and count once, like member votes. Guest voting does not include Q&amp;A polls. If you later create an account, your guest participation can be claimed into your profile. Creating polls, commenting, messaging, and community features require an account.</p>
 
 <h2>4. The Service</h2>
-<p>MILA lets you create and vote in polls in seven formats — Quick (Yes / Neutral / No), Custom, Quiz, Multi-select, Ranked, Slider, and Q&amp;A — comment, message other users, join communities, earn leaderboard placement, and earn or purchase coins. Poll durations, quotas, and features depend on your plan (see Section 5).</p>
+<p>MILA lets you create and vote in polls in seven formats — Quick (Yes / Neutral / No), Custom, Quiz, Multi-select, Ranked, Slider, and Q&amp;A — comment, send direct messages, post stories, join communities, earn leaderboard placement, and earn or purchase coins. Poll durations, quotas, and features depend on your plan (see Section 5).</p>
+<p><strong>Direct messages.</strong> Signed-in members can send direct messages to other members. Guest voting does not include messaging. A direct message is visible only to the people in that conversation. The community rules in Section 8 apply to messages the same way they apply to public posts.</p>
+<p><strong>Stories.</strong> Signed-in members can post stories, including photos. Other people can see a story according to the audience controls in the app. You can delete a story you posted, and deleting it also deletes its photo. Blocks, mutes, and bans apply to stories.</p>
+<p><em>TODO(Edward): state the exact story lifetime (for example, whether a story expires after 24 hours) and the default audience.</em></p>
+<p><strong>Translation.</strong> MILA can show a translation of text in the Service using Google Translate. When a translation is requested, the text being translated is sent to Google so Google can return the translation.</p>
+<p><em>TODO(Edward): confirm that translation is on demand rather than automatic, and which content it covers — polls, comments, direct messages, stories, and community posts.</em></p>
+<p><strong>Photos, image moderation, and video.</strong> You can attach images, including poll covers and story photos. Images are sent to Sightengine, an image-moderation service, so we can detect and block content that violates these Terms. Video, where the product offers it, is hosted by Cloudflare Stream. During the current beta, photos are the supported poll cover and video in polls is limited.</p>
+<p><em>TODO(Edward): confirm which uploads are sent to Sightengine (avatars, direct-message images, story photos, video frames), whether anyone in this beta can upload video, and how long Sightengine and Cloudflare Stream keep media after you delete it.</em></p>
+<p><strong>Push notifications.</strong> If you allow notifications, we may send push notifications about activity on your account, such as votes, messages, comments, and community activity. We use a device push token to deliver them. You can turn notifications off in your device settings at any time.</p>
+<p><em>TODO(Edward): confirm whether a notification can include the text of a direct message or only the fact that one arrived.</em></p>
 
 <h2>5. Coins, Premium, and Billing</h2>
 <ul>
@@ -55,45 +67,51 @@
 <li><strong>Beta coins.</strong> Coins earned or granted during the beta have no cash value, and beta coin balances reset when MILA launches publicly. Beta testers will be recognized separately.</li>
 <li><strong>Referral rewards.</strong> Each account has a referral code, and links you share — including poll links — may carry it. When a new user joins through your link and claims the invite, they receive 25 coins; you receive 50 coins once their account qualifies (10 votes cast within 14 days), up to 20 qualified referrals per calendar month. After you vote, MILA may prompt you to invite a friend to vote on that poll; sharing is always optional. Referral coins are coins like any other: no cash value, not transferable between accounts, and beta balances reset at launch as described above.</li>
 <li><strong>Purchases are paused during the public beta.</strong> Premium and coin packs are not being sold today, and beta testers get the full experience without charge. The billing terms below describe how purchases will work when they open.</li>
-<li><strong>Coin packs</strong> (50 / 160 / 450 / 1,200 coins) will be sold as one-time in-app purchases through your platform&rsquo;s store (Apple App Store or Google Play, via RevenueCat) or the web checkout, at the prices shown at purchase.</li>
-<li><strong>MILA Premium</strong> ($2.99/month or $19.99/year, or current listed price) is an auto-renewing subscription. When purchases are live, payment is charged through your platform&rsquo;s billing (your Apple ID on iOS) at confirmation of purchase and renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel in your platform&rsquo;s subscription settings.</li>
+<li><strong>Coin packs</strong> (50 / 160 / 450 / 1,200 coins) will be sold as one-time purchases at the prices shown at purchase. On iOS, Apple processes the payment and RevenueCat reports the entitlement to us. On the web, Stripe processes the payment. We do not see your full card number.</li>
+<li><strong>MILA Premium</strong> ($2.99/month or $19.99/year, or current listed price) is an auto-renewing subscription. When purchases are live, payment on iOS is charged to your Apple ID at confirmation of purchase and renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel an App Store subscription in your Apple subscription settings. On the web, Stripe charges the subscription.</li>
+<li><em>TODO(Edward): confirm Stripe is the web processor for Premium, coin packs, and any future tips; confirm there is an in-product way to cancel a web subscription; and do not describe Google Play as a live billing path until an Android app exists (there is no Android build today). If RevenueCat also sits on the web checkout, name that here.</em></li>
 <li>Flash-poll quotas reset on the first of each month. Unused quota does not roll over.</li>
 <li>All purchases are final except as required by law or the applicable store&rsquo;s refund policies. If we remove coins or features due to a violation of these Terms, no refund is owed.</li>
 </ul>
 
-<h2>6. Ads</h2>
+<h2>6. Tips and payouts</h2>
+<p>Tips and prize payouts are paused during the beta and are not available today. That pause is enforced in the product, not only hidden in the interface. Coins have no cash value, cannot be redeemed for money, and are not a payout. Leaderboard standings can still be shown while payouts are paused.</p>
+<p><em>TODO(Edward): before tips or payouts turn on, add the payment rail (including whether Stripe moves real money), who is eligible, fees, tax reporting, and what happens to a balance that was frozen during the beta.</em></p>
+
+<h2>7. Ads</h2>
 <p>When ads are enabled, free accounts may see banner, interstitial, and in-feed ads, including optional rewarded ads that grant in-app benefits. In the web app, ads appear as cards labeled &ldquo;Ad&rdquo; in the feed, served by Google AdSense; when no AdSense ad is available, those labeled cards may promote Mila Tech&rsquo;s own products instead. Premium subscribers do not see ads.</p>
 
-<h2>7. Acceptable Use</h2>
-<p>You agree not to:</p>
+<h2>8. Community rules</h2>
+<p>MILA has zero tolerance for objectionable content and abusive behavior. You agree not to post or send polls, comments, direct messages, stories, images, or video that are:</p>
 <ul>
-<li>Post polls, comments, messages, or images that are unlawful, harassing, hateful, sexually explicit involving minors, or infringing on others' rights;</li>
-<li>Manipulate votes, leaderboards, or coin balances through bots, automation, or exploits;</li>
-<li>Attempt to access other users' accounts or non-public areas of the Service;</li>
-<li>Scrape or bulk-collect content except as permitted by our robots.txt content signals;</li>
-<li>Use the Service for any commercial purpose not expressly authorized.</li>
+<li>Sexual content involving anyone under 18, or any sexual exploitation of a minor;</li>
+<li>Unlawful, threatening, hateful, or harassing, including attacks on a person or group;</li>
+<li>Infringing on someone else&rsquo;s rights.</li>
 </ul>
-<p>We may remove content and suspend or terminate accounts that violate these Terms, with or without notice.</p>
+<p>You also agree not to manipulate votes, leaderboards, or coin balances through bots, automation, or exploits; attempt to access other users&rsquo; accounts or non-public areas of the Service; scrape or bulk-collect content except as permitted by our robots.txt content signals; or use the Service for a commercial purpose we have not authorized.</p>
+<p>There is no exception for objectionable content. We will remove it and will suspend or permanently eject the account that posted it, with or without notice. You can report content and users in the app. We review reports and act on violations of these rules.</p>
+<p><em>TODO(Edward): confirm the in-app report path and any response-time commitment you want stated here. App Store guideline 1.2 expects a published reporting mechanism and that the developer will act on objectionable content.</em></p>
 
-<h2>8. Your Content</h2>
-<p>You retain ownership of the polls, comments, and messages you create. By posting, you grant Mila Tech LLC a worldwide, non-exclusive, royalty-free license to host, display, and distribute that content as part of operating the Service (for example, showing your poll in other users' feeds).</p>
+<h2>9. Your Content</h2>
+<p>You retain ownership of the polls, comments, direct messages, stories, images, and video you create. By posting, you grant Mila Tech LLC a worldwide, non-exclusive, royalty-free license to host, display, moderate, and distribute that content as part of operating the Service (for example, showing your poll in other users&rsquo; feeds, delivering a direct message to its participants, and sending an image to Sightengine for moderation).</p>
 
-<h2>9. Termination</h2>
-<p>You may stop using the Service at any time. You can delete your account in the app under Profile → Delete Account, or request deletion of your account and personal data by contacting <a href="mailto:edward@milatech.tech">edward@milatech.tech</a>. We may suspend or terminate your access for violations of these Terms.</p>
+<h2>10. Termination and account deletion</h2>
+<p>You may stop using the Service at any time. You can delete your account in the app under Profile → Delete Account, or request deletion of your account and personal data by contacting <a href="mailto:edward@milatech.tech">edward@milatech.tech</a>. Deletion covers your account and the personal data tied to it, including your profile, direct messages, stories, and push tokens, and we remove or anonymize that data within a reasonable period. Public polls and comments may remain where other people&rsquo;s conversations depend on them, including in aggregated or anonymized form. We may suspend or terminate your access for violations of these Terms.</p>
+<p><em>TODO(Edward): confirm the exact deletion scope — both sides of a direct message, Cloudflare Stream video, copies held by Sightengine, RevenueCat and Stripe customer records, and database backups — and how long &ldquo;a reasonable period&rdquo; is.</em></p>
 
-<h2>10. Disclaimers</h2>
+<h2>11. Disclaimers</h2>
 <p>The Service is provided "as is" without warranties of any kind. Poll results reflect the opinions of participating users and are not scientific surveys. We do not guarantee uninterrupted or error-free operation.</p>
 
-<h2>11. Limitation of Liability</h2>
+<h2>12. Limitation of Liability</h2>
 <p>To the maximum extent permitted by law, Mila Tech LLC is not liable for indirect, incidental, or consequential damages. Our total liability for any claim is limited to the amount you paid us in the 12 months before the claim (or $50 if you paid nothing).</p>
 
-<h2>12. Governing Law</h2>
+<h2>13. Governing Law</h2>
 <p>These Terms are governed by the laws of the State of Michigan, without regard to conflict-of-law rules.</p>
 
-<h2>13. Changes</h2>
+<h2>14. Changes</h2>
 <p>We may modify these Terms. Material changes will be announced in the app or on our website before they take effect.</p>
 
-<h2>14. Contact</h2>
+<h2>15. Contact</h2>
 <p>Questions about these Terms: <a href="mailto:edward@milatech.tech">edward@milatech.tech</a><br>Mila Tech LLC, Metro Detroit, Michigan</p>
 </div>
 <footer>
