@@ -1,14 +1,17 @@
-# Security headers (added 2026-11-13). CSP is scoped to what these pages
-# actually load: first-party files, Google AdSense, GA4 (consent-gated),
-# the visit counter, the lead API, and MILA app embeds. Inline scripts and
-# styles are used throughout, so 'unsafe-inline' is required for now.
+# Security headers. Audited 2026-11-13 against what these pages load:
+# inline scripts and styles, and AdSense (pagead2.googlesyndication.com).
+# The same policy as the other sites is used so an AdSense tag is not
+# blocked. 'unsafe-inline' stays because the pages use inline scripts and
+# styles. A single-label wildcard such as *.doubleclick.net does not match
+# googleads.g.doubleclick.net, so the multi-label AdSense and GA4 hosts
+# are listed too. Enforced, not Report-Only.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://www.google.com https://*.google.com https://*.gstatic.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://visits.milatech.tech https://api.owed.milatech.tech https://app.milatech.tech https://*.google-analytics.com https://www.google-analytics.com https://www.googletagmanager.com https://pagead2.googlesyndication.com https://*.doubleclick.net https://*.googlesyndication.com; frame-src 'self' https://app.milatech.tech https://*.doubleclick.net https://*.googlesyndication.com https://www.google.com https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.g.doubleclick.net https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://www.google.com https://*.google.com https://*.gstatic.com https://static.cloudflareinsights.com https://*.adtrafficquality.google https://partner.googleadservices.com https://www.googletagservices.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://visits.milatech.tech https://api.owed.milatech.tech https://app.milatech.tech https://*.google-analytics.com https://www.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.googletagmanager.com https://pagead2.googlesyndication.com https://*.doubleclick.net https://*.g.doubleclick.net https://*.googlesyndication.com https://*.google.com https://*.adtrafficquality.google https://cloudflareinsights.com; frame-src 'self' https://app.milatech.tech https://*.doubleclick.net https://*.g.doubleclick.net https://*.googlesyndication.com https://*.safeframe.googlesyndication.com https://www.google.com https://*.google.com https://*.adtrafficquality.google https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
 
 /*.css
   Cache-Control: public, max-age=86400
