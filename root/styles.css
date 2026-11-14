@@ -557,3 +557,32 @@ video.walkthrough{width:100%;max-width:760px;display:block;margin:0 auto;border-
 .drae-card img{width:74px;height:74px;border-radius:16px;display:block}
 .drae-card h3{font-size:19px;font-weight:800}
 .drae-card p{font-size:15.5px;color:var(--muted)}
+
+/* ---------- brands API docs (2026-11-13) ---------- */
+.codeblock{
+  background:#171233;color:#E9EFFF;border-radius:14px;padding:18px 20px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  font-size:13.5px;line-height:1.65;overflow-x:auto;white-space:pre;margin:14px 0 8px;
+  border:1px solid rgba(23,18,51,.6);
+}
+.inline-code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  font-size:.9em;background:rgba(122,37,244,.09);border:1px solid var(--line);
+  border-radius:6px;padding:1px 6px;color:var(--ink);white-space:nowrap;
+}
+.method{
+  display:inline-block;font-size:12px;font-weight:800;letter-spacing:1.4px;
+  color:#0B7A43;background:rgba(0,180,90,.12);border:1px solid rgba(0,150,75,.4);
+  border-radius:999px;padding:4px 11px;vertical-align:2px;margin-right:8px;
+}
+.endpoint-head{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.endpoint-head .path{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:16.5px;font-weight:700;color:var(--ink);word-break:break-all}
+.card ul.fieldlist{margin:8px 0 4px 20px;font-size:16px}
+.card ul.fieldlist li{margin-bottom:5px}
+.table-scroll{overflow-x:auto;margin-top:16px}
+.api-table{width:100%;border-collapse:collapse;font-size:15.5px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.api-table th,.api-table td{padding:11px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.api-table th{background:rgba(122,37,244,.08);color:var(--ink);font-size:13px;letter-spacing:1.2px;text-transform:uppercase}
+.api-table tr:last-child td{border-bottom:none}
+.api-table td code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;color:var(--ink)}
+.example-note{font-size:14.5px;color:var(--muted);margin-top:6px}

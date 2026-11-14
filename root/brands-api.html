@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://milatech.tech/brands-api">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MILA Sentiment API — Developer Docs | Mila Tech LLC</title>
+<meta name="description" content="Developer documentation for the MILA Sentiment API: read-only aggregate sentiment over MILA's public polls. Endpoints, authentication, the 10-ballot sample floor, rate limits, error codes, and examples from real polls.">
+<link rel="stylesheet" href="styles.css">
+<script src="analytics.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3173775162505932"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true"></div>
+<div class="familynav" role="navigation" aria-label="Mila Tech family">
+  <div class="wrap familynav-in">
+    <span class="familynav-label">Our products</span>
+    <div class="familynav-links"><a class="current" aria-current="page" href="https://milatech.tech">Mila Tech</a><a href="https://mila.milatech.tech">MILA</a><a href="https://loyal.milatech.tech">Loyal</a><a href="https://owed.milatech.tech">Owed</a><a href="https://drae.milatech.tech">DRAE</a><a href="https://leadminerx.milatech.tech">LeadMiner X</a></div>
+  </div>
+</div>
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="logo.png" alt="Mila Tech logo">MILA<span>TECH</span></a>
+    <div class="navlinks">
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/services">Services</a>
+      <a href="/insights">Insights</a>
+      <a href="/about">About</a>
+      <a href="/support">Support</a>
+      <a href="https://mila.milatech.tech">MILA</a>
+      <a href="https://drae.milatech.tech">DRAE</a>
+      <a class="cta" href="/contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap page-hero">
+    <div class="kicker"><span class="sun-dot"></span> MILA for Brands &middot; Developer docs</div>
+    <h1>The MILA <span class="grad">Sentiment API</span></h1>
+    <p class="lead">Read-only aggregate sentiment over MILA&rsquo;s public polls, for brand and research clients. Four endpoints serve per-poll sentiment, a trending snapshot, category snapshots, and poll search &mdash; the same honestly-counted votes the app shows, over HTTPS + JSON. Aggregates only: the API never returns voter identities or individual votes.</p>
+    <div class="btnrow left" style="margin-top:22px">
+      <a class="btn primary" href="#endpoints">Endpoints <span class="arr">&rarr;</span></a>
+      <a class="btn ghost" href="/contact?segment=mila-brands-waitlist">Request an API key</a>
+      <a class="btn ghost" href="/brands">MILA for Brands</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="start">
+    <div class="sec-head">
+      <span class="sec-label">01 / Getting started</span>
+      <h2>Base URL and authentication</h2>
+      <p class="sub">Every request goes to the API base URL and carries your client key as a bearer token. Keys look like <span class="inline-code">mila_live_&hellip;</span> and carry the exclusive <span class="inline-code">sentiment</span> scope: a sentiment key works on the four endpoints below and nothing else, and no other kind of key works on them.</p>
+    </div>
+    <p><strong>Base URL</strong></p>
+    <div class="codeblock">https://tuedziedafdiwuuzzveo.supabase.co/functions/v1/api-v1</div>
+    <p style="margin-top:16px"><strong>Authentication header</strong> (on every request)</p>
+    <div class="codeblock">Authorization: Bearer &lt;your-key&gt;</div>
+    <div class="grid">
+      <article class="card">
+        <h3>How to get a key</h3>
+        <p>Keys are provisioned by MILA &mdash; there is no self-serve signup. <a href="/contact?segment=mila-brands-waitlist">Request access through the API waitlist</a> and tell us what you want to measure; when your key is issued, the raw key is shown to you exactly once and is never stored on our side (only a SHA-256 hash is kept), so save it somewhere safe. Lost it? We revoke it and issue a new one.</p>
+      </article>
+      <article class="card">
+        <h3>Response envelope</h3>
+        <p>Every successful response carries <span class="inline-code">api_version</span> (<span class="inline-code">"v1"</span>) and <span class="inline-code">generated_at</span> (the ISO&nbsp;8601 timestamp of that response, stamped fresh on each call) alongside the endpoint&rsquo;s payload. Errors return <span class="inline-code">{ "error": { "code": &hellip;, "message": &hellip; } }</span> &mdash; see &sect;05 for the codes.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="floor">
+    <div class="sec-head">
+      <span class="sec-label">02 / The sample floor</span>
+      <h2>Splits only when the sample earns them</h2>
+    </div>
+    <div class="handoff-strip">
+      <strong>The 10-ballot rule:</strong> a poll with fewer than <strong>10 ballots</strong> returns vote <strong>counts only</strong>, with <span class="inline-code">sample_state: "insufficient_sample"</span> and <strong>no percentage fields anywhere in the response</strong> &mdash; they are omitted, not zeroed. Once a poll reaches 10 ballots, each option also carries <span class="inline-code">share_percent</span> and <span class="inline-code">sample_state</span> reads <span class="inline-code">"sufficient"</span>. A 2-ballot poll is never dressed up as a 50/50 split.
+    </div>
+    <p class="sub" style="margin-top:18px">This is the same small-sample honesty rule the MILA app applies in its own results, applied to the API exactly as-is. Ballot counts (<span class="inline-code">sample_size</span>) are always the full unified total: member and guest ballots across every format&rsquo;s ballot tables. Only published, everyone-audience polls that are visible on their public <span class="inline-code">/p/&hellip;</span> page are served.</p>
+  </section>
+
+  <section id="endpoints">
+    <div class="sec-head">
+      <span class="sec-label">03 / Endpoints</span>
+      <h2>Four read-only endpoints</h2>
+      <p class="sub">All four require the <span class="inline-code">sentiment</span> scope. Paths below are relative to the base URL.</p>
+    </div>
+
+    <article class="card" style="margin-top:20px">
+      <div class="endpoint-head"><span class="method">GET</span><span class="path">/v1/sentiment/polls/:id</span></div>
+      <p>One public poll&rsquo;s sentiment.</p>
+      <ul class="fieldlist">
+        <li><span class="inline-code">:id</span> &mdash; the poll&rsquo;s UUID (the id in its <span class="inline-code">https://app.milatech.tech/p/&hellip;</span> link).</li>
+        <li>Returns <span class="inline-code">poll</span>: the standard poll payload described below. A poll that isn&rsquo;t public returns <span class="inline-code">404 not_found</span> &mdash; the API does not confirm private polls exist.</li>
+      </ul>
+    </article>
+
+    <article class="card" style="margin-top:20px">
+      <div class="endpoint-head"><span class="method">GET</span><span class="path">/v1/sentiment/trending</span></div>
+      <p>A trending snapshot: public polls in the app&rsquo;s trend order (vote velocity with time decay).</p>
+      <ul class="fieldlist">
+        <li><span class="inline-code">limit</span> &mdash; 1&ndash;25, default 10.</li>
+        <li>Returns <span class="inline-code">polls</span> (standard payloads, each also carrying <span class="inline-code">trend_score</span>) and <span class="inline-code">count</span>.</li>
+      </ul>
+    </article>
+
+    <article class="card" style="margin-top:20px">
+      <div class="endpoint-head"><span class="method">GET</span><span class="path">/v1/sentiment/categories/:category</span></div>
+      <p>A sentiment snapshot for one poll category over a time window.</p>
+      <ul class="fieldlist">
+        <li><span class="inline-code">:category</span> &mdash; a MILA category id, e.g. <span class="inline-code">politics</span>, <span class="inline-code">sports</span>, <span class="inline-code">tech</span>. Unknown ids return <span class="inline-code">404 not_found</span>.</li>
+        <li><span class="inline-code">days</span> &mdash; 1&ndash;90, default 30. Only polls created inside the window count.</li>
+        <li>Returns <span class="inline-code">window</span>, <span class="inline-code">poll_count</span>, <span class="inline-code">polls_with_votes</span>, <span class="inline-code">total_ballots</span>, and <span class="inline-code">top_polls</span> &mdash; up to 10 standard payloads, most ballots first.</li>
+      </ul>
+    </article>
+
+    <article class="card" style="margin-top:20px">
+      <div class="endpoint-head"><span class="method">GET</span><span class="path">/v1/sentiment/search?q=</span></div>
+      <p>Public polls whose question text contains the query.</p>
+      <ul class="fieldlist">
+        <li><span class="inline-code">q</span> &mdash; required, minimum 2 characters; shorter or missing returns <span class="inline-code">400 invalid_query</span>.</li>
+        <li><span class="inline-code">limit</span> &mdash; 1&ndash;25, default 10.</li>
+        <li>Returns <span class="inline-code">query</span>, <span class="inline-code">count</span>, and <span class="inline-code">results</span> &mdash; standard payloads, most ballots first.</li>
+      </ul>
+    </article>
+
+    <article class="card" style="margin-top:20px">
+      <h3>The standard poll payload</h3>
+      <ul class="fieldlist">
+        <li><span class="inline-code">poll_id</span>, <span class="inline-code">question</span>, <span class="inline-code">category</span>, <span class="inline-code">categories</span>, <span class="inline-code">format</span>, <span class="inline-code">status</span> (active or closed)</li>
+        <li><span class="inline-code">public_url</span> &mdash; the poll&rsquo;s public page on MILA</li>
+        <li><span class="inline-code">window</span> &mdash; <span class="inline-code">opened_at</span>, <span class="inline-code">closes_at</span>, <span class="inline-code">closed_at</span> (null while open)</li>
+        <li><span class="inline-code">sample_size</span> &mdash; total ballots; <span class="inline-code">sample_state</span> &mdash; <span class="inline-code">"sufficient"</span> or <span class="inline-code">"insufficient_sample"</span></li>
+        <li><span class="inline-code">options[]</span> &mdash; each with <span class="inline-code">id</span>, <span class="inline-code">label</span>, <span class="inline-code">position</span>, <span class="inline-code">votes</span>, and &mdash; only at 10+ ballots &mdash; <span class="inline-code">share_percent</span> (one decimal)</li>
+        <li>Slider polls return <span class="inline-code">options: []</span> and, above the floor, <span class="inline-code">average_intensity</span></li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="examples">
+    <div class="sec-head">
+      <span class="sec-label">04 / Examples</span>
+      <h2>Real polls, real responses</h2>
+      <p class="sub">Both examples below are live responses for real MILA polls, verified against the production API on Nov&nbsp;13, 2026. No production poll has reached 10 ballots yet, so both honestly show the below-floor shape &mdash; counts, no percentages. The above-floor difference is shown as a labeled format sketch after them.</p>
+    </div>
+
+    <p><strong>Request &mdash; one poll&rsquo;s sentiment</strong></p>
+    <div class="codeblock">curl "https://tuedziedafdiwuuzzveo.supabase.co/functions/v1/api-v1/v1/sentiment/polls/7afca170-1529-4f49-85c1-f3f988e7b976" \
+  -H "Authorization: Bearer &lt;your-key&gt;"</div>
+
+    <p style="margin-top:20px"><strong>Response &mdash; a live poll still collecting its first votes</strong> (Detroit&rsquo;s Campus Martius holiday poll, 0 ballots at capture)</p>
+    <div class="codeblock">{
+  "api_version": "v1",
+  "generated_at": "&lt;ISO 8601 timestamp, stamped fresh on every response&gt;",
+  "poll": {
+    "poll_id": "7afca170-1529-4f49-85c1-f3f988e7b976",
+    "question": "Detroit's Campus Martius at the holidays — are you there for the big tree and lights or the ice skating?",
+    "category": "local",
+    "categories": ["local"],
+    "format": "standard",
+    "status": "active",
+    "public_url": "https://app.milatech.tech/p/7afca170-1529-4f49-85c1-f3f988e7b976",
+    "window": {
+      "opened_at": "2026-11-12T11:23:48.980591+00:00",
+      "closes_at": "2026-11-19T11:23:48.980591+00:00",
+      "closed_at": null
+    },
+    "sample_size": 0,
+    "sample_state": "insufficient_sample",
+    "options": [
+      { "id": "ddfed253-aef3-4c01-ac5a-d6974bcd1f49", "label": "Tree &amp; lights", "position": 0, "votes": 0 },
+      { "id": "8fdaddd0-fc57-4747-98d7-3a9388900563", "label": "Ice skating", "position": 1, "votes": 0 }
+    ]
+  }
+}</div>
+    <p class="example-note">This poll is still open &mdash; its counts will move as votes arrive. See it live: <a href="https://app.milatech.tech/p/7afca170-1529-4f49-85c1-f3f988e7b976">app.milatech.tech/p/7afca170&hellip;</a></p>
+
+    <p style="margin-top:24px"><strong>Response &mdash; a closed poll with a small real sample</strong> (&ldquo;Should Congress be banned from trading stocks?&rdquo;, 5 ballots: 4 / 1 / 0 &mdash; counts served, split withheld by the floor)</p>
+    <div class="codeblock">{
+  "api_version": "v1",
+  "generated_at": "&lt;ISO 8601 timestamp, stamped fresh on every response&gt;",
+  "poll": {
+    "poll_id": "c32fd301-d1cb-4893-a1a4-bff54bdac5b8",
+    "question": "Should Congress be banned from trading stocks?",
+    "category": "politics",
+    "categories": ["politics"],
+    "format": "standard",
+    "status": "closed",
+    "public_url": "https://app.milatech.tech/p/c32fd301-d1cb-4893-a1a4-bff54bdac5b8",
+    "window": {
+      "opened_at": "2026-11-06T15:52:32.842365+00:00",
+      "closes_at": "2026-11-13T15:52:32.842365+00:00",
+      "closed_at": "2026-11-13T15:55:00.920059+00:00"
+    },
+    "sample_size": 5,
+    "sample_state": "insufficient_sample",
+    "options": [
+      { "id": "e6458b99-2921-4c52-8805-3c00a8ad3d9b", "label": "Yes, ban it outright", "position": 0, "votes": 4 },
+      { "id": "30a97a65-744f-4de0-908c-9ff599e20089", "label": "No, it's their money too", "position": 1, "votes": 1 },
+      { "id": "ff674a87-4ee6-4899-9ff7-4f9267c8f475", "label": "Allow it, but disclose every trade in real time", "position": 2, "votes": 0 }
+    ]
+  }
+}</div>
+
+    <p style="margin-top:24px"><strong>Format example &mdash; illustrative values only.</strong> At 10 or more ballots, <span class="inline-code">sample_state</span> reads <span class="inline-code">"sufficient"</span> and each option gains <span class="inline-code">share_percent</span>. Nothing else about the shape changes:</p>
+    <div class="codeblock">// Format example — illustrative values, not a real response
+{ "id": "…", "label": "Yes", "position": 0, "votes": 25, "share_percent": 62.5 }</div>
+  </section>
+
+  <section id="limits">
+    <div class="sec-head">
+      <span class="sec-label">05 / Rate limits &amp; errors</span>
+      <h2>Limits and error codes</h2>
+      <p class="sub">Per key: <strong>60 requests per minute</strong> and <strong>10,000 requests per day</strong>, counted durably from the API&rsquo;s usage log &mdash; every authenticated request is recorded (key, route, status), so the caps hold across the whole fleet, not just one server. Going over returns <span class="inline-code">429 rate_limited</span>.</p>
+    </div>
+    <div class="table-scroll">
+      <table class="api-table">
+        <thead><tr><th>HTTP</th><th>Code</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>401</td><td><code>invalid_key</code></td><td>Missing, malformed, or unknown API key.</td></tr>
+          <tr><td>401</td><td><code>key_revoked</code></td><td>This key has been revoked. Contact MILA for a replacement.</td></tr>
+          <tr><td>403</td><td><code>scope_required</code></td><td>The key lacks the <span class="inline-code">sentiment</span> scope these endpoints require.</td></tr>
+          <tr><td>404</td><td><code>not_found</code></td><td>Poll or category not found, or the poll is not public.</td></tr>
+          <tr><td>400</td><td><code>invalid_query</code></td><td>Search query missing or under 2 characters.</td></tr>
+          <tr><td>429</td><td><code>rate_limited</code></td><td>Over 60 requests/minute or 10,000 requests/day for this key.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="getkey">
+    <div class="contact-panel">
+      <span class="sec-label">06 / Get access</span>
+      <h2>Request an API key</h2>
+      <p class="sub">Keys are provisioned by MILA for brand and research clients &mdash; no self-serve signup, and no key is needed to read everything on this page. Join the API waitlist and tell us the audience and questions you care about; we issue keys as capacity allows, and the waitlist topic is kept separate from sponsored-poll purchases.</p>
+      <div class="btnrow left" style="margin-top:20px">
+        <a class="btn ghost" href="/contact?segment=mila-brands-waitlist">Request a key <span class="arr">&rarr;</span></a>
+        <a class="btn ghost" href="/brands">MILA for Brands</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-brand"><img src="logo.png" alt="Mila Tech logo">MILA<span>TECH</span></div>
+    <p>&copy; 2026 Mila Tech LLC &middot; A Delaware limited liability company &middot; Metro Detroit, Michigan</p>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/services">Services</a>
+      <a href="/insights">Insights</a>
+      <a href="/about">About</a>
+      <a href="/support">Support</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="https://mila.milatech.tech">mila.milatech.tech</a>
+      <a href="https://drae.milatech.tech">drae.milatech.tech</a>
+      <a href="https://app.milatech.tech">app.milatech.tech</a>
+      <a href="https://owed.milatech.tech">owed.milatech.tech</a>
+      <a href="https://leadminerx.milatech.tech">leadminerx.milatech.tech</a>
+      <a href="https://loyal.milatech.tech">loyal.milatech.tech</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
