@@ -32,12 +32,7 @@ Every site is multi-page with a shared top navigation bar and footer — no one-
   - `terms.html` — Terms of Service
   - `privacy.html` — Privacy Policy
   - `styles.css` — shared stylesheet
-- `drae/` → **https://drae.milatech.tech** — DRAE sale site
-  - `index.html` — Home (what DRAE is, walkthrough video, benchmark, sale summary)
-  - `details.html` — Details (video walkthrough, architecture, benchmark, what's included)
-  - `contact.html` — Contact (acquire directly, marketplace listings, book a live demo)
-  - `drae-sale-card.png`, `drae-walkthrough.mp4` — sale assets
-  - `styles.css` — copy of the flagship stylesheet (shared design system)
+- `drae/` — **RETIRED. DO NOT DEPLOY.** This folder is the old DRAE sale tree (its `index.html` still carries the withdrawn "$2,500" sale copy). It is kept for reference only and must never be deployed. The live drae.milatech.tech site (the in-development notice) is served from `~/workspace/drae-deploy/` — that is the only drae source (see Deployment below).
 
 
 ## Deployment
@@ -50,7 +45,7 @@ The `root/` and `mila/` Workers are connected to this repo with their site folde
 |---|---|---|
 | `mila-landing` | `mila/` | mila.milatech.tech |
 | `milatech-root` | `root/` | milatech.tech |
-| `drae-landing` | `drae/` (deployed with wrangler from a clean dir) | drae.milatech.tech |
+| `drae-landing` | `~/workspace/drae-deploy/` (NOT this repo — wrangler deploy, assets `./dist`) | drae.milatech.tech |
 
 LeadMiner X pages in this repo live at `root/leadminerx/` and are published with `milatech-root` at https://milatech.tech/leadminerx/. That is the copy the Git build serves: `milatech-root`'s root directory is `root/`. `leadminerx.milatech.tech` is the separate `leadminerx-landing` worker, deployed with wrangler, and it is not a Git build root in this repo. Do not wrangler-deploy an old checkout over that worker without comparing it to what is already live.
 
@@ -60,7 +55,7 @@ No build step — pure static files. `root/wrangler.jsonc` and `mila/wrangler.js
 ## Making changes
 
 
-Edit the HTML/CSS, commit, push. That's it for `root/` and `mila/`. For `drae/`, also re-deploy the `drae-landing` Worker (wrangler deploy of the `drae/` folder as static assets).
+Edit the HTML/CSS, commit, push. That's it for `root/` and `mila/`. **DRAE is not deployed from this repo:** the `drae-landing` Worker serves `~/workspace/drae-deploy/dist`, deployed with wrangler from `~/workspace/drae-deploy/`. The `drae/` folder in this repo is the retired sale tree — never deploy it; doing so would put the withdrawn $2,500 sale pages back live over the in-development notice.
 
 **Design language (all three sites):** the MILA makeover identity — deep ink `#0A0614` background, brand purple `#7A25F4`, bright accent `#B79CFF`, and the official MILA logo (gradient-bars M on a black tile, `logo.png` in each site folder). No old blue accent.
 
