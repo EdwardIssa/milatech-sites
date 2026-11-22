@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Check links in this repo's HTML.
 
-Local links are resolved per site directory (root/, mila/, drae/). Root
-pages use extensionless URLs such as /privacy, which map to privacy.html.
+Local links are resolved per site directory (root/, mila/, drae/,
+leadminerx/). Root pages use extensionless URLs such as /privacy, which
+map to privacy.html. LeadMiner X pages do the same (/product →
+product.html) because the worker uses html_handling auto-trailing-slash.
 root/_redirects is applied before a root-site target is reported missing.
 
 Remote http(s) links are requested once each. 404 and 410 fail the run.
@@ -23,12 +25,13 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SITES = ("root", "mila", "drae")
+SITES = ("root", "mila", "drae", "leadminerx")
 HOST_TO_SITE = {
     "milatech.tech": "root",
     "www.milatech.tech": "root",
     "mila.milatech.tech": "mila",
     "drae.milatech.tech": "drae",
+    "leadminerx.milatech.tech": "leadminerx",
 }
 SKIP_SCHEMES = ("mailto:", "tel:", "javascript:", "data:")
 SOFT_HTTP = {401, 403, 429, 503}
