@@ -586,3 +586,69 @@ video.walkthrough{width:100%;max-width:760px;display:block;margin:0 auto;border-
 .api-table tr:last-child td{border-bottom:none}
 .api-table td code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;color:var(--ink)}
 .example-note{font-size:14.5px;color:var(--muted);margin-top:6px}
+
+/* ---------- homepage: MILA purple (README design system) ----------
+   Deep ink #0A0614, brand purple #7A25F4, accent #B79CFF.
+   Scoped to the homepage so other root pages keep their current layout. */
+body.home{background:#0A0614;color:#E7E0FF}
+body.home .bg-fx{
+  background:
+    radial-gradient(900px 420px at 90% -8%,rgba(122,37,244,.32),transparent 62%),
+    radial-gradient(700px 380px at 0% 0%,rgba(183,156,255,.14),transparent 60%),
+    #0A0614;
+}
+body.home .bg-fx::before{
+  background:
+    linear-gradient(rgba(183,156,255,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(183,156,255,.07) 1px,transparent 1px);
+}
+body.home a{color:#B79CFF}
+body.home h1,body.home h2,body.home h3{color:#fff}
+body.home .familynav{background:rgba(10,6,20,.94);border-bottom-color:rgba(183,156,255,.28)}
+body.home .familynav-label{color:#B79CFF}
+body.home .familynav-links a{color:#E7E0FF}
+body.home .familynav-links a:hover{color:#fff;background:rgba(183,156,255,.12)}
+body.home .familynav-links a.current{color:#0A0614;background:#B79CFF;border-color:#B79CFF}
+body.home nav{background:rgba(10,6,20,.94);border-bottom-color:rgba(183,156,255,.28)}
+body.home .brand,body.home .foot-brand{color:#fff}
+body.home .brand span,body.home .foot-brand span{
+  background:none;-webkit-text-fill-color:#B79CFF;color:#B79CFF;
+}
+body.home .navlinks a{color:#E7E0FF}
+body.home .navlinks a:hover,body.home .navlinks a.active{color:#B79CFF}
+body.home .navlinks .cta{background:#7A25F4;color:#fff;box-shadow:none}
+body.home .navlinks .cta:hover{color:#fff;filter:brightness(1.08)}
+body.home .hero{padding-top:48px;padding-bottom:8px}
+body.home .kicker{background:transparent;color:#B79CFF;border-color:rgba(183,156,255,.45);box-shadow:none}
+body.home .grad{background:none;-webkit-text-fill-color:#B79CFF;color:#B79CFF;animation:none}
+body.home .lead{color:#E7E0FF}
+body.home .btn.primary{background:#7A25F4;color:#fff;box-shadow:none}
+body.home .btn.primary:hover{filter:brightness(1.08);box-shadow:none}
+body.home .sec-label{background:#7A25F4;color:#fff;box-shadow:none}
+body.home .path-list{list-style:none;display:grid;gap:14px;margin:8px 0 0}
+body.home .path{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  background:#140C22;border:1px solid rgba(183,156,255,.32);border-radius:18px;
+  padding:20px 22px;
+}
+body.home .path h2{font-size:22px;font-weight:800;letter-spacing:-.3px;margin:0 0 4px}
+body.home .path p{margin:0;font-size:17px;color:#E7E0FF;max-width:46ch}
+body.home .path .btn{flex:0 0 auto;margin:0}
+body.home .icon-step,body.home .update-entry{
+  background:#140C22;border-color:rgba(183,156,255,.32);
+}
+body.home .icon-step b{color:#fff}
+body.home .icon-step .ico{background:#7A25F4}
+body.home .update-entry p{color:#E7E0FF}
+body.home .update-date:empty{display:none}
+body.home footer{background:transparent;border-top-color:rgba(183,156,255,.28)}
+body.home footer p{color:#B79CFF}
+body.home .foot-links a{color:#E7E0FF}
+@media(max-width:719px){
+  body.home .hero{padding-top:18px}
+  body.home .hero h1{font-size:36px;letter-spacing:-1px;margin:12px 0 10px}
+  body.home .lead{font-size:16.5px}
+  body.home section{padding-top:22px}
+  body.home .path{flex-direction:column;align-items:stretch;padding:16px}
+  body.home .path .btn{justify-content:center;width:100%}
+}

@@ -58,12 +58,12 @@
     if (document.getElementById('mt-cookie-bar')) return;
     var style = document.createElement('style');
     style.textContent =
-      '#mt-cookie-bar{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#171029;color:#EDE9FF;' +
-      'border-top:2px solid #7A25F4;padding:12px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;' +
-      'justify-content:center;font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;box-shadow:0 -2px 14px rgba(0,0,0,.45)}' +
+      '#mt-cookie-bar{position:static;z-index:1;width:100%;box-sizing:border-box;background:#0A0614;color:#EDE9FF;' +
+      'border-bottom:2px solid #7A25F4;padding:6px 12px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;' +
+      'justify-content:center;font:13px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;box-shadow:none}' +
       '#mt-cookie-bar a{color:#B79CFF;text-decoration:underline}' +
-      '#mt-cookie-bar .mt-cookie-btns{display:flex;gap:8px}' +
-      '#mt-cookie-bar button{cursor:pointer;border-radius:999px;padding:7px 18px;font:600 14px system-ui,-apple-system,"Segoe UI",sans-serif}' +
+      '#mt-cookie-bar .mt-cookie-btns{display:flex;gap:8px;flex:0 0 auto}' +
+      '#mt-cookie-bar button{cursor:pointer;border-radius:999px;padding:4px 12px;font:600 13px system-ui,-apple-system,"Segoe UI",sans-serif}' +
       '#mt-cookie-bar .mt-cookie-accept{background:#7A25F4;border:1px solid #7A25F4;color:#fff}' +
       '#mt-cookie-bar .mt-cookie-decline{background:transparent;border:1px solid #B79CFF;color:#B79CFF}';
     document.head.appendChild(style);
@@ -73,13 +73,12 @@
     bar.setAttribute('role', 'dialog');
     bar.setAttribute('aria-label', 'Cookie notice');
     bar.innerHTML =
-      '<span>We use analytics cookies to see how visitors use this site and make it better. ' +
-      '<a href="/privacy">Privacy Policy</a></span>' +
+      '<span>Analytics cookies. <a href="/privacy">Privacy Policy</a></span>' +
       '<span class="mt-cookie-btns">' +
       '<button type="button" class="mt-cookie-accept">Accept</button>' +
       '<button type="button" class="mt-cookie-decline">Decline</button>' +
       '</span>';
-    document.body.appendChild(bar);
+    document.body.insertBefore(bar, document.body.firstChild);
 
     bar.querySelector('.mt-cookie-accept').addEventListener('click', function () {
       try { localStorage.setItem(KEY, 'granted'); } catch (e) { /* ignore */ }
