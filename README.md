@@ -7,7 +7,7 @@ Source for Mila Tech LLC's websites, deployed via Cloudflare Workers (Static Ass
 ## Structure
 
 
-Every site is multi-page with a shared top navigation bar and footer — no one-pagers.
+The deployed marketing sites are multi-page, each with a shared top navigation bar and footer. `root/leadminerx/` is an older one-pager and is not the LeadMiner X store.
 
 - `root/` → **https://milatech.tech** — Mila Tech LLC company site
   - `index.html` — Home (hero, venture/product cards, Daily Updates)
@@ -32,32 +32,46 @@ Every site is multi-page with a shared top navigation bar and footer — no one-
   - `terms.html` — Terms of Service
   - `privacy.html` — Privacy Policy
   - `styles.css` — shared stylesheet
+- `leadminerx/` → **https://leadminerx.milatech.tech** — LeadMiner X marketing site (the $149 store). This folder is the source for the `leadminerx-landing` worker.
+  - `index.html` — Home
+  - `product.html` — Product
+  - `pricing.html` — Pricing
+  - `faq.html` — FAQ
+  - `affiliates.html` — Affiliates
+  - `terms.html` — Terms of Service
+  - `privacy.html` — Privacy Policy
+  - `styles.css` / `mine.css` — stylesheets
+  - Checkout stays on Gumroad (`milatech.gumroad.com/l/leadminerx`, `/l/sgciy`, `/l/rzwhk`). Do not swap those for Stripe unless Edward asks.
+- `root/leadminerx/` is an **older one-pager** (`index.html`, `privacy.html`, `terms.html`, `styles.css`). It is not the source for https://leadminerx.milatech.tech. `milatech-root` still publishes it at https://milatech.tech/leadminerx/ because that worker's build root is `root/`. Recommend redirecting `/leadminerx` and `/leadminerx/` on milatech.tech to https://leadminerx.milatech.tech so the company site stops serving the stale one-pager. That redirect belongs in `root/` (`milatech-root`). This change does not edit `root/`, because another open PR is already changing it.
 - `drae/` — **RETIRED. DO NOT DEPLOY.** This folder is the old DRAE sale tree (its `index.html` still carries the withdrawn "$2,500" sale copy). It is kept for reference only and must never be deployed. The live drae.milatech.tech site (the in-development notice) is served from `~/workspace/drae-deploy/` — that is the only drae source (see Deployment below).
 
 
 ## Deployment
 
 
-The `root/` and `mila/` Workers are connected to this repo with their site folder as the build root directory; pushes to `main` auto-deploy. The DRAE site is deployed separately (see below).
+The `root/` and `mila/` Workers are connected to this repo with their site folder as the build root directory; pushes to `main` auto-deploy. `leadminerx/` is the source for https://leadminerx.milatech.tech. The `leadminerx-landing` worker is still a wrangler upload of static assets and is not Git-connected yet, so a push does not update that domain until the worker's build root is set to `leadminerx/` the same way `mila/` and `root/` are connected. The DRAE site is deployed separately (see below).
 
 
 | Worker | Repo root directory | Custom domain |
 |---|---|---|
 | `mila-landing` | `mila/` | mila.milatech.tech |
 | `milatech-root` | `root/` | milatech.tech |
+| `leadminerx-landing` | `leadminerx/` | leadminerx.milatech.tech |
 | `drae-landing` | `~/workspace/drae-deploy/` (NOT this repo — wrangler deploy, assets `./dist`) | drae.milatech.tech |
 
-LeadMiner X pages in this repo live at `root/leadminerx/` and are published with `milatech-root` at https://milatech.tech/leadminerx/. That is the copy the Git build serves: `milatech-root`'s root directory is `root/`. `leadminerx.milatech.tech` is the separate `leadminerx-landing` worker, deployed with wrangler, and it is not a Git build root in this repo. Do not wrangler-deploy an old checkout over that worker without comparing it to what is already live.
+`leadminerx/wrangler.jsonc` matches the live worker: name `leadminerx-landing`, compatibility date `2025-01-01`, assets only (`directory: "."`, `html_handling: "auto-trailing-slash"`), empty `previews`, no script module, no bindings, and no secrets. `leadminerx/.assetsignore` keeps that config out of the public asset set, the same as `root/` and `mila/`. Do not wrangler-deploy over `leadminerx-landing` without comparing the checkout to what is already live.
 
-No build step — pure static files. `root/wrangler.jsonc` and `mila/wrangler.jsonc` are the Worker configs. Each includes an empty `previews` block so non-main branch builds can run `npx wrangler preview`.
+`root/leadminerx/` is still the older one-pager at https://milatech.tech/leadminerx/. Recommend a redirect there from `/leadminerx` and `/leadminerx/` to https://leadminerx.milatech.tech. Make that change in `root/`, not in `leadminerx/`.
+
+No build step — pure static files. `root/wrangler.jsonc`, `mila/wrangler.jsonc`, and `leadminerx/wrangler.jsonc` are the Worker configs. Each includes an empty `previews` block so non-main branch builds can run `npx wrangler preview`.
 
 
 ## Making changes
 
 
-Edit the HTML/CSS, commit, push. That's it for `root/` and `mila/`. **DRAE is not deployed from this repo:** the `drae-landing` Worker serves `~/workspace/drae-deploy/dist`, deployed with wrangler from `~/workspace/drae-deploy/`. The `drae/` folder in this repo is the retired sale tree — never deploy it; doing so would put the withdrawn $2,500 sale pages back live over the in-development notice.
+Edit the HTML/CSS, commit, push. That's it for `root/` and `mila/`. `leadminerx/` is edited the same way, but https://leadminerx.milatech.tech does not update on push until `leadminerx-landing` is Git-connected to this folder. **DRAE is not deployed from this repo:** the `drae-landing` Worker serves `~/workspace/drae-deploy/dist`, deployed with wrangler from `~/workspace/drae-deploy/`. The `drae/` folder in this repo is the retired sale tree — never deploy it; doing so would put the withdrawn $2,500 sale pages back live over the in-development notice.
 
-**Design language (all three sites):** the MILA makeover identity — deep ink `#0A0614` background, brand purple `#7A25F4`, bright accent `#B79CFF`, and the official MILA logo (gradient-bars M on a black tile, `logo.png` in each site folder). No old blue accent.
+**Design language (company site, MILA, and the retired DRAE tree):** the MILA makeover identity — deep ink `#0A0614` background, brand purple `#7A25F4`, bright accent `#B79CFF`, and the official MILA logo (gradient-bars M on a black tile, `logo.png` in each site folder). No old blue accent. LeadMiner X keeps its own Mine palette in `leadminerx/mine.css` (charcoal `#141619`, safety orange `#FF6A13`, ore gold `#E8B04A`).
 
 
 ## Notes
