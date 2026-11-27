@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo for Premier Roofing and Renovations, prepared by Mila Tech</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; color: #222; background: #f4f4f6; line-height: 1.5; }
+.wrap { max-width: 820px; margin: 0 auto; padding: 28px 18px 60px; }
+header.top { background: #1c2733; color: #fff; border-radius: 12px; padding: 24px 26px; }
+header.top h1 { margin: 0 0 4px; font-size: 26px; }
+header.top p { margin: 2px 0; color: #c8d2dc; font-size: 14px; }
+.grade { display: inline-block; color: #fff; padding: 8px 16px; border-radius: 8px; font-weight: bold; margin-top: 12px; }
+.g-red { background: #c0392b; } .g-amber { background: #b58900; }
+section { background: #fff; border-radius: 12px; padding: 22px 26px; margin-top: 18px; }
+h2 { margin-top: 0; font-size: 20px; }
+.finding { border-left: 5px solid #c0392b; background: #fdf1f0; padding: 10px 14px; margin: 10px 0; border-radius: 6px; }
+.finding.warn { border-left-color: #e0a800; background: #fff8e6; }
+.finding b { display: block; }
+.mock { border: 2px dashed #9db2c3; border-radius: 10px; padding: 18px; background: #fbfcfd; }
+.mock .bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #dde5ec; padding-bottom: 10px; margin-bottom: 12px; }
+.mock .brand { font-weight: bold; font-size: 18px; }
+.cta { background: #1c7c3f; color: #fff; border: none; padding: 10px 18px; border-radius: 8px; font-size: 15px; cursor: pointer; }
+#chatlog { border: 1px solid #dde5ec; border-radius: 8px; padding: 12px; min-height: 150px; background: #fff; }
+.msg { margin: 8px 0; padding: 9px 12px; border-radius: 10px; max-width: 88%; }
+.bot { background: #eef3f8; }
+.user { background: #dcefe2; margin-left: auto; }
+.chips { margin-top: 10px; }
+.chip { background: #fff; border: 1px solid #1c7c3f; color: #1c7c3f; border-radius: 999px; padding: 7px 13px; margin: 3px 3px 3px 0; cursor: pointer; font-size: 13px; }
+table.offers { width: 100%; border-collapse: collapse; }
+table.offers td { border: 1px solid #e2e6ea; padding: 12px; vertical-align: top; }
+.price { font-size: 22px; font-weight: bold; }
+.small { color: #555; font-size: 13px; }
+footer { color: #666; font-size: 13px; margin-top: 18px; text-align: center; }
+</style></head><body>
+<div class="wrap">
+<header class="top">
+<h1>Premier Roofing and Renovations</h1>
+<p>Fraser, Michigan &middot; www.premierenovations.com</p>
+<p>Website check run 2026-11-23 by Mila Tech (milatech.tech). This page is a private demo built for Premier Roofing and Renovations from that check.</p>
+<span class="grade g-amber">AMBER, losing customers on fixable issues, 79 out of 100</span>
+</header>
+
+<section>
+<h2>1. What is broken on your site today</h2>
+<div class="finding warn"><b>Security certificate problem</b>Your site&#x27;s security certificate chain includes an expired certificate. Plenty of visitors still get in, but some phones, browsers, and security tools will show a security warning and turn people away before they ever see your number.</div>
+<div class="finding warn"><b>Slowest homepage in the fixable group</b>Your homepage loaded in 1.4 seconds in the check, the slowest of the roofers whose sites otherwise pass. It still passes, but every bit of delay costs mobile visitors, and Google says most leave after 3 seconds.</div>
+<div class="finding warn"><b>What is working, for the record</b>A lot: your phone number is on the homepage with tap-to-call, there is a clear quote path, the site works on phones, and your page title and Google description are set properly (&#x27;Metro Detroit Roofing, Siding &amp; Exteriors&#x27;). One real problem is doing the damage.</div>
+
+<p class="small">Checked on the public homepage only, the same page your customers and Google see first. Every item above was measured by the check, nothing here is a guess.</p>
+</section>
+
+<section>
+<h2>2. What the fix looks like, working</h2>
+<div class="mock">
+<div class="bar"><span class="brand">Premier Roofing and Renovations</span><button class="cta" onclick="ask('How do I get a quote?')">Get a free quote</button></div>
+<p>Your site is close, which is exactly why the certificate warning hurts: everything else invites the call, then some phones scare the customer off at the door. This is the fixed version, with a receptionist that catches the people who land here after hours.</p>
+<p><b>Try the AI receptionist.</b> This is a working demo loaded with Premier Roofing and Renovations's own public facts. Tap a question or type your own.</p>
+<div id="chatlog"></div>
+<div class="chips"><button class="chip">What services do you offer?</button><button class="chip">What area do you serve?</button><button class="chip">How do I get a quote?</button><button class="chip">Can I call you?</button><button class="chip">What are your hours?</button><button class="chip">What is wrong with your website?</button></div>
+<p><input id="askbox" type="text" placeholder="Type a question..." style="width:70%;padding:9px;border:1px solid #ccc;border-radius:8px;"> <button class="cta" id="askbtn">Ask</button></p>
+</div>
+</section>
+
+<section>
+<h2>3. The offer</h2>
+<table class="offers"><tr><td style="width:30%"><div class="price">$249</div><div>Quick Fix</div><div class="small">one-time</div></td><td>Everything the check flagged, fixed on your existing site: the security certificate sorted so browsers stop warning, phone number at the top with tap-to-call, a clear quote path, proper page title and Google description. Delivered in 3 business days, with a before and after report so you can see the score move.</td></tr>
+<tr><td style="width:30%"><div class="price">$899</div><div>Rebuild</div><div class="small">one-time</div></td><td>A clean, fast site built to pass every line of the check: mobile first, tap-to-call, quote form, service pages, proper titles and descriptions, HTTPS done right from day one. Your content and photos, our build.</td></tr>
+<tr><td style="width:30%"><div class="price">$49/mo</div><div>Care plan</div><div class="small">monthly</div></td><td>Hosting, security updates, backups, small text and photo edits, and a fresh check every quarter so the grade stays green.</td></tr>
+</table>
+<p><b>AI receptionist add-on:</b> the chat demo above, live on your site, answering customers day and night. Pricing on this one is set per business, ask Edward and he will quote it straight.</p>
+<p class="small">No contracts for the one-time work. The audit report is yours to keep either way, hand it to your own web person if you would rather go that route.</p>
+</section>
+<footer>Prepared by Mila Tech, milatech.tech, for Premier Roofing and Renovations. Demo page, not published.</footer>
+</div>
+<script>
+const QA = {"What services do you offer?": "Roofing, siding, and exteriors. That is straight from their own page title: 'Metro Detroit Roofing, Siding & Exteriors'.", "What area do you serve?": "Metro Detroit, per their own site title. The business is based in Fraser, Michigan.", "How do I get a quote?": "There is a clear contact and quote path from their homepage, the check confirmed it. On this fixed version, this chat can also take your name, address, and what the project is, and pass it straight to the team, day or night.", "Can I call you?": "Yes. Their homepage shows a phone number with a tap-to-call link, the check confirmed that too. This demo does not print the number because it only uses facts recorded in the check itself.", "What are your hours?": "Hours were not part of the public data in the check, so this demo does not guess. A live version gets loaded with the real hours before it goes on the site.", "What is wrong with your website?": "One main thing, from the 2026-11-23 check: the security certificate chain includes an expired certificate, so some phones, browsers, and security tools show a security warning and turn people away before they ever see the number. The site scored 79 out of 100, that one fix is most of the gap."};
+const FALLBACK = "That one is not in the public facts this demo was loaded with, so I will not guess. On the live version, anything I cannot answer gets passed to the team with your number so they can call you back.";
+const log = document.getElementById('chatlog');
+function add(text, who) {
+  const d = document.createElement('div');
+  d.className = 'msg ' + who; d.textContent = text; log.appendChild(d);
+  log.scrollTop = log.scrollHeight;
+}
+function ask(q) {
+  add(q, 'user');
+  let a = QA[q];
+  if (!a) {
+    const low = q.toLowerCase();
+    for (const k in QA) {
+      const words = k.toLowerCase().replace(/[^a-z0-9 ]/g,'').split(' ');
+      if (words.some(w => w.length > 3 && low.includes(w))) { a = QA[k]; break; }
+    }
+  }
+  setTimeout(() => add(a || FALLBACK, 'bot'), 350);
+}
+document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => ask(c.textContent)));
+document.getElementById('askbtn').addEventListener('click', () => {
+  const inp = document.getElementById('askbox'); if (inp.value.trim()) { ask(inp.value.trim()); inp.value=''; }
+});
+add("Hi, this is the demo receptionist for Premier Roofing and Renovations. Ask me about their services, their area, or how to get a quote.", 'bot');
+</script>
+</body></html>
